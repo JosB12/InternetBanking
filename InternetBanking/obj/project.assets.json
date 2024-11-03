@@ -8332,9 +8332,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\WebApp.InternetBanking.csproj",
-      "projectName": "WebApp.InternetBanking",
-      "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\WebApp.InternetBanking.csproj",
+      "projectUniqueName": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\InternetBanking.csproj",
+      "projectName": "InternetBanking",
+      "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\InternetBanking.csproj",
       "packagesPath": "C:\\Users\\blanc\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\obj\\",
       "projectStyle": "PackageReference",
