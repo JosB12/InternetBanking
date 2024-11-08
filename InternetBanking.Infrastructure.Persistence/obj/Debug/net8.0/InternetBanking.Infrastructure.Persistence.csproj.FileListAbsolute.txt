@@ -1,0 +1,13 @@
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\bin\Debug\net8.0\InternetBanking.Infrastructure.Persistence.deps.json
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\bin\Debug\net8.0\InternetBanking.Infrastructure.Persistence.dll
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\bin\Debug\net8.0\InternetBanking.Infrastructure.Persistence.pdb
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.csproj.AssemblyReference.cache
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.AssemblyInfoInputs.cache
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.AssemblyInfo.cs
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.sourcelink.json
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.dll
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\refint\InternetBanking.Infrastructure.Persistence.dll
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\InternetBanking.Infrastructure.Persistence.pdb
+C:\Users\blanc\source\repos\InternetBanking\InternetBanking.Infrastructure.Persistence\obj\Debug\net8.0\ref\InternetBanking.Infrastructure.Persistence.dll

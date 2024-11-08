@@ -3,6 +3,202 @@
   "WorkspaceRootPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\migrations\\20241108185332_initimigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\migrations\\20241108185332_initimigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\contexts\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\contexts\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\seeds\\defaultroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\seeds\\defaultroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\mapping\\generalprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\mapping\\generalprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\interfaces\\services\\account\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\interfaces\\services\\account\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\middlewares\\loginauthorize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\middlewares\\loginauthorize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\middlewares\\validateusersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\middlewares\\validateusersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.shared\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|solutionrelative:internetbanking.infrastructure.shared\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.shared\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|solutionrelative:internetbanking.infrastructure.shared\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\viewmodels\\user\\saveuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\viewmodels\\user\\saveuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\viewmodels\\user\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\viewmodels\\user\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\viewmodels\\user\\logginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\viewmodels\\user\\logginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\viewmodels\\user\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\viewmodels\\user\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\interfaces\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\interfaces\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\interfaces\\services\\email\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\interfaces\\services\\email\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\email\\emailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\email\\emailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\interfaces\\services\\generic\\igenericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\interfaces\\services\\generic\\igenericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\authentication\\authenticationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\authentication\\authenticationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\authentication\\authenticationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\authentication\\authenticationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\forgotpassword\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\forgotpassword\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\forgotpassword\\forgotpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\forgotpassword\\forgotpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\register\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\register\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\register\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\register\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\resetpassword\\resetpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\resetpassword\\resetpasswordresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\dtos\\account\\resetpassword\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\dtos\\account\\resetpassword\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\interfaces\\repositories\\generic\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\interfaces\\repositories\\generic\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18F620CB-D7A1-4A93-8F86-56B54CC37927}|InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.domain\\settings\\mailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18F620CB-D7A1-4A93-8F86-56B54CC37927}|InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj|solutionrelative:internetbanking.core.domain\\settings\\mailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\helpers\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\helpers\\sessionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\seeds\\defaultadminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\seeds\\defaultadminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\seeds\\defaultclientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\seeds\\defaultclientuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\seeds\\defaultsuperadminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\seeds\\defaultsuperadminuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\enums\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\enums\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -11,28 +207,8 @@
       "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\wwwroot\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|solutionrelative:internetbanking.infrastructure.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.shared\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCAD825C-838D-44DF-B394-F3B298870121}|InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj|solutionrelative:internetbanking.infrastructure.shared\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|solutionrelative:internetbanking.infrastructure.identity\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.core.application\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\webapp.internetbanking.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -51,19 +227,595 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "InternetBanking\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "InternetBanking\\wwwroot\\js\\site.js",
+              "Title": "20241108185332_InitiMigration.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Migrations\\20241108185332_InitiMigration.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Migrations\\20241108185332_InitiMigration.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Migrations\\20241108185332_InitiMigration.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Migrations\\20241108185332_InitiMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-11-02T22:59:27.133Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:53:33.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ServiceRegistration.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T21:33:21.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Program.cs",
+              "RelativeDocumentMoniker": "InternetBanking\\Program.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Program.cs",
+              "RelativeToolTip": "InternetBanking\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T22:59:15.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "InternetBanking\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Controllers\\UserController.cs",
+              "RelativeToolTip": "InternetBanking\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAqwJsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:13:25.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DefaultRoles.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultRoles.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultRoles.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultRoles.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:40:55.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Entities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Entities\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Entities\\ApplicationUser.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Entities\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:35:17.058Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "IdentityContext.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Contexts\\IdentityContext.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Contexts\\IdentityContext.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Contexts\\IdentityContext.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Contexts\\IdentityContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:31:55.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GeneralProfile.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Mapping\\GeneralProfile.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Mapping\\GeneralProfile.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Mapping\\GeneralProfile.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Mapping\\GeneralProfile.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:46:58.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAYwCsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:42:11.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Account\\IAccountService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Interfaces\\Services\\Account\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Account\\IAccountService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Interfaces\\Services\\Account\\IAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:46:36.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GenericService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Services\\GenericService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Services\\GenericService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Services\\GenericService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Services\\GenericService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:43:19.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ResetPassword.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\ResetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:40:35.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\Register.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\Register.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\Register.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:40:08.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Services\\AccountService.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Services\\AccountService.cs",
+              "ViewState": "AgIAANkAAAAAAAAAAAAgwPoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:45:36.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\AccessDenied.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\AccessDenied.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:39:29.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\ConfirmEmail.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:39:03.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\ForgotPassword.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:38:11.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:37:23.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:30:30.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "InternetBanking\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "InternetBanking\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T18:30:27.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LoginAuthorize.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Middlewares\\LoginAuthorize.cs",
+              "RelativeDocumentMoniker": "InternetBanking\\Middlewares\\LoginAuthorize.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Middlewares\\LoginAuthorize.cs",
+              "RelativeToolTip": "InternetBanking\\Middlewares\\LoginAuthorize.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:12:26.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\appsettings.json",
+              "RelativeDocumentMoniker": "InternetBanking\\appsettings.json",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\appsettings.json",
+              "RelativeToolTip": "InternetBanking\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-02T22:59:17.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ValidateUserSession.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Middlewares\\ValidateUserSession.cs",
+              "RelativeDocumentMoniker": "InternetBanking\\Middlewares\\ValidateUserSession.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Middlewares\\ValidateUserSession.cs",
+              "RelativeToolTip": "InternetBanking\\Middlewares\\ValidateUserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:12:35.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Shared\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\Services\\EmailService.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Shared\\Services\\EmailService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwBIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:07:15.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T21:36:53.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T21:37:40.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SaveUserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\SaveUserViewModel.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\User\\SaveUserViewModel.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\SaveUserViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\User\\SaveUserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:26:12.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ResetPasswordViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\ResetPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\User\\ResetPasswordViewModel.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\ResetPasswordViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\User\\ResetPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:25:50.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LogginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\LogginViewModel.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\User\\LogginViewModel.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\LogginViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\User\\LogginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:25:14.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ForgotPasswordViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\ForgotPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\User\\ForgotPasswordViewModel.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\User\\ForgotPasswordViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\User\\ForgotPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:24:52.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\User\\IUserService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Interfaces\\Services\\User\\IUserService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\User\\IUserService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Interfaces\\Services\\User\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:22:55.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Email\\IEmailService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Interfaces\\Services\\Email\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Email\\IEmailService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Interfaces\\Services\\Email\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:17:51.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "EmailRequest.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Email\\EmailRequest.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Email\\EmailRequest.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Email\\EmailRequest.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Email\\EmailRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:08:29.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IGenericService.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Generic\\IGenericService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Interfaces\\Services\\Generic\\IGenericService.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Services\\Generic\\IGenericService.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Interfaces\\Services\\Generic\\IGenericService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:22:02.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AuthenticationRequest.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationRequest.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationRequest.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationRequest.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:47:57.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "AuthenticationResponse.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationResponse.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationResponse.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationResponse.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\Authentication\\AuthenticationResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:48:07.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ForgotPasswordRequest.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordRequest.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordRequest.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordRequest.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:03:12.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ForgotPasswordResponse.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordResponse.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordResponse.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordResponse.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\ForgotPassword\\ForgotPasswordResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:03:26.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterRequest.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:04:12.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RegisterResponse.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterResponse.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterResponse.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterResponse.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\Register\\RegisterResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:06:31.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ResetPasswordResponse.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordResponse.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordResponse.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordResponse.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:07:45.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ResetPasswordRequest.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordRequest.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordRequest.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\Account\\ResetPassword\\ResetPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:07:29.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Repositories\\Generic\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Interfaces\\Repositories\\Generic\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Interfaces\\Repositories\\Generic\\IGenericRepository.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Interfaces\\Repositories\\Generic\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:23:59.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MailSettings.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Domain\\Settings\\MailSettings.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Domain\\Settings\\MailSettings.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Domain\\Settings\\MailSettings.cs",
+              "RelativeToolTip": "InternetBanking.Core.Domain\\Settings\\MailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:20:14.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "SessionHelper.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Helpers\\SessionHelper.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Helpers\\SessionHelper.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Helpers\\SessionHelper.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Helpers\\SessionHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:10:56.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DefaultAdminUser.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultAdminUser.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultAdminUser.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultAdminUser.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultAdminUser.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAgwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:42:16.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "DefaultSuperAdminUser.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultSuperAdminUser.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultSuperAdminUser.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultSuperAdminUser.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultSuperAdminUser.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:41:37.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Roles.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Enums\\Roles.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Enums\\Roles.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\Enums\\Roles.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Enums\\Roles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:39:27.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "DefaultClientUser.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultClientUser.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultClientUser.cs",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Seeds\\DefaultClientUser.cs",
+              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\Seeds\\DefaultClientUser.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:38:11.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
               "Title": "favicon.ico -  [English (United States)] - Icon [32x32, 32 bit, BMP]",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\wwwroot\\favicon.ico",
               "RelativeDocumentMoniker": "InternetBanking\\wwwroot\\favicon.ico",
@@ -75,31 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\appsettings.json",
-              "RelativeDocumentMoniker": "InternetBanking\\appsettings.json",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\appsettings.json",
-              "RelativeToolTip": "InternetBanking\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-02T22:59:17.204Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Program.cs",
-              "RelativeDocumentMoniker": "InternetBanking\\Program.cs",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Program.cs",
-              "RelativeToolTip": "InternetBanking\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T22:59:15.812Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 51,
               "Title": "ServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\ServiceRegistration.cs",
               "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Persistence\\ServiceRegistration.cs",
@@ -111,43 +839,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
-              "RelativeToolTip": "InternetBanking.Infrastructure.Shared\\ServiceRegistration.cs",
+              "DocumentIndex": 49,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "InternetBanking\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "InternetBanking\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T21:37:40.328Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-02T22:59:27.133Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
-              "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T21:36:53.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ServiceRegistration.cs",
-              "RelativeToolTip": "InternetBanking.Core.Application\\ServiceRegistration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T21:33:21.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 52,
               "Title": "WebApp.InternetBanking.csproj",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\WebApp.InternetBanking.csproj",
               "RelativeDocumentMoniker": "InternetBanking\\WebApp.InternetBanking.csproj",
