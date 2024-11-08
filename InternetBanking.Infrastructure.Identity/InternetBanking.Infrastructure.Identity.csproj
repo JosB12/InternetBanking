@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migration\**" />
+    <EmbeddedResource Remove="Migration\**" />
+    <None Remove="Migration\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.13.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
@@ -27,6 +33,7 @@
     <ProjectReference Include="..\InternetBanking.Infrastructure.Shared\InternetBanking.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Seeds\" />
@@ -34,4 +41,6 @@
     <Folder Include="Entities\" />
   </ItemGroup>
 
+=======
+>>>>>>> develop
 </Project>
