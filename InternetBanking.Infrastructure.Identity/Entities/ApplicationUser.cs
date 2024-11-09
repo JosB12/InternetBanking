@@ -11,5 +11,12 @@ namespace InternetBanking.Infrastructure.Identity.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public bool IsActive { get; set; } = true;
+        public string UserType { get; set; }
+
+
+        //agregar cuando este la base de datos y modificar el identity
+        //public ICollection<Product> Products { get; set; } = new List<Product>(); 
+
     }
 }

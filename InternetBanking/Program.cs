@@ -1,5 +1,4 @@
 using InternetBanking.Infrastructure.Identity;
-using InternetBanking.Infrastructure.Shared;
 using WebApp.InternetBanking.Middlewares;
 using InternetBanking.Core.Application;
 
@@ -18,7 +17,6 @@ builder.Services.AddSession(options =>
 
 //builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
-builder.Services.AddSharedInfrastructure(builder.Configuration);
 builder.Services.AddApplicationLayer(builder.Configuration);
 builder.Services.AddScoped<LoginAuthorize>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

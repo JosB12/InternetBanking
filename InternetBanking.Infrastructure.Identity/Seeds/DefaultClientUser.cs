@@ -27,8 +27,22 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "123Pa$$word!");
-                    await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
+                    var result =  await userManager.CreateAsync(defaultUser, "123Pa$$word!");
+                    if (result.Succeeded)
+                    {
+                        // Asignar rol Client
+                        await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
+
+                        // Crear cuenta bancaria con saldo inicial
+                        //var account = new Account
+                        //{
+                        //    Balance = 1000.00M, // Saldo inicial
+                        //    UserId = defaultUser.Id
+                        //};
+
+                        // Guardar cuenta bancaria
+                        //await accountRepository.CreateAsync(account);
+                    }
                 }
             }
         }

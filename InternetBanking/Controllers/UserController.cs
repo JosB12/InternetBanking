@@ -4,9 +4,7 @@ using InternetBanking.Core.Application.ViewModels.User;
 using WebApp.InternetBanking.Middlewares;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.DTOS.Account.Authentication;
-using InternetBanking.Core.Application.DTOS.Account.ForgotPassword;
 using InternetBanking.Core.Application.DTOS.Account.Register;
-using InternetBanking.Core.Application.DTOS.Account.ResetPassword;
 using System.Security.Claims;
 
 
@@ -90,63 +88,6 @@ namespace WebApp.InternetBanking.Controllers
             }
             return RedirectToRoute(new { controller = "User", action = "Index" });
 
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token)
-        {
-            string response = await _userService.ConfirmEmailAsync(userId, token);
-            return View("ConfirmEmail", response);
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        public IActionResult ForgotPassword()
-        {
-            return View(new ForgotPasswordViewModel());
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        [HttpPost]
-        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel vm)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(vm);
-            }
-            var origin = Request.Headers["origin"];
-            ForgotPasswordResponse response = await _userService.ForgotPasswordAsync(vm, origin);
-            if (response.HasError)
-            {
-                vm.HasError = response.HasError;
-                vm.Error = response.Error;
-                return View(vm);
-            }
-            return RedirectToRoute(new { controller = "User", action = "Index" });
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        public IActionResult ResetPassword(string token)
-        {
-            return View(new ResetPasswordViewModel { Token = token });
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        [HttpPost]
-        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel vm)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(vm);
-            }
-
-            ResetPasswordResponse response = await _userService.ResetPasswordAsync(vm);
-            if (response.HasError)
-            {
-                vm.HasError = response.HasError;
-                vm.Error = response.Error;
-                return View(vm);
-            }
-            return RedirectToRoute(new { controller = "User", action = "Index" });
         }
 
         public IActionResult AccessDenied()
