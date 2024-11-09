@@ -33,14 +33,11 @@
     <ProjectReference Include="..\InternetBanking.Infrastructure.Shared\InternetBanking.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
-<<<<<<< HEAD
-  <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Seeds\" />
-    <Folder Include="Contexts\" />
-    <Folder Include="Entities\" />
-  </ItemGroup>
-
-=======
->>>>>>> develop
+	<ItemGroup>
+		<Folder Include="Services\" />
+		<Folder Include="Seeds\" />
+		<Folder Include="Contexts\" />
+		<Folder Include="Entities\" />
+	</ItemGroup>
+	
 </Project>
