@@ -63,7 +63,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 response.Error = $"Invalid credentials for {request.UserName}";
                 return response;
             }
-            if (!user.EmailConfirmed)
+            if (!user.IsActive)
             {
                 response.HasError = true;
                 response.Error = $"Account no confirmed for {request.UserName}";

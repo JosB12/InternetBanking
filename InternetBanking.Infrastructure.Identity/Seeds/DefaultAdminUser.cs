@@ -18,8 +18,8 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
             defaultUser.Email = "Adminuser@email.com";
             defaultUser.FirstName = "John";
             defaultUser.LastName = "Doe";
-            defaultUser.EmailConfirmed = true;
-            defaultUser.PhoneNumberConfirmed = true;
+            defaultUser.UserType = "Admin";
+
 
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
             {

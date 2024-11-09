@@ -14,36 +14,51 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
     {
         public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            ApplicationUser defaultUser = new();
-            defaultUser.UserName = "clientuser";
-            defaultUser.Email = "clientuser@email.com";
-            defaultUser.FirstName = "John";
-            defaultUser.LastName = "Doe";
-            defaultUser.EmailConfirmed = true;
-            defaultUser.PhoneNumberConfirmed = true;
-
-            if (userManager.Users.All(u => u.Id != defaultUser.Id))
+            try
             {
-                var user = await userManager.FindByEmailAsync(defaultUser.Email);
-                if (user == null)
+                ApplicationUser defaultUser = new();
+                defaultUser.UserName = "clientuser";
+                defaultUser.Email = "clientuser@email.com";
+                defaultUser.FirstName = "John";
+                defaultUser.LastName = "Doe";
+                defaultUser.UserType = "Clien";
+
+
+                if (userManager.Users.All(u => u.Id != defaultUser.Id))
                 {
-                    var result =  await userManager.CreateAsync(defaultUser, "123Pa$$word!");
-                    if (result.Succeeded)
+                    var user = await userManager.FindByEmailAsync(defaultUser.Email);
+                    if (user == null)
                     {
-                        // Asignar rol Client
-                        await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
+                        var result = await userManager.CreateAsync(defaultUser, "123Pa$$word!");
+                        if (result.Succeeded)
+                        {
+                            // Asignar rol Client
+                            await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
 
-                        // Crear cuenta bancaria con saldo inicial
-                        //var account = new Account
-                        //{
-                        //    Balance = 1000.00M, // Saldo inicial
-                        //    UserId = defaultUser.Id
-                        //};
+                            // Crear cuenta bancaria con saldo inicial
+                            //var account = new Account
+                            //{
+                            //    Balance = 1000.00M, // Saldo inicial
+                            //    UserId = defaultUser.Id
+                            //};
 
-                        // Guardar cuenta bancaria
-                        //await accountRepository.CreateAsync(account);
+                            // Guardar cuenta bancaria
+                            //await accountRepository.CreateAsync(account);
+                        }
+                        else
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                Console.WriteLine($"Error al crear el usuario: {error.Description}");
+                            }
+                        }
+
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Excepción general en SeedAsync: {ex.Message}");
             }
         }
     }
