@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|solutionrelative:internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{075EE493-4266-40A3-B6CA-55311C8588E6}|InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.identity\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,20 +55,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:InternetBanking.Infrastructure.Persistence\\Migrations\\20241110145803_InitialMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|solutionrelative:internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|solutionrelative:internetbanking.infrastructure.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking.infrastructure.persistence\\internetbanking.infrastructure.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{3D89B196-2391-4475-9DE5-B223C4925F4A}|InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj|solutionrelative:internetbanking.infrastructure.persistence\\internetbanking.infrastructure.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|solutionrelative:internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Migrations\\20241109174922_AddDefaultAdminToContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,8 +71,16 @@
       "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\InternetBanking.csproj|solutionrelative:internetbanking\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|c:\\users\\blanc\\source\\repos\\internetbanking\\internetbanking\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CECB3ABE-9B9D-4575-915B-8617E196CF28}|InternetBanking\\WebApp.InternetBanking.csproj|solutionrelative:internetbanking\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -119,8 +119,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Identity\\ServiceRegistration.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAkwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T17:05:55.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T17:05:55.2Z"
             },
             {
               "$type": "Document",
@@ -132,8 +131,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110160440_AddRestrictDeleteToTarjetasCredito.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:04:41.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T16:04:41.182Z"
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110152712_InitialMigration.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:27:13.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:27:13.129Z"
             },
             {
               "$type": "Document",
@@ -158,8 +155,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110152600_InitialMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:26:00.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:26:00.878Z"
             },
             {
               "$type": "Document",
@@ -171,8 +167,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110152232_InitialMigration.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:22:32.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:22:32.972Z"
             },
             {
               "$type": "Document",
@@ -184,8 +179,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110152025_InitialMigration.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:20:25.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:20:25.916Z"
             },
             {
               "$type": "Document",
@@ -197,8 +191,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110151927_InitialMigration.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:19:27.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:19:27.305Z"
             },
             {
               "$type": "Document",
@@ -210,8 +203,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110151655_InitialMigration.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:16:55.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:16:55.781Z"
             },
             {
               "$type": "Document",
@@ -223,8 +215,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110151329_InitialMigration.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:13:29.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:13:29.802Z"
             },
             {
               "$type": "Document",
@@ -236,8 +227,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110151041_InitialMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:10:42.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:10:42.019Z"
             },
             {
               "$type": "Document",
@@ -249,8 +239,7 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110150130_InitialMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:01:31.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T15:01:31.148Z"
             },
             {
               "$type": "Document",
@@ -262,12 +251,11 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\Migrations\\20241110145803_InitialMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T14:58:03.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:58:03.428Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "ServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\ServiceRegistration.cs",
               "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Persistence\\ServiceRegistration.cs",
@@ -275,12 +263,11 @@
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\ServiceRegistration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T14:54:21.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:54:21.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Program.cs",
               "RelativeDocumentMoniker": "InternetBanking\\Program.cs",
@@ -288,25 +275,23 @@
               "RelativeToolTip": "InternetBanking\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T16:55:24.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T16:55:24.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "InternetBanking.Infrastructure.Persistence",
+              "DocumentIndex": 14,
+              "Title": "InternetBanking.Infrastructure.Persistence.csproj",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
               "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
               "ToolTip": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
               "RelativeToolTip": "InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-10T14:47:07.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:47:07.449Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "InternetBanking\\Views\\Shared\\_Layout.cshtml",
@@ -318,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "20241109174922_AddDefaultAdminToContext.cs",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Identity\\Migrations\\20241109174922_AddDefaultAdminToContext.cs",
               "RelativeDocumentMoniker": "InternetBanking.Infrastructure.Identity\\Migrations\\20241109174922_AddDefaultAdminToContext.cs",
@@ -330,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "ServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\ServiceRegistration.cs",
               "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ServiceRegistration.cs",

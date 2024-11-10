@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BYlzNmiEAKQ=",
+  "dgSpecHash": "WJt+kdJ6yo0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\InternetBanking.csproj",
+  "projectFilePath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking\\WebApp.InternetBanking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\blanc\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\blanc\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
