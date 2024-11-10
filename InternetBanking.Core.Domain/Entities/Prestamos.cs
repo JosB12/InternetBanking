@@ -17,7 +17,7 @@ namespace InternetBanking.Core.Domain.Entities
         public decimal DeudaRestante { get; set; }
         public DateTime FechaInicio { get; set; }
 
-        public Guid IdProductoFinanciero { get; set; }
+        public int IdProductoFinanciero { get; set; }
 
         public ProductosFinancieros ProductoFinanciero { get; set; }
     }

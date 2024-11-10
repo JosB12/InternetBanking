@@ -10,15 +10,13 @@ namespace InternetBanking.Core.Domain.Entities
 {
     public class TarjetasCredito
     {
-        public Guid Id { get; set; }
-
+        public int Id { get; set; }  
+        public string IdentificadorUnico { get; set; } 
         public string NumeroTarjeta { get; set; }
-
         public decimal LimiteCredito { get; set; }
         public decimal DeudaActual { get; set; }
 
-        public Guid IdProductoFinanciero { get; set; }
-
+        public int IdProductoFinanciero { get; set; }  
         public ProductosFinancieros ProductoFinanciero { get; set; }
     }
 }

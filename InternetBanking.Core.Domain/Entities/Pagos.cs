@@ -10,7 +10,7 @@ namespace InternetBanking.Core.Domain.Entities
 {
     public class Pagos
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string? IdUsuario { get; set; }
 
@@ -18,8 +18,15 @@ namespace InternetBanking.Core.Domain.Entities
         public decimal Monto { get; set; }
         public DateTime Fecha { get; set; }
 
-        public Guid? IdCuentaPago { get; set; }
-        public Guid? IdBeneficiario { get; set; }
-        public Guid? IdProductoFinanciero { get; set; }
+        public int? IdCuentaPago { get; set; }
+        public CuentasAhorro CuentaPago { get; set; }  // Propiedad de navegación
+
+        public int? IdBeneficiario { get; set; }
+        public Beneficiarios Beneficiario { get; set; }  // Propiedad de navegación
+
+        public int? IdProductoFinanciero { get; set; }
+        public ProductosFinancieros ProductoFinanciero { get; set; }
+
+
     }
 }

@@ -10,22 +10,13 @@ namespace InternetBanking.Core.Domain.Entities
 {
     public class Beneficiarios
     {
-        [Key]
-        public Guid Id { get; set; }
 
-        [Required]
+        public int Id { get; set; }  
         public string? IdUsuario { get; set; }
-
-        [Required]
-        public Guid IdCuentaBeneficiario { get; set; }
-
+        public int IdCuentaBeneficiario { get; set; }  
         public CuentasAhorro CuentaBeneficiario { get; set; }
-
         public string Nombre { get; set; }
-
         public string Apellido { get; set; }
-
-
         public string NumeroCuenta { get; set; }
     }
 }

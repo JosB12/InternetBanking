@@ -10,19 +10,18 @@ namespace InternetBanking.Core.Domain.Entities
 {
     public class ProductosFinancieros
     {
-        
-        public Guid Id { get; set; }
 
-        public string TipoProducto { get; set; }
-
-        public string IdUsuario { get; set; }
-
-        public string NumeroProducto { get; set; } // Número único de 9 dígitos
-
+        public int Id { get; set; } 
+        public string IdentificadorUnico { get; set; }  
+        public string? IdUsuario { get; set; }  
+        public string NumeroProducto { get; set; }  
         public DateTime FechaCreacion { get; set; }
 
         public CuentasAhorro CuentaAhorro { get; set; }
         public TarjetasCredito TarjetaCredito { get; set; }
         public Prestamos Prestamo { get; set; }
+
+        public ICollection<CuentasAhorro> CuentasAhorro { get; set; }
+
     }
 }
