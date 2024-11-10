@@ -17,6 +17,7 @@ namespace InternetBanking.Core.Application.DTOS.Account.Register
         public string Phone { get; set; }
         public decimal? InitialAmount { get; set; }
         public string UserType { get; set; }
+        public string Identification { get; set; }
 
-    }
+}
 }

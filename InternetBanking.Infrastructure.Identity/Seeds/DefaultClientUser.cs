@@ -22,6 +22,7 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
                 defaultUser.FirstName = "John";
                 defaultUser.LastName = "Doe";
                 defaultUser.UserType = "Clien";
+                defaultUser.Identification = "444-56412478-9";
 
 
                 if (userManager.Users.All(u => u.Id != defaultUser.Id))

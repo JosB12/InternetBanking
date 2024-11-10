@@ -26,6 +26,9 @@ namespace InternetBanking.Core.Application.ViewModels.User
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "Debe colocar una cedula")]
+        public string Identification { get; set; }
+
         [Compare(nameof(Password), ErrorMessage = "Las contraseñas no coiciden")]
         [Required(ErrorMessage = "Debe colocar una contraseña")]
         [DataType(DataType.Password)]

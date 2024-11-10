@@ -116,6 +116,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 LastName = request.LastName,
                 UserName = request.UserName,
                 PhoneNumber = request.Phone,
+                Identification = request.Identification,
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
             };

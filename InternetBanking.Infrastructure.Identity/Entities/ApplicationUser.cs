@@ -14,6 +14,7 @@ namespace InternetBanking.Infrastructure.Identity.Entities
         public string LastName { get; set; }
         public bool IsActive { get; set; } = true;
         public string UserType { get; set; }
+        public string Identification { get; set; } //Cedula
 
 
         //public ICollection<ProductosFinancieros> Products { get; set; } = new List<ProductosFinancieros>(); 
