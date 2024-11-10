@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\InternetBanking",
+    "\\InternetBanking.Core.Application",
+    "\\InternetBanking.Core.Domain",
+    "\\InternetBanking.Infrastructure.Identity",
+    "\\InternetBanking.Infrastructure.Persistence",
+    "\\InternetBanking.Infrastructure.Shared"
+  ],
+  "SelectedNode": "\\InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj",
+  "PreviewInSolutionExplorer": false
+}

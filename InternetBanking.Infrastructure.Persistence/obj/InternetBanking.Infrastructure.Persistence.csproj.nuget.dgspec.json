@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj": {}
+    "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj": {
+    "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
         "projectName": "InternetBanking.Infrastructure.Persistence",
-        "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
-        "packagesPath": "C:\\Users\\blanc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
+        "packagesPath": "C:\\Users\\jordy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\blanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jordy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
