@@ -86,7 +86,7 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
                 .HasOne(t => t.ProductoFinanciero)
                 .WithOne()
                 .HasForeignKey<TarjetasCredito>(t => t.IdProductoFinanciero)
-                .OnDelete(DeleteBehavior.Cascade); // Se puede ajustar a NoAction, Restrict, etc.
+                .OnDelete(DeleteBehavior.Restrict); // Se puede ajustar a NoAction, Restrict, etc.
             modelBuilder.Entity<ProductosFinancieros>()
                 .HasOne(p => p.TarjetaCredito)
                 .WithOne(t => t.ProductoFinanciero)  // Ajusta la relación si es necesario
@@ -114,6 +114,8 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
                 .HasForeignKey(t => t.IdProductoFinanciero)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.SetNull); // Cambiar a NoAction o Restrict si es necesario
+
+            
             #endregion
 
 
