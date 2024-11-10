@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="Contexts\" />
+    <ProjectReference Include="..\InternetBanking.Core.Application\InternetBanking.Core.Application.csproj" />
+    <ProjectReference Include="..\InternetBanking.Core.Domain\InternetBanking.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>

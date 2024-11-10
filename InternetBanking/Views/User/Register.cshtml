@@ -78,10 +78,19 @@
                             <input asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
-
+                        
                         <div class="mb-3">
-                            <label asp-for="Photo" class="form-label">Foto</label>
-                            <input type="file" asp-for="Photo" class="form-control" />
+                            <label for="UserType" class="form-label">Tipo de Usuario:</label>
+                            <select asp-for="UserType" class="form-control">
+                                <option value="Admin">Admin</option>
+                                <option value="Client">Cliente</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3" id="InitialAmountContainer" style="display:none;">
+                            <label for="InitialAmount" class="form-label">Saldo inicial:</label>
+                            <input asp-for="InitialAmount" class="form-control" />
+                            <span asp-validation-for="InitialAmount" class="text-danger"></span>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Guardar</button>

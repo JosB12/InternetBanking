@@ -72,20 +72,29 @@ namespace InternetBanking.Infrastructure.Identity
             {
                 var services = scope.ServiceProvider;
 
-                try
-                {
+                //try
+                //{
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
+                
                     await DefaultRoles.SeedAsync(userManager, roleManager);
-                    await DefaultSuperAdminUser.SeedAsync(userManager, roleManager);
-                    await DefaultClientUser.SeedAsync(userManager, roleManager);
-                }
-                catch (Exception ex)
-                {
+                await DefaultSuperAdminUser.SeedAsync(userManager, roleManager);
+                await DefaultClientUser.SeedAsync(userManager, roleManager);
 
+
+                try
+                {
+                    await DefaultAdminUser.SeedAsync(userManager, roleManager);
+                }catch (Exception ex)
+                {
+                    Console.WriteLine($"Error durante la siembra de los usuarios: {ex.Message}");
                 }
-            }
+                }
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Error durante la siembra de los usuarios: {ex.Message}");
+            //}
+        }
         }
     }
-}
+
