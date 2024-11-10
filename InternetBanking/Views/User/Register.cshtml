@@ -1,0 +1,111 @@
+﻿@using InternetBanking.Core.Application.ViewModels.User;
+@model SaveUserViewModel
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    <h4>Registro de nuevo usuario</h4>
+                </div>
+                <div class="card-body">
+                    @if (Model.HasError)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <p>@Model.Error</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            <h5>Se encontraron los siguientes errores:</h5>
+                            <ul>
+                                @foreach (var modelState in ViewData.ModelState.Values)
+                                {
+                                    foreach (var error in modelState.Errors)
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <form method="post" asp-controller="User" asp-action="Register" enctype="multipart/form-data">
+
+                        <div class="mb-3">
+                            <label asp-for="FirstName" class="form-label">Nombre: </label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LastName" class="form-label">Apellido: </label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">Nombre de usuario: </label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Contraseña: </label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ConfirmPassword" class="form-label">Confirmar contraseña: </label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Phone" class="form-label">Telefono: </label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Correo: </label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="UserType" class="form-label">Tipo de Usuario:</label>
+                            <select asp-for="UserType" class="form-control">
+                                <option value="Admin">Admin</option>
+                                <option value="Client">Cliente</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3" id="InitialAmountContainer" style="display:none;">
+                            <label for="InitialAmount" class="form-label">Saldo inicial:</label>
+                            <input asp-for="InitialAmount" class="form-control" />
+                            <span asp-validation-for="InitialAmount" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a asp-controller="User" asp-action="Index" class="btn btn-warning">Volver atras</a>
+
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
