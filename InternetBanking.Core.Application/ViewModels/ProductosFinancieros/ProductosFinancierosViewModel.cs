@@ -1,4 +1,5 @@
 ﻿using InternetBanking.Core.Application.Enums;
+using InternetBanking.Core.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
