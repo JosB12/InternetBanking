@@ -1,0 +1,199 @@
+﻿@model List<InternetBanking.Core.Application.ViewModels.Beneficiario.BeneficiarioViewModel>
+
+@{
+    ViewData["Title"] = "Beneficiario";
+}
+<style>
+    body {
+        background-color: #f8f9fa;
+        color:#000;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: #007bff;
+        margin-bottom: 30px;
+    }
+
+    /* Estilo de la tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            color: #000; /* Color negro para el texto */
+        }
+
+        table th {
+            background-color: #007bff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #e1f5fe;
+        }
+
+    /* Botón de agregar beneficiario */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    /* Estilo para los botones de eliminar */
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    /* Modal */
+    .modal-content {
+        background-color: #ffffff;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        background-color: #007bff;
+        color: white;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #e5e5e5;
+    }
+
+    /* Estilo de los inputs y mensajes de error */
+    .form-group input {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+    }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+        .text-danger small {
+            font-weight: normal;
+        }
+</style>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- Asegúrate de que jQuery esté cargado -->
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Confirma que jQuery y Bootstrap están cargados
+    $(document).ready(function () {
+        // Abre el modal cuando se hace clic en el botón
+        $("#AddBeneficiarioModal").modal({
+            show: false
+        });
+
+        // Muestra el modal cuando se hace clic en el botón
+        $('button[data-target="#AddBeneficiarioModal"]').on('click', function () {
+            $("#AddBeneficiarioModal").modal('show');
+        });
+
+        $('.modal').on('click', '.close', function () {
+            $('#AddBeneficiarioModal').modal('hide');
+        });
+    });
+</script>
+
+
+<h2>Beneficiarios</h2>
+
+<!-- Botón para abrir el modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#AddBeneficiarioModal">Agregar Beneficiario</button>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Número de Cuenta</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var beneficiario in Model)
+        {
+            <tr>
+                <td>@beneficiario.Nombre</td>
+                <td>@beneficiario.Apellido</td>
+                <td>@beneficiario.NumeroCuenta</td>
+                <td>
+                    <!-- Formulario para eliminar beneficiario -->
+                    <form asp-action="Delete" asp-route-id="@beneficiario.Id" method="post" onsubmit="return confirm('¿Está seguro de eliminar este beneficiario?');">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal para agregar beneficiario -->
+<div class="modal fade" id="AddBeneficiarioModal" tabindex="-1" role="dialog" aria-labelledby="AddBeneficiarioModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddBeneficiarioModalLabel">Agregar Beneficiario</h5>
+                <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form asp-controller="Beneficiario" asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label for="NumeroCuenta">Número de Cuenta</label>
+                        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" required />
+                        @if (ViewData["ErrorMessage"] != null)
+                        {
+                            <div class="text-danger">@ViewData["ErrorMessage"]</div>
+                        }
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

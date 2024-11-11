@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
 using InternetBanking.Core.Application.DTOS.Account.Authentication;
+using InternetBanking.Core.Application.DTOS.Account.Details;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.ViewModels.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace InternetBanking.Core.Application.Services
 {
@@ -42,7 +39,10 @@ namespace InternetBanking.Core.Application.Services
 
             return await _accountService.RegisterBasicUserAsync(registerRequest, origin);
         }
-
+        public async Task<UserDetailsDTO> GetUserDetailsAsync(string userId)
+        {
+            return await _accountService.GetUserDetailsAsync(userId);
+        }
         #endregion
     }
 }
