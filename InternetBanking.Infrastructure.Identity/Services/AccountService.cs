@@ -4,13 +4,7 @@ using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
 using InternetBanking.Infrastructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetBanking.Infrastructure.Identity.Services
 {
@@ -38,9 +32,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 Id = user.Id,
                 UserName = user.UserName,
                 Email = user.Email,
-
                 Roles = (await _userManager.GetRolesAsync(user)).ToList(),
-                IsVerified = user.EmailConfirmed,
                 HasError = false
             };
         }
@@ -63,7 +55,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 response.Error = $"Invalid credentials for {request.UserName}";
                 return response;
             }
-            if (!user.IsActive)
+            if (!user.EstaActivo)
             {
                 response.HasError = true;
                 response.Error = $"Account no confirmed for {request.UserName}";
@@ -76,7 +68,6 @@ namespace InternetBanking.Infrastructure.Identity.Services
             var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
 
             response.Roles = rolesList.ToList();
-            response.IsVerified = user.EmailConfirmed;
 
             return response;
         }
@@ -112,11 +103,11 @@ namespace InternetBanking.Infrastructure.Identity.Services
             var user = new ApplicationUser
             {
                 Email = request.Email,
-                FirstName = request.FirstName,
-                LastName = request.LastName,
+                Nombre = request.Nombre,
+                Apellido = request.Apellido,
                 UserName = request.UserName,
-                PhoneNumber = request.Phone,
-                Identification = request.Identification,
+                PhoneNumber = request.Telefono,
+                Cedula = request.Cedula,
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
             };
@@ -129,20 +120,20 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 return response;
             }
 
-            if (request.UserType == "Admin")
+            if (request.TipoUsuario == "Administrador")
             {
-                await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Administrador.ToString());
                 if (user.UserName == "superadminuser")
                 {
                     await _userManager.AddToRoleAsync(user, Roles.SuperAdmin.ToString());
                 }
             }
-            else if (request.UserType == "Client")
+            else if (request.TipoUsuario == "Cliente")
             {
-                await _userManager.AddToRoleAsync(user, Roles.Client.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Cliente.ToString());
 
                 // Si el tipo es "Client", asignar un saldo inicial (si existe)
-                if (request.InitialAmount.HasValue && request.InitialAmount.Value > 0)
+                if (request.MontoInicial.HasValue && request.MontoInicial.Value > 0)
                 {
                     // Aquí debes agregar la lógica para guardar el saldo inicial, en base al modelo de tu aplicación
                     // Por ejemplo, crear un objeto `Account` que esté vinculado al usuario.
@@ -161,26 +152,6 @@ namespace InternetBanking.Infrastructure.Identity.Services
             }
 
             return response;
-        }
-
-        public async Task<string> ConfirmAccountAsync(string userId, string token)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-            {
-                return $"No accounts registered with this user";
-            }
-
-            token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(token));
-            var result = await _userManager.ConfirmEmailAsync(user, token);
-            if (result.Succeeded)
-            {
-                return $"Account confirmed for {user.Email}. You can now use the app";
-            }
-            else
-            {
-                return $"An error occurred while confirming {user.Email}.";
-            }
         }
     }
 }

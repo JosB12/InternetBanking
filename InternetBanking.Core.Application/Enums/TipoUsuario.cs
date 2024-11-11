@@ -1,9 +1,8 @@
 ﻿
 namespace InternetBanking.Core.Application.Enums
 {
-    public enum Roles
+    public enum TipoUsuario
     {
-        SuperAdmin,
         Administrador,
         Cliente
     }

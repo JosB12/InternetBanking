@@ -16,11 +16,12 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
             ApplicationUser defaultUser = new();
             defaultUser.UserName = "superadminuser";
             defaultUser.Email = "superadminuser@email.com";
-            defaultUser.FirstName = "John";
-            defaultUser.LastName = "Doe";
-            defaultUser.UserType = "Admin";
-            defaultUser.Identification = "451-2325162-9";
-
+            defaultUser.Nombre = "John";
+            defaultUser.Apellido = "Doe";
+            defaultUser.TipoUsuario = TipoUsuario.Administrador;
+            defaultUser.Cedula = "451-2325162-9";
+            defaultUser.EmailConfirmed = true;
+            defaultUser.PhoneNumberConfirmed = true;
 
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
             {
@@ -28,8 +29,8 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
                 if (user == null)
                 {
                     await userManager.CreateAsync(defaultUser, "123Pa$$word!");
-                    await userManager.AddToRoleAsync(defaultUser, Roles.Client.ToString());
-                    await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
+                    await userManager.AddToRoleAsync(defaultUser, Roles.Cliente.ToString());
+                    await userManager.AddToRoleAsync(defaultUser, Roles.Administrador.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.SuperAdmin.ToString());
                 }
             }
