@@ -583,3 +583,16 @@ C:\Users\blanc\source\repos\InternetBanking\InternetBanking\obj\Debug\net8.0\Int
 C:\Users\blanc\source\repos\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.genruntimeconfig.cache
 C:\Users\blanc\source\repos\InternetBanking\InternetBanking\obj\Debug\net8.0\ref\InternetBanking.dll
 C:\Users\blanc\source\repos\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.csproj.AssemblyReference.cache
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.AssemblyInfoInputs.cache
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.AssemblyInfo.cs
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.csproj.CoreCompileInputs.cache
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.RazorAssemblyInfo.cache
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.RazorAssemblyInfo.cs
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.sourcelink.json
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.dll
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\refint\InternetBanking.dll
+C:\Users\jordy\source\repos\JosB12\InternetBanking\InternetBanking\obj\Debug\net8.0\InternetBanking.pdb
