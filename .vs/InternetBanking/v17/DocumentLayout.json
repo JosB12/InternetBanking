@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\jordy\\source\\repos\\josb12\\internetbanking\\internetbanking.core.application\\services\\productofinancieroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\services\\productofinancieroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|c:\\users\\jordy\\source\\repos\\josb12\\internetbanking\\internetbanking.core.application\\viewmodels\\productosfinancieros\\productosfinancierosviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26BD14B4-DAA2-4580-8825-5E6D0771A9F0}|InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj|solutionrelative:internetbanking.core.application\\viewmodels\\productosfinancieros\\productosfinancierosviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,11 +43,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductoFinancieroService.cs",
+              "DocumentMoniker": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\Services\\ProductoFinancieroService.cs",
+              "RelativeDocumentMoniker": "InternetBanking.Core.Application\\Services\\ProductoFinancieroService.cs",
+              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\Services\\ProductoFinancieroService.cs*",
+              "RelativeToolTip": "InternetBanking.Core.Application\\Services\\ProductoFinancieroService.cs*",
+              "ViewState": "AgIAACkAAAAAAAAAAADgvzUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T20:36:13.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ProductosFinancierosViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs",
               "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs",
-              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs*",
-              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs*",
+              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADgvw0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T20:35:41.278Z",
@@ -51,12 +68,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductosFinancierosSaveViewModel.cs",
               "DocumentMoniker": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs",
               "RelativeDocumentMoniker": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs",
-              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs*",
-              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs*",
+              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\ViewModels\\ProductosFinancieros\\ProductosFinancierosSaveViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T20:35:31.139Z",
@@ -64,12 +81,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductoFinancieroResponse.cs",
               "DocumentMoniker": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs",
               "RelativeDocumentMoniker": "InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs",
-              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs*",
-              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs*",
+              "ToolTip": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs",
+              "RelativeToolTip": "InternetBanking.Core.Application\\DTOS\\ProductosFinacieros\\ProductoFinancieroResponse.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAIAxwA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T20:35:15.286Z",

@@ -5,6 +5,7 @@ using InternetBanking.Core.Application.Interfaces.Repositories.Generic;
 using InternetBanking.Core.Application.Interfaces.Services;
 using InternetBanking.Core.Application.ViewModels.ProductosFinancieros;
 using InternetBanking.Core.Domain.Entities;
+using InternetBanking.Core.Domain.Enums;
 
 namespace InternetBanking.Core.Application.Services;
 
