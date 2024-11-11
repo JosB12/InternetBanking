@@ -1,0 +1,56 @@
+﻿@model InternetBanking.Core.Application.ViewModels.Beneficiario.SaveBeneficiarioViewModel
+
+<h2>Agregar Beneficiario</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="NumeroCuenta">Número de Cuenta</label>
+        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+
+<!-- Estilos en línea -->
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: #007bff;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+</style>

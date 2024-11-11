@@ -1,4 +1,5 @@
 ﻿using InternetBanking.Core.Application.DTOS.Account.Authentication;
+using InternetBanking.Core.Application.DTOS.Account.Details;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
@@ -6,11 +7,7 @@ using InternetBanking.Infrastructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetBanking.Infrastructure.Identity.Services
 {
@@ -181,6 +178,21 @@ namespace InternetBanking.Infrastructure.Identity.Services
             {
                 return $"An error occurred while confirming {user.Email}.";
             }
+        }
+        public async Task<UserDetailsDTO> GetUserDetailsAsync(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                throw new Exception("Usuario no encontrado");
+            }
+
+            return new UserDetailsDTO
+            {
+                Nombre = user.FirstName,
+                Apellido = user.LastName
+            };
         }
     }
 }

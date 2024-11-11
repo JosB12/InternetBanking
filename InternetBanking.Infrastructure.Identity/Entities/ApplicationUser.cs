@@ -1,10 +1,5 @@
-﻿using InternetBanking.Core.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Identity;
+
 
 namespace InternetBanking.Infrastructure.Identity.Entities
 {
@@ -15,9 +10,6 @@ namespace InternetBanking.Infrastructure.Identity.Entities
         public bool IsActive { get; set; } = true;
         public string UserType { get; set; }
         public string Identification { get; set; } //Cedula
-
-
-        //public ICollection<ProductosFinancieros> Products { get; set; } = new List<ProductosFinancieros>(); 
 
     }
 }
