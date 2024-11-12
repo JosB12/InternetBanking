@@ -1,7 +1,7 @@
 using InternetBanking.Infrastructure.Identity;
 using WebApp.InternetBanking.Middlewares;
 using InternetBanking.Core.Application;
-
+using InternetBanking.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-//builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
 builder.Services.AddApplicationLayer(builder.Configuration);
 builder.Services.AddScoped<LoginAuthorize>();

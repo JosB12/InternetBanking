@@ -72,8 +72,7 @@ namespace InternetBanking.Infrastructure.Identity
             {
                 var services = scope.ServiceProvider;
 
-                //try
-                //{
+                
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                 
@@ -90,10 +89,7 @@ namespace InternetBanking.Infrastructure.Identity
                     Console.WriteLine($"Error durante la siembra de los usuarios: {ex.Message}");
                 }
                 }
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine($"Error durante la siembra de los usuarios: {ex.Message}");
-            //}
+          
         }
         }
     }

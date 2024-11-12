@@ -1,22 +1,18 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InternetBanking.Core.Application.Enums;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace InternetBanking.Infrastructure.Identity.Entities
 {
     public class ApplicationUser : IdentityUser
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool IsActive { get; set; } = true;
-        public string UserType { get; set; }
-
-
-        //agregar cuando este la base de datos y modificar el identity
-        //public ICollection<Product> Products { get; set; } = new List<Product>(); 
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Cedula { get; set; } //Cedula
+        public bool EstaActivo { get; set; } = true;
+        public TipoUsuario TipoUsuario { get; set; }
+        public decimal? MontoInicial { get; set; }
+        public bool TieneCuentaPrincipal { get; set; } = false;
 
     }
 }

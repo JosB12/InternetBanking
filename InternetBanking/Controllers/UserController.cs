@@ -4,8 +4,7 @@ using InternetBanking.Core.Application.ViewModels.User;
 using WebApp.InternetBanking.Middlewares;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.DTOS.Account.Authentication;
-using InternetBanking.Core.Application.DTOS.Account.Register;
-using System.Security.Claims;
+
 
 
 namespace WebApp.InternetBanking.Controllers
@@ -52,44 +51,6 @@ namespace WebApp.InternetBanking.Controllers
             HttpContext.Session.Remove("user");
             return RedirectToRoute(new { controller = "User", action = "Index" });
         }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        public IActionResult Register()
-        {
-            return View(new SaveUserViewModel());
-        }
-
-        [ServiceFilter(typeof(LoginAuthorize))]
-        [HttpPost]
-        public async Task<IActionResult> Register(SaveUserViewModel vm)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(vm);
-            }
-
-            try
-            {
-                var origin = Request.Headers["origin"];
-                RegisterResponse response = await _userService.RegisterAsync(vm, origin);
-                if (response.HasError)
-                {
-                    vm.HasError = response.HasError;
-                    vm.Error = response.Error;
-                    return View(vm);
-                }
-
-            }
-
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "An error occurred trying to register the user. " + ex.Message);
-                return View(vm);
-            }
-            return RedirectToRoute(new { controller = "User", action = "Index" });
-
-        }
-
         public IActionResult AccessDenied()
         {
             return View();

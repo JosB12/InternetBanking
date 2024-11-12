@@ -39,6 +39,10 @@ namespace InternetBanking.Infrastructure.Identity.Contexts
             {
                 entity.ToTable(name: "UserLogins");
             });
+
+            modelBuilder.Entity<ApplicationUser>()
+                .Property(u => u.MontoInicial)
+                .HasColumnType("decimal(18,2)");
         }
     }
 }
