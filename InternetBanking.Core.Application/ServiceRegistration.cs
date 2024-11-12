@@ -1,4 +1,5 @@
-﻿using InternetBanking.Core.Application.Interfaces.Services.Generic;
+﻿using InternetBanking.Core.Application.Interfaces.Services;
+using InternetBanking.Core.Application.Interfaces.Services.Generic;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.Services;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,7 @@ namespace InternetBanking.Core.Application
             #region Service
             services.AddTransient(typeof(IGenericService<,,>), typeof(GenericService<,,>));
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IDashboardService, DashboardService>();
 
 
 

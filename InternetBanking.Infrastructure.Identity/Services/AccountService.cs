@@ -153,5 +153,48 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
             return response;
         }
+
+        public async Task<int> ObtenerTotalClientesActivosAsync()
+        {
+            // Obtiene todos los usuarios activos
+            var usuariosActivos = await _userManager.Users
+                .Where(u => u.EstaActivo)
+                .ToListAsync();
+
+            int count = 0;
+            // Filtra los usuarios activos que tienen el rol de "Cliente"
+            foreach (var user in usuariosActivos)
+            {
+                if (await _userManager.IsInRoleAsync(user, "Cliente"))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public async Task<int> ObtenerTotalClientesInactivosAsync()
+        {
+            // Obtiene todos los usuarios inactivos
+            var usuariosInactivos = await _userManager.Users
+                .Where(u => !u.EstaActivo)
+                .ToListAsync();
+
+            int count = 0;
+            // Filtra los usuarios inactivos que tienen el rol de "Cliente"
+            foreach (var user in usuariosInactivos)
+            {
+                if (await _userManager.IsInRoleAsync(user, "Cliente"))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
+
     }
 }
