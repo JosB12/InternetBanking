@@ -1,0 +1,48 @@
+﻿@using InternetBanking.Core.Application.ViewModels.Transferencia
+@model TransaccionesViewModel
+@{
+    ViewData["Title"] = "Realizar Transferencia";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<form asp-action="CrearTransferencia" method="post">
+    <div class="form-group">
+        <label for="CuentaOrigenId">Cuenta Origen</label>
+        <select asp-for="CuentaOrigenId" asp-items="ViewBag.CuentasUsuario" class="form-control" required>
+            <option value="">Seleccione una cuenta</option>
+        </select>
+        <span asp-validation-for="CuentaOrigenId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="CuentaDestinoId">Cuenta Destino</label>
+        <select asp-for="CuentaDestinoId" asp-items="ViewBag.CuentasUsuario" class="form-control" required>
+            <option value="">Seleccione una cuenta destino</option>
+        </select>
+        <span asp-validation-for="CuentaDestinoId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Monto">Monto</label>
+        <input asp-for="Monto" class="form-control" type="number" min="0.01" step="0.01" required />
+        <span asp-validation-for="Monto" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Realizar Transferencia</button>
+</form>
+

@@ -1,4 +1,6 @@
-﻿using InternetBanking.Core.Application.Interfaces.Services.Generic;
+﻿using InternetBanking.Core.Application.Interfaces.Repositories.CuentaAhorro;
+using InternetBanking.Core.Application.Interfaces.Services.Generic;
+using InternetBanking.Core.Application.Interfaces.Services.Transaccion;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.Services;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +24,7 @@ namespace InternetBanking.Core.Application
             #region Service
             services.AddTransient(typeof(IGenericService<,,>), typeof(GenericService<,,>));
             services.AddTransient<IUserService, UserService>();
-
+            services.AddTransient<ITransaccionesService, TransaccionesService>();
 
 
             #endregion

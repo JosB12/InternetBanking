@@ -1,6 +1,10 @@
-﻿using InternetBanking.Core.Application.Interfaces.Repositories.Generic;
+﻿using InternetBanking.Core.Application.Interfaces.Repositories.CuentaAhorro;
+using InternetBanking.Core.Application.Interfaces.Repositories.Generic;
+using InternetBanking.Core.Application.Interfaces.Repositories.Transaccion;
 using InternetBanking.Infrastructure.Persistence.Contexts;
+using InternetBanking.Infrastructure.Persistence.Repositories.CuentaAhorro;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
+using InternetBanking.Infrastructure.Persistence.Repositories.Transaccion;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +36,9 @@ namespace InternetBanking.Infrastructure.Persistence
 
             #region Repositories
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<ITransaccionesRepository, TransaccionesRepository>();
+            services.AddTransient<ICuentaAhorroRepository, CuentaAhorroRepository>();
+
 
 
             #endregion
