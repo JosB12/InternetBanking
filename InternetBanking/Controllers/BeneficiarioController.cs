@@ -1,7 +1,9 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Services;
 using InternetBanking.Core.Application.ViewModels.Beneficiario;
+using InternetBanking.Core.Application.ViewModels.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace InternetBanking.Controllers
 {
@@ -30,12 +32,36 @@ namespace InternetBanking.Controllers
         {
             if (!ModelState.IsValid)
             {
+                // Si el modelo no es válido, vuelve a mostrar el formulario con los mensajes de error
                 return View(vm);
             }
 
-            var beneficiario = await _beneficiarioService.AddBeneficiarioAsync(vm);
-            return RedirectToAction("Index");
+            try
+            {
+                // Obtiene el ID del usuario autenticado
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (string.IsNullOrEmpty(userId))
+                {
+                    throw new UnauthorizedAccessException("El usuario no está autenticado.");
+                }
+
+                // Limpia el NumeroCuenta para evitar espacios extra
+                var numeroCuentaTrimmed = vm.NumeroCuenta?.Trim();
+
+                // Llama al servicio para agregar el beneficiario, pasando el número de cuenta limpio
+                var beneficiario = await _beneficiarioService.CrearBeneficiarioAsync(vm);
+
+                // Redirige a la lista de beneficiarios después de agregar
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                // Muestra el mensaje de error en la vista
+                ModelState.AddModelError("", ex.Message);
+                return View(vm);
+            }
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)

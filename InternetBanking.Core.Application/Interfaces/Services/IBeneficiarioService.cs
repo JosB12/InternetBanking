@@ -1,5 +1,6 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Services.Generic;
 using InternetBanking.Core.Application.ViewModels.Beneficiario;
+using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace InternetBanking.Core.Application.Interfaces.Services
 {
     public interface IBeneficiarioService : IGenericService<SaveBeneficiarioViewModel, BeneficiarioViewModel, Beneficiarios>
     {
-        Task<BeneficiarioViewModel> AddBeneficiarioAsync(SaveBeneficiarioViewModel vm);
+        Task<Beneficiarios> CrearBeneficiarioAsync(SaveBeneficiarioViewModel viewModel);
         Task<List<BeneficiarioViewModel>> GetBeneficiariosAsync();
         Task DeleteBeneficiarioAsync(int id);
     }

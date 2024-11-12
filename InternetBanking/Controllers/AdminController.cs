@@ -16,13 +16,6 @@ namespace InternetBanking.Controllers
         }
 
         // GET: Admin/Index
-        public async Task<IActionResult> Index()
-        {
-            // Llamamos al método GetAllUsuarios para obtener la lista de usuarios
-            var users = await _userService.GetAllUsuarios();
-
-            // Retornamos los usuarios a la vista
-            return View(users);
-        }
+        
     }
 }

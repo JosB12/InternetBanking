@@ -36,12 +36,27 @@ namespace InternetBanking.Core.Application.Services
         }
         public async Task<CuentasAhorroViewModel> GetAccountByNumeroCuentaAsync(string numeroCuenta)
         {
+            // Validar entrada
+            if (string.IsNullOrEmpty(numeroCuenta))
+            {
+                throw new ArgumentException("El número de cuenta no puede ser vacío.", nameof(numeroCuenta));
+            }
+
+            // Obtener la cuenta usando el número de cuenta
             var cuenta = await _cuentasAhorroRepository.GetAccountByNumeroCuentaAsync(numeroCuenta);
 
-            var cuentaViewModel = _mapper.Map<CuentasAhorroViewModel>(cuenta);
+            // Verificar si la cuenta existe
+            if (cuenta == null)
+            {
+                throw new KeyNotFoundException($"No se encontró la cuenta con el número de cuenta: {numeroCuenta}");
+            }
 
+            // Mapear a ViewModel
+            var cuentaViewModel = _mapper.Map<CuentasAhorroViewModel>(cuenta);
             return cuentaViewModel;
         }
+
+
 
 
     }

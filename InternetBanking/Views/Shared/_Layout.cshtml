@@ -34,7 +34,7 @@
                             <li class="nav-item align-content-end">
                                 <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="User" asp-action="LogOut">Cerrar session (@(User.UserName))</a>
                             </li>
-                            @if (User.Roles.Contains("Client"))
+                            @if (User.Roles.Contains("Cliente"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Beneficiario" asp-action="Index">Beneficiarios</a>

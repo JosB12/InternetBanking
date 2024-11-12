@@ -8,5 +8,9 @@ namespace InternetBanking.Core.Application.ViewModels.Beneficiario
         [Display(Name = "Número de Cuenta")]
         public string NumeroCuenta { get; set; }
 
+        
+
+        
+
     }
 }

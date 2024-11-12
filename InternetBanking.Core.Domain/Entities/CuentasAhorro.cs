@@ -12,5 +12,9 @@ namespace InternetBanking.Core.Domain.Entities
 
         public int IdProductoFinanciero { get; set; }  
         public ProductosFinancieros ProductoFinanciero { get; set; }
+        public virtual ICollection<Transacciones> TransaccionesOrigen { get; set; }
+        public virtual ICollection<Transacciones> TransaccionesDestino { get; set; }
+        public virtual ICollection<Pagos> Pagos { get; set; }
+        public virtual ICollection<AvancesEfectivo> AvancesEfectivo { get; set; }
     }
 }

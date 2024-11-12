@@ -6,6 +6,7 @@ using InternetBanking.Core.Application.Interfaces.Services;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.ViewModels.Beneficiario;
+using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Core.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 
@@ -41,44 +42,45 @@ namespace InternetBanking.Core.Application.Services
             userViewModel = _httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
             _accountService = accountService;
         }
-        public async Task<BeneficiarioViewModel> AddBeneficiarioAsync(SaveBeneficiarioViewModel vm)
+        public async Task<Beneficiarios> CrearBeneficiarioAsync(SaveBeneficiarioViewModel viewModel)
         {
             try
             {
-                var cuenta = await _cuentasAhorroRepository.GetAccountByNumeroCuentaAsync(vm.NumeroCuenta);
-                if (cuenta == null)
+                if (string.IsNullOrEmpty(viewModel.NumeroCuenta))
                 {
-                    throw new Exception("La cuenta de beneficiario no existe.");
+                    throw new ArgumentException("El número de cuenta no puede ser nulo o vacío.");
                 }
 
-                if (cuenta.ProductoFinanciero.IdUsuario == userViewModel.Id)
+                viewModel.NumeroCuenta = viewModel.NumeroCuenta.PadLeft(9, '0');
+
+                // 3. Validar que la cuenta de ahorro exista
+                var cuentaAhorro = await _cuentasAhorroRepository.GetAccountByNumeroCuentaAsync(viewModel.NumeroCuenta);
+                if (cuentaAhorro == null)
                 {
-                    throw new Exception("No puedes agregar tu propia cuenta como beneficiario.");
+                    throw new KeyNotFoundException($"La cuenta con número {viewModel.NumeroCuenta} no existe.");
                 }
 
-                var beneficiarioExistente = await _beneficiarioRepository.GetAllAsync();
-                if (beneficiarioExistente.Any(b => b.IdUsuario == userViewModel.Id && b.NumeroCuenta == vm.NumeroCuenta))
-                {
-                    throw new Exception("Este beneficiario ya está registrado.");
-                }
+                var beneficiario = _mapper.Map<Beneficiarios>(viewModel);
 
-                var usuarioBeneficiario = await _userService.GetUserDetailsAsync(cuenta.ProductoFinanciero.IdUsuario);
+                beneficiario.CuentaBeneficiario = cuentaAhorro;
 
-                var beneficiario = new Beneficiarios
-                {
-                    IdUsuario = userViewModel.Id,
-                    IdCuentaBeneficiario = cuenta.Id,
-                    NumeroCuenta = cuenta.NumeroCuenta,
-                    Nombre = usuarioBeneficiario.Nombre,
-                    Apellido = usuarioBeneficiario.Apellido
-                };
+                await _beneficiarioRepository.AddAsync(beneficiario);
 
-                var savedBeneficiario = await _beneficiarioRepository.AddAsync(beneficiario);
-                return _mapper.Map<BeneficiarioViewModel>(savedBeneficiario);
+                return beneficiario;
+            }
+            catch (ArgumentException ex)
+            {
+                throw new ArgumentException($"Error en la creación del beneficiario: {ex.Message}", ex);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                // Lanzar la excepción para que el controlador la maneje adecuadamente
+                throw new KeyNotFoundException($"Error en la creación del beneficiario: {ex.Message}", ex);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al agregar beneficiario: {ex.Message}");
+                // Lanzar una excepción genérica para cualquier otro error
+                throw new ApplicationException("Hubo un error inesperado al procesar la creación del beneficiario.", ex);
             }
         }
 
@@ -87,30 +89,27 @@ namespace InternetBanking.Core.Application.Services
             try
             {
                 var beneficiarios = await _beneficiarioRepository.GetAllAsync();
-                var beneficiariosUsuario = beneficiarios.Where(b => b.IdUsuario == userViewModel.Id).ToList();
 
-                var beneficiarioViewModels = new List<BeneficiarioViewModel>();
-
-                foreach (var beneficiario in beneficiariosUsuario)
-                {
-                    var viewModel = new BeneficiarioViewModel
+                // Filtrar beneficiarios por el usuario actual
+                var beneficiariosUsuario = beneficiarios
+                    .Where(b => b.IdUsuario == userViewModel.Id)
+                    .Select(b => new BeneficiarioViewModel
                     {
-                        Id = beneficiario.Id,
-                        Nombre = beneficiario.Nombre,
-                        Apellido = beneficiario.Apellido,
-                        NumeroCuenta = beneficiario.NumeroCuenta
-                    };
+                        Id = b.Id,
+                        Nombre = b.Nombre,
+                        Apellido = b.Apellido,
+                        NumeroCuenta = b.NumeroCuenta
+                    })
+                    .ToList();
 
-                    beneficiarioViewModels.Add(viewModel);
-                }
-
-                return beneficiarioViewModels;
+                return beneficiariosUsuario;
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error al obtener beneficiarios: {ex.Message}");
             }
         }
+
 
         public async Task DeleteBeneficiarioAsync(int id)
         {

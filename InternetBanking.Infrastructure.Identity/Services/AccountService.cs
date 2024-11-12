@@ -37,7 +37,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 Email = user.Email,
 
                 Roles = (await _userManager.GetRolesAsync(user)).ToList(),
-                IsVerified = user.EmailConfirmed,
+                EstaActivo = user.EmailConfirmed.ToString(),
                 HasError = false
             };
         }
@@ -60,7 +60,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 response.Error = $"Invalid credentials for {request.UserName}";
                 return response;
             }
-            if (!user.IsActive)
+            if (!user.EstaActivo)
             {
                 response.HasError = true;
                 response.Error = $"Account no confirmed for {request.UserName}";
@@ -73,7 +73,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
             var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
 
             response.Roles = rolesList.ToList();
-            response.IsVerified = user.EmailConfirmed;
+            response.EstaActivo = user.EmailConfirmed.ToString();
 
             return response;
         }
@@ -109,11 +109,11 @@ namespace InternetBanking.Infrastructure.Identity.Services
             var user = new ApplicationUser
             {
                 Email = request.Email,
-                FirstName = request.FirstName,
-                LastName = request.LastName,
+                Nombre = request.Nombre,
+                Apellido = request.Apellido,
                 UserName = request.UserName,
-                PhoneNumber = request.Phone,
-                Identification = request.Identification,
+                PhoneNumber = request.Telefono,
+                Cedula = request.Cedula,
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
             };
@@ -126,20 +126,20 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 return response;
             }
 
-            if (request.UserType == "Admin")
+            if (request.TipoUsuario == "Admin")
             {
-                await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Administrador.ToString());
                 if (user.UserName == "superadminuser")
                 {
                     await _userManager.AddToRoleAsync(user, Roles.SuperAdmin.ToString());
                 }
             }
-            else if (request.UserType == "Client")
+            else if (request.TipoUsuario == "Client")
             {
-                await _userManager.AddToRoleAsync(user, Roles.Client.ToString());
+                await _userManager.AddToRoleAsync(user, Roles.Cliente.ToString());
 
                 // Si el tipo es "Client", asignar un saldo inicial (si existe)
-                if (request.InitialAmount.HasValue && request.InitialAmount.Value > 0)
+                if (request.MontoInicial.HasValue && request.MontoInicial.Value > 0)
                 {
                     // Aquí debes agregar la lógica para guardar el saldo inicial, en base al modelo de tu aplicación
                     // Por ejemplo, crear un objeto `Account` que esté vinculado al usuario.
@@ -190,8 +190,8 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
             return new UserDetailsDTO
             {
-                Nombre = user.FirstName,
-                Apellido = user.LastName
+                Nombre = user.Nombre,
+                Apellido = user.Apellido
             };
         }
     }
