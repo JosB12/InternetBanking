@@ -3,7 +3,8 @@ namespace InternetBanking.Core.Application.Enums
 {
     public enum TipoUsuario
     {
-        Administrador,
-        Cliente
+        Administrador = 0,
+        Cliente = 1,
+        superadmin = 2
     }
 }

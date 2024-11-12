@@ -30,7 +30,12 @@
                     <ul class="navbar-nav flex-grow-1">
                          @if (User != null)
                         {
-
+                            @if(User.Roles.Contains("Administrador"))
+                            {
+                                <li class="nav-item align-content-end">
+                                    <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="UserManagement" asp-action="Index">Manejo de usuarios</a>
+                                </li>
+                            }
                             <li class="nav-item align-content-end">
                                 <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="User" asp-action="LogOut">Cerrar session (@(User.UserName))</a>
                             </li>

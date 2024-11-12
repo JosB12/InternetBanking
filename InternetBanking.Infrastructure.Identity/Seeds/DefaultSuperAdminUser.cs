@@ -18,7 +18,7 @@ namespace InternetBanking.Infrastructure.Identity.Seeds
             defaultUser.Email = "superadminuser@email.com";
             defaultUser.Nombre = "John";
             defaultUser.Apellido = "Doe";
-            defaultUser.TipoUsuario = TipoUsuario.Administrador;
+            defaultUser.TipoUsuario = TipoUsuario.superadmin;
             defaultUser.Cedula = "451-2325162-9";
             defaultUser.EmailConfirmed = true;
             defaultUser.PhoneNumberConfirmed = true;
