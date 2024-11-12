@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PZdJuVmV0GU=",
+  "dgSpecHash": "fSxSyTxhdrw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj",
+  "projectFilePath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jordy\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\jordy\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

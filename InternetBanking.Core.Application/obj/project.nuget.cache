@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OGiT0kySCgc=",
+  "dgSpecHash": "+NlwCI95lRk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj",
+  "projectFilePath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jordy\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\jordy\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
