@@ -10,6 +10,7 @@ namespace InternetBanking.Core.Application.Interfaces.Services.User
 {
     public interface IUserService
     {
+        
         Task<AuthenticationResponse> LogginAsync(LogginViewModel vm);
         Task<RegisterResponse> RegisterAsync(SaveUserViewModel vm);
         Task<List<UserListViewModel>> GetAllUsersForViewAsync();

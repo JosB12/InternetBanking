@@ -8,10 +8,10 @@ namespace InternetBanking.Core.Domain.Entities
     {
 
         public int Id { get; set; }
-        public string IdentificadorUnico { get; set; } // 9 dígitos únicos en el sistema
+        public string IdentificadorUnico { get; set; } 
         [Required]
         public string IdUsuario { get; set; }
-        public string NumeroProducto { get; set; } // Hasta 20 caracteres
+        public string NumeroProducto { get; set; } 
         public DateTime FechaCreacion { get; set; }
         public TipoProducto TipoProducto { get; set; }
 

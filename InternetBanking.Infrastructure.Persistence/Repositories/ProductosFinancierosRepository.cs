@@ -1,8 +1,14 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Repositories;
+using InternetBanking.Core.Application.Interfaces.Repositories.Pago;
 using InternetBanking.Core.Domain.Entities;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 
 namespace InternetBanking.Infrastructure.Persistence.Repositories
@@ -52,6 +58,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
    
         // Consulta para obtener todos los productos financieros asociados a un usuario
         public async Task<List<ProductosFinancieros>> GetByUserIdAsync(string userId)
+        public async Task<int> ObtenerCantidadTotalProductosFinancierosAsync()
         {
             return await _dbContext.ProductosFinancieros
                 .Where(p => p.IdUsuario == userId)
@@ -59,6 +66,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.TarjetaCredito)
                 .Include(p => p.Prestamo)
                 .ToListAsync();
+            return await _dbContext.ProductosFinancieros.CountAsync();
         }
     }
 }

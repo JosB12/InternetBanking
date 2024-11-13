@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http
+﻿﻿@using Microsoft.AspNetCore.Http
 @using InternetBanking.Core.Application.DTOS.Account
 @using InternetBanking.Core.Application.DTOS.Account.Authentication
 @using InternetBanking.Core.Application.Helpers;
@@ -28,7 +28,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                         @if (User != null)
+                        @if (User != null)
                         {
                             @if(User.Roles.Contains("Administrador"))
                             {
@@ -39,10 +39,20 @@
                             <li class="nav-item align-content-end">
                                 <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="User" asp-action="LogOut">Cerrar session (@(User.UserName))</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            </li>
+                            @if (User.Roles.Contains("Cliente"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Beneficiario" asp-action="Index">Beneficiarios</a>
+                                </li>
+
+                            }
                         }
                         else
                         {
-                            
+
                         }
                     </ul>
                 </div>
