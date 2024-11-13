@@ -6,7 +6,13 @@ namespace InternetBanking.Core.Application.ViewModels.Beneficiario
     {
         [Required(ErrorMessage = "El número de cuenta es requerido.")]
         [Display(Name = "Número de Cuenta")]
-        public string NumeroCuenta { get; set; }
+        public string? NumeroCuenta { get; set; }
+
+        public string? IdUsuario { get; set; }
+
+        public int IdProductoFinanciero { get; set; }
+
+
 
         
 

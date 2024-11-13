@@ -2,6 +2,8 @@
 using InternetBanking.Core.Domain.Entities;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 
 namespace InternetBanking.Infrastructure.Persistence.Repositories
@@ -13,6 +15,11 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         public BeneficiarioRepository(ApplicationContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<Beneficiarios, bool>> predicate)
+        {
+            return await _dbContext.Beneficiarios.AnyAsync(predicate);
         }
     }
 }

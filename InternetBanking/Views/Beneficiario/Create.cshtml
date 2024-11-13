@@ -17,15 +17,23 @@
             </div>
             <div class="modal-body">
                 <form asp-action="Create" asp-controller="Beneficiario" method="post">
+                    @* Asegúrate de que el modelo esté vinculado *@
+                    @Html.AntiForgeryToken()
+
+                    <!-- Número de Cuenta -->
                     <div class="form-group">
                         <label for="NumeroCuenta">Número de Cuenta</label>
-                        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" required />
+                        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" asp-for="NumeroCuenta" required />
                         @if (ViewData["ErrorMessage"] != null)
-
                         {
                             <div class="text-danger">@ViewData["ErrorMessage"]</div>
                         }
                     </div>
+
+                    @* Propiedades ocultas si es necesario, por ejemplo IdUsuario o IdProductoFinanciero *@
+                    <input type="hidden" asp-for="IdProductoFinanciero" />
+                    <input type="hidden" asp-for="IdUsuario" />
+
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
             </div>

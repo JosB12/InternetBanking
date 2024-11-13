@@ -1,6 +1,8 @@
-﻿using InternetBanking.Core.Application.Interfaces.Services;
+﻿using InternetBanking.Core.Application.Interfaces.Repositories;
+using InternetBanking.Core.Application.Interfaces.Services;
 using InternetBanking.Core.Application.ViewModels.Beneficiario;
 using InternetBanking.Core.Application.ViewModels.User;
+using InternetBanking.Infrastructure.Persistence.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -11,56 +13,75 @@ namespace InternetBanking.Controllers
     public class BeneficiarioController : Controller
     {
         private readonly IBeneficiarioService _beneficiarioService;
+        private readonly ICuentasAhorroRepository _cuentasAhorroRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public BeneficiarioController(IBeneficiarioService beneficiarioService)
+        public BeneficiarioController(IBeneficiarioService beneficiarioService, ICuentasAhorroRepository cuentasAhorroRepository , IHttpContextAccessor httpContextAccessor)
         {
             _beneficiarioService = beneficiarioService;
+            _cuentasAhorroRepository = cuentasAhorroRepository;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
             var beneficiarios = await _beneficiarioService.GetBeneficiariosAsync();
             return View(beneficiarios);
         }
+        [HttpGet]
         public async Task<IActionResult> Create()
         {
             var vm = new SaveBeneficiarioViewModel();
             return View(vm);
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Create(SaveBeneficiarioViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                // Si el modelo no es válido, vuelve a mostrar el formulario con los mensajes de error
-                return View(vm);
+                TempData["ErrorMessage"] = "Hay errores en el formulario. Por favor revisa los datos.";
+                return RedirectToAction("Index");
             }
 
             try
             {
-                // Obtiene el ID del usuario autenticado
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (string.IsNullOrEmpty(userId))
+                // Obtener la información de la cuenta de ahorro
+                var accountData = await _cuentasAhorroRepository.ValidateAccountAsync(vm.NumeroCuenta);
+
+                // Verificar si la cuenta existe
+                if (accountData.Equals(default((string NumeroCuenta, int IdProductoFinanciero, string IdUsuario))))
                 {
-                    throw new UnauthorizedAccessException("El usuario no está autenticado.");
+                    TempData["ErrorMessage"] = "La cuenta de ahorro no existe.";
+                    return RedirectToAction("Index");
                 }
 
-                // Limpia el NumeroCuenta para evitar espacios extra
-                var numeroCuentaTrimmed = vm.NumeroCuenta?.Trim();
+                // Obtener el ID del usuario actual desde la sesión
+                var idUsuarioActual = _httpContextAccessor.HttpContext.Session.GetString("UserId");
 
-                // Llama al servicio para agregar el beneficiario, pasando el número de cuenta limpio
-                var beneficiario = await _beneficiarioService.CrearBeneficiarioAsync(vm);
+                // Crear el beneficiario llamando al servicio correspondiente
+                var (success, message) = await _beneficiarioService.CrearBeneficiarioAsync(vm.NumeroCuenta, idUsuarioActual);
 
-                // Redirige a la lista de beneficiarios después de agregar
+                // Si hubo un problema, mostrar el mensaje de error en la vista
+                if (!success)
+                {
+                    TempData["ErrorMessage"] = message;
+                    return RedirectToAction("Index");
+                }
+
+                // Beneficiario agregado exitosamente
+                TempData["SuccessMessage"] = "Beneficiario agregado exitosamente.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                // Muestra el mensaje de error en la vista
-                ModelState.AddModelError("", ex.Message);
-                return View(vm);
+                TempData["ErrorMessage"] = $"Error al crear el beneficiario: {ex.Message}";
+                return RedirectToAction("Index");
             }
         }
+
+
+
 
 
         [HttpPost]

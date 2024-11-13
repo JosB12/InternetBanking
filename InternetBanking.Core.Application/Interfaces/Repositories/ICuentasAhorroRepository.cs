@@ -6,7 +6,7 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
 {
     public interface ICuentasAhorroRepository : IGenericRepository<CuentasAhorro>
     {
-        Task<CuentasAhorro> GetAccountByNumeroCuentaAsync(string numeroCuenta);
+        Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta);
         Task<CuentasAhorro> GetAccountByIdAndNumeroCuentaAsync(int idCuenta, string numeroCuenta);
     }
 }

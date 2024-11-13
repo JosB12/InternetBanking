@@ -46,40 +46,28 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         }
 
 
-        public async Task<CuentasAhorro> GetAccountByNumeroCuentaAsync(string numeroCuenta)
+        public async Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta)
         {
-            if (string.IsNullOrEmpty(numeroCuenta))
-            {
-                throw new ArgumentException("El número de cuenta no puede ser nulo o vacío.");
-            }
+            if (string.IsNullOrWhiteSpace(numeroCuenta))
+                return (false, null, null);
 
-            var trimmedCuenta = numeroCuenta.Trim();
-            Console.WriteLine($"Buscando cuenta con el número: {trimmedCuenta}");
+            // Buscar la cuenta y obtener los datos necesarios en una sola consulta
+            var cuentaInfo = await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero)
+                .Where(c => c.NumeroCuenta == numeroCuenta.Trim())
+                .Select(c => new
+                {
+                    Cuenta = c,
+                    IdUsuario = c.ProductoFinanciero.IdUsuario
+                })
+                .FirstOrDefaultAsync();
 
-            // Verificar que _dbContext no sea nulo
-            if (_dbContext == null)
-            {
-                throw new InvalidOperationException("DbContext no está inicializado.");
-            }
+            if (cuentaInfo == null)
+                return (false, null, null);
 
-            // Realizar la consulta sin tratar NumeroCuenta como un tipo numérico
-            var cuenta = await _dbContext.CuentasAhorro
-                .FirstOrDefaultAsync(c => c.NumeroCuenta == trimmedCuenta);
-
-            if (cuenta == null)
-            {
-                throw new KeyNotFoundException($"No se encontró una cuenta con el número {numeroCuenta}");
-            }
-
-            return cuenta;
+            return (true, cuentaInfo.Cuenta, cuentaInfo.IdUsuario);
         }
 
-
-
-
-
-
-
-
+        
     }
 }

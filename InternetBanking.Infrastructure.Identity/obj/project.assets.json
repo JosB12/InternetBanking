@@ -5058,9 +5058,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj",
+      "projectUniqueName": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj",
       "projectName": "InternetBanking.Infrastructure.Identity",
-      "projectPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj",
+      "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Identity\\InternetBanking.Infrastructure.Identity.csproj",
       "packagesPath": "C:\\Users\\jordy\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Identity\\obj\\",
       "projectStyle": "PackageReference",
@@ -5080,14 +5080,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj": {
-              "projectPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj"
+            "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj": {
+              "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj"
             },
-            "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj": {
-              "projectPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj"
+            "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj": {
+              "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj"
             },
-            "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj": {
-              "projectPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj"
+            "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj": {
+              "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Shared\\InternetBanking.Infrastructure.Shared.csproj"
             }
           }
         }

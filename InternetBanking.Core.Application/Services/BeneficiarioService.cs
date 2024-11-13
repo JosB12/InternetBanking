@@ -42,47 +42,84 @@ namespace InternetBanking.Core.Application.Services
             userViewModel = _httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
             _accountService = accountService;
         }
-        public async Task<Beneficiarios> CrearBeneficiarioAsync(SaveBeneficiarioViewModel viewModel)
+        public async Task<(bool success, string message)> CrearBeneficiarioAsync(string numeroCuenta, string idUsuarioActual)
         {
             try
             {
-                if (string.IsNullOrEmpty(viewModel.NumeroCuenta))
+                // 1. Validar la cuenta del beneficiario
+                var (exists, cuenta, idUsuarioCuenta) = await _cuentasAhorroRepository.ValidateAccountAsync(numeroCuenta);
+
+                if (!exists)
                 {
-                    throw new ArgumentException("El número de cuenta no puede ser nulo o vacío.");
+                    return (false, $"La cuenta {numeroCuenta} no existe en el sistema.");
                 }
 
-                viewModel.NumeroCuenta = viewModel.NumeroCuenta.PadLeft(9, '0');
-
-                // 3. Validar que la cuenta de ahorro exista
-                var cuentaAhorro = await _cuentasAhorroRepository.GetAccountByNumeroCuentaAsync(viewModel.NumeroCuenta);
-                if (cuentaAhorro == null)
+                // 2. Verificar que no se esté agregando su propia cuenta como beneficiario
+                if (idUsuarioCuenta == idUsuarioActual)
                 {
-                    throw new KeyNotFoundException($"La cuenta con número {viewModel.NumeroCuenta} no existe.");
+                    return (false, "No puedes agregar tu propia cuenta como beneficiario.");
                 }
 
-                var beneficiario = _mapper.Map<Beneficiarios>(viewModel);
+                // 3. Verificar si ya existe este beneficiario
+                var beneficiarioExistente = await _beneficiarioRepository.AnyAsync(b =>
+                    b.IdUsuario == idUsuarioActual &&
+                    b.NumeroCuenta == numeroCuenta);
 
-                beneficiario.CuentaBeneficiario = cuentaAhorro;
+                if (beneficiarioExistente)
+                {
+                    return (false, "Este beneficiario ya está registrado en tu lista.");
+                }
 
+                // 4. Crear el nuevo beneficiario
+                var beneficiario = new Beneficiarios
+                {
+                    IdUsuario = idUsuarioActual,
+                    IdCuentaBeneficiario = cuenta.Id,
+                    CuentaBeneficiario = cuenta,
+                    Nombre = cuenta.ProductoFinanciero?.NumeroProducto ?? "No disponible",
+                    Apellido = cuenta.NumeroCuenta ?? "No disponible",
+                    NumeroCuenta = numeroCuenta
+                };
+
+                // 5. Guardar el beneficiario
                 await _beneficiarioRepository.AddAsync(beneficiario);
 
-                return beneficiario;
-            }
-            catch (ArgumentException ex)
-            {
-                throw new ArgumentException($"Error en la creación del beneficiario: {ex.Message}", ex);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                // Lanzar la excepción para que el controlador la maneje adecuadamente
-                throw new KeyNotFoundException($"Error en la creación del beneficiario: {ex.Message}", ex);
+                return (true, "Beneficiario agregado exitosamente.");
             }
             catch (Exception ex)
             {
-                // Lanzar una excepción genérica para cualquier otro error
-                throw new ApplicationException("Hubo un error inesperado al procesar la creación del beneficiario.", ex);
+                return (false, "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo.");
             }
         }
+
+        private void ValidarBeneficiario(Beneficiarios beneficiario)
+        {
+            if (beneficiario == null)
+            {
+                throw new ArgumentNullException(nameof(beneficiario));
+            }
+
+            if (beneficiario.CuentaBeneficiario == null)
+            {
+                throw new InvalidOperationException("La cuenta del beneficiario no puede ser nula.");
+            }
+
+            if (string.IsNullOrWhiteSpace(beneficiario.Nombre))
+            {
+                throw new InvalidOperationException("El nombre del beneficiario no puede estar vacío.");
+            }
+
+            if (string.IsNullOrWhiteSpace(beneficiario.Apellido))
+            {
+                throw new InvalidOperationException("El apellido del beneficiario no puede estar vacío.");
+            }
+
+            // Agregar aquí otras validaciones específicas según tu modelo de Beneficiarios
+        }
+
+
+
+
 
         public async Task<List<BeneficiarioViewModel>> GetBeneficiariosAsync()
         {
