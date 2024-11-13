@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using InternetBanking.Core.Domain.Enums;
 
 namespace InternetBanking.Core.Domain.Entities
 {
     public class Transacciones
     {
-        
+
         public int Id { get; set; }
-
-        public string? IdUsuario { get; set; }
-
-        public string TipoTransaccion { get; set; }
+        [Required]
+        public string IdUsuario { get; set; } // Identificador de usuario, sin referencia a ApplicationUser
+        [Required]
+        public TipoTransaccion TipoTransaccion { get; set; }
         public decimal Monto { get; set; }
         public DateTime Fecha { get; set; }
 
         public int? IdCuentaOrigen { get; set; }
-        public CuentasAhorro CuentaOrigen { get; set; }  // Propiedad de navegación
+        public virtual CuentasAhorro CuentaOrigen { get; set; }
 
         public int? IdCuentaDestino { get; set; }
-        public CuentasAhorro CuentaDestino { get; set; }  // Propiedad de navegación
+        public virtual CuentasAhorro CuentaDestino { get; set; }
 
         public int? IdProductoFinanciero { get; set; }
-        public ProductosFinancieros ProductoFinanciero { get; set; }
+        public virtual ProductosFinancieros ProductoFinanciero { get; set; }
     }
 }

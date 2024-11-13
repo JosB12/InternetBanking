@@ -1,0 +1,71 @@
+﻿@using InternetBanking.Core.Application.Enums
+@model InternetBanking.Core.Application.ViewModels.User.EditProfileViewModel
+
+<h2>Editar Usuario</h2>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="TipoUsuario" />
+
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Apellido" class="control-label"></label>
+        <input asp-for="Apellido" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cedula" class="control-label"></label>
+        <input asp-for="Cedula" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName" class="control-label"></label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <small class="form-text text-muted">Deja este campo vacío si no deseas cambiar la contraseña.</small>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword" class="control-label"></label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+    </div>
+
+    <p>Tipo de usuario: @Model.TipoUsuario</p>
+    <p>Tipo de usuario: @Model.Id</p>
+
+    @if (Model.TipoUsuario == TipoUsuario.Cliente)
+    {
+        <div class="form-group">
+            <label asp-for="MontoAdicional" class="control-label">Monto Adicional</label>
+            <input asp-for="MontoAdicional" type="number" step="0.01" class="form-control" />
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancelar</a>
+</form>
+
+<!-- Quita o comenta los scripts de validación momentáneamente -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
