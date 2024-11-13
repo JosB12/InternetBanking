@@ -7,154 +7,202 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
-        #region tables
         public DbSet<ProductosFinancieros> ProductosFinancieros { get; set; }
         public DbSet<CuentasAhorro> CuentasAhorro { get; set; }
         public DbSet<TarjetasCredito> TarjetasCredito { get; set; }
         public DbSet<Prestamos> Prestamos { get; set; }
         public DbSet<Beneficiarios> Beneficiarios { get; set; }
-        public DbSet<Transacciones> Transacciones { get; set; }
         public DbSet<Pagos> Pagos { get; set; }
+        public DbSet<Transacciones> Transacciones { get; set; }
         public DbSet<AvancesEfectivo> AvancesEfectivo { get; set; }
-        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            #region relationships
-            // Relación AvancesEfectivo -> TarjetasCredito (N a 1)
-            modelBuilder.Entity<AvancesEfectivo>()
-                .HasOne(a => a.TarjetaCredito)
-                .WithMany()
-                .HasForeignKey(a => a.IdTarjetaCredito)
-                .OnDelete(DeleteBehavior.Restrict); // Se puede ajustar a NoAction, Restrict, etc.
-
-            // Relación AvancesEfectivo -> CuentasAhorro (N a 1)
-            modelBuilder.Entity<AvancesEfectivo>()
-                .HasOne(a => a.CuentaDestino)
-                .WithMany()
-                .HasForeignKey(a => a.IdCuentaDestino)
-                .OnDelete(DeleteBehavior.Cascade); // Se puede ajustar a NoAction, Restrict, etc.
-
-            // Relación Beneficiarios -> CuentasAhorro (N a 1)
-            modelBuilder.Entity<Beneficiarios>()
-                .HasOne(b => b.CuentaBeneficiario)
-                .WithMany()
-                .HasForeignKey(b => b.IdCuentaBeneficiario)
-                .OnDelete(DeleteBehavior.Restrict); // Se puede ajustar a NoAction, Restrict, etc.
-
-            // Relación CuentasAhorro -> ProductosFinancieros (1 a N)
-            modelBuilder.Entity<CuentasAhorro>()
-                .HasOne(c => c.ProductoFinanciero)
-                .WithMany(p => p.CuentasAhorro)
-                .HasForeignKey(c => c.IdProductoFinanciero)
-                .OnDelete(DeleteBehavior.Restrict); // Se puede ajustar a NoAction, Restrict, etc.
-
-            // Relación Pagos -> CuentasAhorro (N a 1, opcional)
-            modelBuilder.Entity<Pagos>()
-                .HasOne(p => p.CuentaPago)
-                .WithMany()
-                .HasForeignKey(p => p.IdCuentaPago)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction); // Opcional, cambia el comportamiento
-
-            // Relación Pagos -> Beneficiarios (N a 1, opcional)
-            modelBuilder.Entity<Pagos>()
-                .HasOne(p => p.Beneficiario)
-                .WithMany()
-                .HasForeignKey(p => p.IdBeneficiario)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction); // Opcional, cambia el comportamiento
-
-            // Relación Pagos -> ProductosFinancieros (N a 1, opcional)
-            modelBuilder.Entity<Pagos>()
-                .HasOne(p => p.ProductoFinanciero)
-                .WithMany()
-                .HasForeignKey(p => p.IdProductoFinanciero)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction); // Opcional, cambia el comportamiento
-
-            // Relación Prestamos -> ProductosFinancieros (1 a 1)
-            modelBuilder.Entity<Prestamos>()
-                .HasOne(p => p.ProductoFinanciero)
-                .WithOne()
-                .HasForeignKey<Prestamos>(p => p.IdProductoFinanciero)
-                .OnDelete(DeleteBehavior.Restrict); // Se puede ajustar a NoAction, Restrict, etc.
-
-            // Relación TarjetasCredito -> ProductosFinancieros (1 a 1)
-            modelBuilder.Entity<TarjetasCredito>()
-                .HasOne(t => t.ProductoFinanciero)
-                .WithOne()
-                .HasForeignKey<TarjetasCredito>(t => t.IdProductoFinanciero)
-                .OnDelete(DeleteBehavior.Cascade); // Se puede ajustar a NoAction, Restrict, etc.
-            modelBuilder.Entity<ProductosFinancieros>()
-                .HasOne(p => p.TarjetaCredito)
-                .WithOne(t => t.ProductoFinanciero)  // Ajusta la relación si es necesario
-                .OnDelete(DeleteBehavior.NoAction);
-            // Relación Transacciones -> CuentasAhorro (origen) (N a 1, opcional)
-            modelBuilder.Entity<Transacciones>()
-                .HasOne(t => t.CuentaOrigen)
-                .WithMany()
-                .HasForeignKey(t => t.IdCuentaOrigen)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict); // Cambiar a NoAction o Restrict si es necesario
-
-            // Relación Transacciones -> CuentasAhorro (destino) (N a 1, opcional)
-            modelBuilder.Entity<Transacciones>()
-                .HasOne(t => t.CuentaDestino)
-                .WithMany()
-                .HasForeignKey(t => t.IdCuentaDestino)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict); // Cambiar a NoAction o Restrict si es necesario
-
-            // Relación Transacciones -> ProductosFinancieros (N a 1, opcional)
-            modelBuilder.Entity<Transacciones>()
-                .HasOne(t => t.ProductoFinanciero)
-                .WithMany()
-                .HasForeignKey(t => t.IdProductoFinanciero)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.SetNull); // Cambiar a NoAction o Restrict si es necesario
+            //FLUENT API
+            #region tables
+            modelBuilder.Entity<ProductosFinancieros>().ToTable("ProductosFinancieros");
+            modelBuilder.Entity<CuentasAhorro>().ToTable("CuentasAhorro");
+            modelBuilder.Entity<TarjetasCredito>().ToTable("TarjetasCredito");
+            modelBuilder.Entity<Prestamos>().ToTable("Prestamos");
+            modelBuilder.Entity<Beneficiarios>().ToTable("Beneficiarios");
+            modelBuilder.Entity<Pagos>().ToTable("Pagos");
+            modelBuilder.Entity<Transacciones>().ToTable("Transacciones");
+            modelBuilder.Entity<AvancesEfectivo>().ToTable("AvancesEfectivo");
             #endregion
 
+            #region "primary keys"
+            modelBuilder.Entity<ProductosFinancieros>().HasKey(pf => pf.Id);
+            modelBuilder.Entity<CuentasAhorro>().HasKey(ca => ca.Id);
+            modelBuilder.Entity<TarjetasCredito>().HasKey(tc => tc.Id);
+            modelBuilder.Entity<Prestamos>().HasKey(p => p.Id);
+            modelBuilder.Entity<Beneficiarios>().HasKey(b => b.Id);
+            modelBuilder.Entity<Pagos>().HasKey(p => p.Id);
+            modelBuilder.Entity<Transacciones>().HasKey(t => t.Id);
+            modelBuilder.Entity<AvancesEfectivo>().HasKey(ae => ae.Id);
+            #endregion
 
-            #region Properties configuration
-            modelBuilder.Entity<AvancesEfectivo>()
-                .Property(a => a.Interes)
-                .HasPrecision(18, 2);
+            #region "Relationships"
+            // ProductosFinancieros relationships
+            modelBuilder.Entity<ProductosFinancieros>()
+                .HasOne(pf => pf.CuentaAhorro)
+                .WithOne(ca => ca.ProductoFinanciero)
+                .HasForeignKey<CuentasAhorro>(ca => ca.IdProductoFinanciero);
 
-            modelBuilder.Entity<AvancesEfectivo>()
-                .Property(a => a.Monto)
-                .HasPrecision(18, 2);
+            modelBuilder.Entity<ProductosFinancieros>()
+                .HasOne(pf => pf.TarjetaCredito)
+                .WithOne(tc => tc.ProductoFinanciero)
+                .HasForeignKey<TarjetasCredito>(tc => tc.IdProductoFinanciero);
+
+            modelBuilder.Entity<ProductosFinancieros>()
+                .HasOne(pf => pf.Prestamo)
+                .WithOne(p => p.ProductoFinanciero)
+                .HasForeignKey<Prestamos>(p => p.IdProductoFinanciero);
+
+            // CuentasAhorro relationships
+            modelBuilder.Entity<CuentasAhorro>()
+                .HasMany(ca => ca.TransaccionesOrigen)
+                .WithOne(t => t.CuentaOrigen)
+                .HasForeignKey(t => t.IdCuentaOrigen)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<CuentasAhorro>()
-                .Property(c => c.Balance)
+                .HasMany(ca => ca.TransaccionesDestino)
+                .WithOne(t => t.CuentaDestino)
+                .HasForeignKey(t => t.IdCuentaDestino)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<CuentasAhorro>()
+                .HasMany(ca => ca.Pagos)
+                .WithOne(p => p.CuentaPago)
+                .HasForeignKey(p => p.IdCuentaPago)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<CuentasAhorro>()
+                .HasMany(ca => ca.AvancesEfectivo)
+                .WithOne(ae => ae.CuentaDestino)
+                .HasForeignKey(ae => ae.IdCuentaDestino)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // TarjetasCredito relationships
+            modelBuilder.Entity<TarjetasCredito>()
+                .HasMany(tc => tc.AvancesEfectivo)
+                .WithOne(ae => ae.TarjetaCredito)
+                .HasForeignKey(ae => ae.IdTarjetaCredito)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Beneficiarios relationships
+            modelBuilder.Entity<Beneficiarios>()
+                .HasMany(b => b.Pagos)
+                .WithOne(p => p.Beneficiario)
+                .HasForeignKey(p => p.IdBeneficiario)
+                .OnDelete(DeleteBehavior.Restrict);
+            #endregion
+
+            #region "Property configurations"
+            // ProductosFinancieros
+            modelBuilder.Entity<ProductosFinancieros>()
+                .Property(pf => pf.IdentificadorUnico)
+                .IsRequired()
+                .HasMaxLength(9);
+
+            modelBuilder.Entity<ProductosFinancieros>()
+                .Property(pf => pf.IdUsuario)
+                .IsRequired();
+
+            modelBuilder.Entity<ProductosFinancieros>()
+                .Property(pf => pf.NumeroProducto)
+                .HasMaxLength(20);
+
+            // CuentasAhorro
+            modelBuilder.Entity<CuentasAhorro>()
+                .Property(ca => ca.IdentificadorUnico)
+                .IsRequired()
+                .HasMaxLength(9);
+
+            modelBuilder.Entity<CuentasAhorro>()
+                .Property(ca => ca.NumeroCuenta)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            modelBuilder.Entity<CuentasAhorro>()
+                .Property(ca => ca.Balance)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Pagos>()
-                .Property(p => p.Monto)
+            // TarjetasCredito
+            modelBuilder.Entity<TarjetasCredito>()
+                .Property(tc => tc.IdentificadorUnico)
+                .IsRequired()
+                .HasMaxLength(9);
+
+            modelBuilder.Entity<TarjetasCredito>()
+                .Property(tc => tc.NumeroTarjeta)
+                .IsRequired()
+                .HasMaxLength(16);
+
+            modelBuilder.Entity<TarjetasCredito>()
+                .Property(tc => tc.LimiteCredito)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<TarjetasCredito>()
+                .Property(tc => tc.DeudaActual)
+                .HasPrecision(18, 2);
+
+            // Prestamos
+            modelBuilder.Entity<Prestamos>()
+                .Property(p => p.MontoPrestamo)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Prestamos>()
                 .Property(p => p.DeudaRestante)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Prestamos>()
-                .Property(p => p.MontoPrestamo)
+            // Beneficiarios
+            modelBuilder.Entity<Beneficiarios>()
+                .Property(b => b.IdUsuario)
+                .IsRequired();
+
+            modelBuilder.Entity<Beneficiarios>()
+                .Property(b => b.Nombre)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<Beneficiarios>()
+                .Property(b => b.Apellido)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<Beneficiarios>()
+                .Property(b => b.NumeroCuenta)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            // Pagos
+            modelBuilder.Entity<Pagos>()
+                .Property(p => p.IdUsuario)
+                .IsRequired();
+
+            modelBuilder.Entity<Pagos>()
+                .Property(p => p.Monto)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<TarjetasCredito>()
-                .Property(t => t.DeudaActual)
-                .HasPrecision(18, 2);
-
-            modelBuilder.Entity<TarjetasCredito>()
-                .Property(t => t.LimiteCredito)
-                .HasPrecision(18, 2);
+            // Transacciones
+            modelBuilder.Entity<Transacciones>()
+                .Property(t => t.IdUsuario)
+                .IsRequired();
 
             modelBuilder.Entity<Transacciones>()
                 .Property(t => t.Monto)
                 .HasPrecision(18, 2);
+
+            // AvancesEfectivo
+            modelBuilder.Entity<AvancesEfectivo>()
+                .Property(ae => ae.Monto)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<AvancesEfectivo>()
+                .Property(ae => ae.Interes)
+                .HasPrecision(18, 2);
             #endregion
         }
-
     }
 }

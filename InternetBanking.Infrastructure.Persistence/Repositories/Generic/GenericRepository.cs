@@ -1,11 +1,6 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Repositories.Generic;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InternetBanking.Infrastructure.Persistence.Repositories.Generic
 {
