@@ -36,7 +36,7 @@ namespace WebApp.InternetBanking.Controllers
             if (userVm != null && userVm.HasError != true)
             {
                 HttpContext.Session.Set<AuthenticationResponse>("user", userVm);
-                return RedirectToRoute(new { controller = "prueba", action = "Index" });
+                return RedirectToRoute(new { controller = "Dashboard", action = "Index" });
             }
             else
             {

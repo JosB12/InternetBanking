@@ -57,8 +57,12 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
 
    
         // Consulta para obtener todos los productos financieros asociados a un usuario
+        public async Task<int> ObtenerCantidadTotalProductosFinancierosAsync() 
+        { 
+            return await _dbContext.ProductosFinancieros.CountAsync(); 
+        }
+            
         public async Task<List<ProductosFinancieros>> GetByUserIdAsync(string userId)
-        public async Task<int> ObtenerCantidadTotalProductosFinancierosAsync()
         {
             return await _dbContext.ProductosFinancieros
                 .Where(p => p.IdUsuario == userId)
@@ -66,7 +70,6 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.TarjetaCredito)
                 .Include(p => p.Prestamo)
                 .ToListAsync();
-            return await _dbContext.ProductosFinancieros.CountAsync();
         }
     }
 }

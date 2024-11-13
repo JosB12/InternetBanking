@@ -38,7 +38,6 @@ namespace InternetBanking.Infrastructure.Persistence
             services.AddTransient<ITarjetasCreditoRepository, TarjetasCreditoRepository>();
 
             services.AddTransient<IPagosRepository, PagoRepository>();
-            services.AddTransient<IProductosFinancierosRepository, ProductosFinancierosRepository>();
             services.AddTransient<ITransaccionesRepository, TransaccionesRepository>();
 
 
