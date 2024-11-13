@@ -31,6 +31,9 @@ namespace InternetBanking.Infrastructure.Persistence
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<ICuentasAhorroRepository, CuentasAhorroRepository>();
             services.AddTransient<IProductosFinancierosRepository, ProductosFinancierosRepository>();
+            services.AddTransient<IPrestamosRepository, PrestamosRepository>();
+            services.AddTransient<ITarjetasCreditoRepository, TarjetasCreditoRepository>();
+
 
 
             #endregion

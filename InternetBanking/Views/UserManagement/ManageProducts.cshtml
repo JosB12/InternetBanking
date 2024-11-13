@@ -1,0 +1,124 @@
+﻿@model InternetBanking.Core.Application.ViewModels.User.UserViewModel
+
+@{
+    ViewData["Title"] = "Gestión de Productos";
+}
+
+<h2>Gestión de Productos para @Model.Nombre @Model.Apellido</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+@if (TempData["Success"] != null)
+{
+<div class="alert alert-success">
+    @TempData["Success"]
+</div>
+}
+
+<div class="mb-3">
+    <h4>Información del Usuario</h4>
+    <p><strong>Nombre:</strong> @Model.Nombre @Model.Apellido</p>
+    <p><strong>Cédula:</strong> @Model.Cedula</p>
+    <p><strong>Correo:</strong> @Model.Correo</p>
+    <p><strong>Tipo de Usuario:</strong> @Model.TipoUsuario</p>
+    <p><strong>Estado:</strong> @(Model.EstaActivo ? "Activo" : "Inactivo")</p>
+</div>
+
+<hr />
+
+<div class="mb-3">
+    <h4>Productos Financieros</h4>
+
+    @if (Model.Productos.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tipo de Producto</th>
+                    <th>Detalles</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var producto in Model.Productos)
+                {
+                    <tr>
+                        <td>@producto.TipoProducto</td>
+                        <td>
+                            @if (producto.TipoProducto == "CuentaAhorro")
+                            {
+                                <ul>
+                                    <li><strong>Número de Cuenta:</strong> @producto.CuentaAhorro.NumeroCuenta</li>
+                                    <li><strong>Balance:</strong> @producto.CuentaAhorro.Balance</li>
+                                </ul>
+                            }
+                            else if (producto.TipoProducto == "TarjetaCredito")
+                            {
+                                <ul>
+                                    <li><strong>Número de Tarjeta:</strong> @producto.TarjetaCredito.NumeroTarjeta</li>
+                                    <li><strong>Límite de Crédito:</strong> @producto.TarjetaCredito.LimiteCredito</li>
+                                    <li><strong>Deuda Actual:</strong> @producto.TarjetaCredito.DeudaActual</li>
+                                </ul>
+                            }
+                            else if (producto.TipoProducto == "Prestamo")
+                            {
+                                <ul>
+                                    <li><strong>Monto de Préstamo:</strong> @producto.Prestamo.MontoPrestamo</li>
+                                    <li><strong>Deuda Restante:</strong> @producto.Prestamo.DeudaRestante</li>
+                                </ul>
+                            }
+                        </td>
+                        <td>
+                            <form method="post" action="@Url.Action("RemoveProduct", new { userId = Model.Id, productoId = producto.IdentificadorUnico })" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No se han agregado productos aún.</p>
+    }
+
+    <div class="mt-3">
+        <h5>Agregar Producto</h5>
+        <form method="post" action="@Url.Action("AddProduct", new { userId = Model.Id })">
+            <div class="form-group">
+                <label for="tipoProducto">Tipo de Producto</label>
+                <select id="tipoProducto" name="tipoProducto" class="form-control">
+                    <option value="CuentaAhorro">Cuenta de Ahorro</option>
+                    <option value="TarjetaCredito">Tarjeta de Crédito</option>
+                    <option value="Prestamo">Préstamo</option>
+                </select>
+            </div>
+
+            <div id="limiteCreditoDiv" class="form-group mt-3" style="display:none;">
+                <label for="limiteCredito">Límite de Crédito</label>
+                <input type="number" id="limiteCredito" name="limiteCredito" class="form-control" step="0.01" />
+            </div>
+
+            <div id="montoPrestamoDiv" class="form-group mt-3" style="display:none;">
+                <label for="montoPrestamo">Monto de Préstamo</label>
+                <input type="number" id="montoPrestamo" name="montoPrestamo" class="form-control" step="0.01" />
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Agregar Producto</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Mostrar campos adicionales según el tipo de producto seleccionado
+    document.getElementById("tipoProducto").addEventListener("change", function () {
+        var tipoProducto = this.value;
+        document.getElementById("limiteCreditoDiv").style.display = (tipoProducto === "TarjetaCredito") ? "block" : "none";
+        document.getElementById("montoPrestamoDiv").style.display = (tipoProducto === "Prestamo") ? "block" : "none";
+    });
+</script>

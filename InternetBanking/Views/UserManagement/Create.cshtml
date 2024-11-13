@@ -7,12 +7,7 @@
 
 <h2>Crear Usuario</h2>
 <div class="card-body">
-    <div class="alert alert-info">
-        <p>Valor de Cliente: @((int)TipoUsuario.Cliente)</p>
-        <p>Valor de Administrador: @((int)TipoUsuario.Administrador)</p>
-        <p>Valor de SuperAdmin: @((int)TipoUsuario.superadmin)</p>
-    </div>
-
+   
     @if (Model.HasError)
     {
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

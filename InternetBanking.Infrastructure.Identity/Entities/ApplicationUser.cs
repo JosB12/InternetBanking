@@ -13,6 +13,8 @@ namespace InternetBanking.Infrastructure.Identity.Entities
         public TipoUsuario TipoUsuario { get; set; }
         public decimal? MontoInicial { get; set; }
         public bool TieneCuentaPrincipal { get; set; } = false;
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+
 
     }
 }

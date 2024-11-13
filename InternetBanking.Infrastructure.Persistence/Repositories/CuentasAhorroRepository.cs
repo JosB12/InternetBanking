@@ -19,6 +19,26 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             return await _dbContext.CuentasAhorro
                 .FirstOrDefaultAsync(c => c.IdentificadorUnico == userId && c.EsPrincipal);
         }
+       
+        public async Task<CuentasAhorro> GetByProductoIdAsync(int productoId)
+        {
+            return await _dbContext.CuentasAhorro
+                .FirstOrDefaultAsync(c => c.IdProductoFinanciero == productoId);
+        }
+        public async Task<CuentasAhorro> GetPrincipalAccountByUserIdAsync(string userId)
+        {
+            return await _dbContext.CuentasAhorro
+                .Where(c => c.ProductoFinanciero.IdUsuario == userId && c.EsPrincipal)
+                .FirstOrDefaultAsync();
+        }
+
+        //public async Task<CuentasAhorro> GetPrimaryAccountByUserIdAsync(string userId)
+        //{
+        //    return await _dbContext.CuentasAhorro
+        //        .FirstOrDefaultAsync(c => c.ProductoFinanciero.IdUsuario == userId && c.EsPrincipal);
+        //}
+
+
         public async Task<CuentasAhorro> GetSavingsAccountByUserIdAsync(string userId)
         {
             // Busca en ProductosFinancieros usando el userId
@@ -34,6 +54,24 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             // Usa el ID de ProductosFinancieros para buscar en CuentasAhorro
             return await _dbContext.CuentasAhorro
                                  .FirstOrDefaultAsync(ca => ca.IdProductoFinanciero == productoFinanciero.Id);
+        }
+        // Obtiene una cuenta de ahorro con detalles asociados
+        public async Task<CuentasAhorro> GetWithDetailsByIdAsync(int id)
+        {
+            return await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero) // Relación con ProductoFinanciero
+                .Include(c => c.TransaccionesOrigen)
+                .Include(c => c.TransaccionesDestino)
+                .Include(c => c.Pagos)
+                .Include(c => c.AvancesEfectivo)
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+        public async Task<List<CuentasAhorro>> GetByUserIdAsync(string userId)
+        {
+            return await _dbContext.CuentasAhorro
+                .Where(c => c.ProductoFinanciero.IdUsuario == userId)
+                .Include(c => c.ProductoFinanciero) // Relación con ProductoFinanciero
+                .ToListAsync();
         }
         public async Task<bool> CuentasAhorroUpdateAsync(CuentasAhorro cuenta)
         {

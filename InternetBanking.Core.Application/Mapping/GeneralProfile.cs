@@ -8,7 +8,7 @@ using InternetBanking.Core.Application.ViewModels.User;
 
 namespace InternetBanking.Core.Application.Mapping
 {
-    internal class GeneralProfile : Profile
+    public class GeneralProfile : Profile
     {
         public GeneralProfile()
         {

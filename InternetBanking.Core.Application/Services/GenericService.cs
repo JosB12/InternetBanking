@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
 using InternetBanking.Core.Application.Interfaces.Repositories.Generic;
 using InternetBanking.Core.Application.Interfaces.Services.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace InternetBanking.Core.Application.Services
 {

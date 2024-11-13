@@ -41,13 +41,14 @@
                     {
                         <button class="btn btn-success" onclick="confirmActivate('@user.Id')">Activar</button>
                     }
+                    <a href="@Url.Action("ManageProducts", "UserManagement", new { userId = user.Id })" class="btn btn-info">Gestionar Productos</a>
+
                 </div>
             </div>
         }
     </div>
 </div>
 
-<!-- Confirmation Modal -->
 <div id="confirmationModal" class="modal">
     <div class="modal-content">
         <h4 id="confirmationMessage" class="modal-header"></h4>
@@ -65,14 +66,14 @@
     function confirmDeactivate(userId) {
         document.getElementById('confirmationMessage').textContent = "¿Estás seguro de que deseas desactivar este usuario?";
         document.getElementById('actionForm').action = '@Url.Action("Deactivate", "UserManagement")';
-        document.getElementById('userIdInput').value = userId; // Set user ID here
+        document.getElementById('userIdInput').value = userId;
         document.getElementById('confirmationModal').style.display = 'block';
     }
 
     function confirmActivate(userId) {
         document.getElementById('confirmationMessage').textContent = "¿Estás seguro de que deseas activar este usuario?";
         document.getElementById('actionForm').action = '@Url.Action("Activate", "UserManagement")';
-        document.getElementById('userIdInput').value = userId; // Set user ID here
+        document.getElementById('userIdInput').value = userId; 
         document.getElementById('confirmationModal').style.display = 'block';
     }
 

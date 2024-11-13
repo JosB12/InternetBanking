@@ -21,15 +21,21 @@ namespace InternetBanking.Infrastructure.Identity.Services
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IProductosFinancierosRepository _productosFinancierosRepository;
         private readonly ICuentasAhorroRepository _cuentasAhorroRepository;
+        private readonly ITarjetasCreditoRepository _tarjetasCreditoRepository;
+        private readonly IPrestamosRepository _prestamosRepository;
         public AccountService(UserManager<ApplicationUser> userManager, 
             SignInManager<ApplicationUser> signInManager,
             IProductosFinancierosRepository productosFinancierosRepository,
-            ICuentasAhorroRepository cuentasAhorroRepository)
+            ICuentasAhorroRepository cuentasAhorroRepository,
+            ITarjetasCreditoRepository tarjetasCreditoRepository,
+            IPrestamosRepository prestamosRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _productosFinancierosRepository = productosFinancierosRepository;
             _cuentasAhorroRepository = cuentasAhorroRepository;
+            _tarjetasCreditoRepository = tarjetasCreditoRepository;
+            _prestamosRepository = prestamosRepository;
         }
         #region Extra
         public async Task<AuthenticationResponse> GetUserByUsernameAsync(string username)
@@ -116,7 +122,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 Apellido = request.Apellido,
                 UserName = request.UserName,
                 Cedula = request.Cedula,
-                TipoUsuario = request.TipoUsuario  // Agregamos esta línea
+                TipoUsuario = request.TipoUsuario 
             };
 
             var result = await _userManager.CreateAsync(user, request.Password);
@@ -173,6 +179,19 @@ namespace InternetBanking.Infrastructure.Identity.Services
         {
             return new Random().Next(100000000, 999999999).ToString();
         }
+        public string GenerarNumeroTarjeta()
+        {
+            var random = new Random();
+
+            long numeroTarjeta = 0;
+
+            for (int i = 0; i < 16; i++)
+            {
+                numeroTarjeta = numeroTarjeta * 10 + random.Next(0, 10); 
+            }
+
+            return numeroTarjeta.ToString();
+        }
 
         private string GenerarNumeroCuenta()
         {
@@ -187,7 +206,10 @@ namespace InternetBanking.Infrastructure.Identity.Services
         #region get
         public async Task<List<UserDTO>> GetAllUsersAsync()
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = await _userManager.Users
+                .OrderByDescending(u => u.FechaCreacion)
+                .ToListAsync();
+
             var userDTOList = new List<UserDTO>();
 
             foreach (var user in users)
@@ -206,6 +228,28 @@ namespace InternetBanking.Infrastructure.Identity.Services
             }
 
             return userDTOList;
+        }
+        public async Task<UserDTO> GetUserByIdAsync(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                Console.WriteLine($"Usuario con ID {userId} no encontrado.");
+                return null;
+            }
+            Console.WriteLine($"Usuario encontrado: {user.Id}, {user.Nombre}, {user.TipoUsuario}, {user.EstaActivo}");
+
+            var roles = await _userManager.GetRolesAsync(user);
+            return new UserDTO
+            {
+                Id = user.Id,
+                Nombre = user.Nombre,
+                Apellido = user.Apellido,
+                Cedula = user.Cedula,
+                Email = user.Email,
+                TipoUsuario = roles.Contains("Administrador") ? "Administrador" : "Cliente",
+                EstaActivo = user.EstaActivo
+            };
         }
         #endregion
 
@@ -317,6 +361,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 UserName = user.UserName,
                 TipoUsuario = user.TipoUsuario, // Añadimos el TipoUsuario para diferenciar entre cliente y administrador
                 MontoAdicional = null // Campo para clientes, solo visible en la vista si el usuario es cliente
+             
             };
         }
         public async Task<bool> UpdateUserAndAccountAsync(EditProfileViewModel vm)
@@ -335,10 +380,37 @@ namespace InternetBanking.Infrastructure.Identity.Services
             
 
             var savingsAccount = await _cuentasAhorroRepository.GetSavingsAccountByUserIdAsync(user.Id);
-            if (savingsAccount != null && vm.MontoAdicional.HasValue && vm.MontoAdicional.Value > 0)
+            if (vm.MontoAdicional.HasValue && vm.MontoAdicional.Value > 0)
             {
-                savingsAccount.Balance += vm.MontoAdicional.Value;
-                await _cuentasAhorroRepository.CuentasAhorroUpdateAsync(savingsAccount);
+                // Si el usuario es Cliente, se crea un Producto Financiero de tipo Cuenta de Ahorro
+                if (user.TipoUsuario == TipoUsuario.Cliente)
+                {
+                    // Crear un nuevo Producto Financiero de tipo Cuenta de Ahorro
+                    var nuevoProducto = new ProductosFinancieros
+                    {
+                        IdUsuario = user.Id,
+                        TipoProducto = TipoProducto.CuentaAhorro,
+                        FechaCreacion = DateTime.Now,
+                        IdentificadorUnico = GenerarIdentificadorUnico(),
+                        NumeroProducto = GenerarNumeroProducto()
+                    };
+
+                    // Guardar el Producto Financiero
+                    await _productosFinancierosRepository.AddAsync(nuevoProducto);
+
+                    // Crear la cuenta de ahorro asociada al producto financiero
+                    var nuevaCuentaAhorro = new CuentasAhorro
+                    {
+                        Balance = vm.MontoAdicional.Value,
+                        EsPrincipal = true,
+                        NumeroCuenta = GenerarNumeroCuenta(),
+                        IdentificadorUnico = GenerarIdentificadorUnico(),
+                        IdProductoFinanciero = nuevoProducto.Id  // Asociar la cuenta al Producto Financiero
+                    };
+
+                    // Guardar la cuenta de ahorro
+                    await _cuentasAhorroRepository.AddAsync(nuevaCuentaAhorro);
+                }
             }
 
             // Actualiza el MontoInicial solo si el usuario es Cliente
@@ -356,9 +428,208 @@ namespace InternetBanking.Infrastructure.Identity.Services
             return result.Succeeded;
         }
 
-     
+
         #endregion
 
+        #region Agregar y quitar producto a usuario
+        
+        public async Task<UpdateUserResponse> AddProductToUserAsync(string userId, TipoProducto tipoProducto, decimal? limiteCredito = null, decimal? montoPrestamo = null)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return new UpdateUserResponse
+                {
+                    HasError = true,
+                    Error = "Usuario no encontrado."
+                };
+            }
+
+            var identificadorUnico = GenerarIdentificadorUnico();
+            var producto = new ProductosFinancieros
+            {
+                IdUsuario = user.Id,
+                TipoProducto = tipoProducto,
+                IdentificadorUnico = identificadorUnico,
+                NumeroProducto = GenerarNumeroProducto(),
+                FechaCreacion = DateTime.Now
+            };
+
+            // Guardar producto financiero en la base de datos
+            await _productosFinancierosRepository.AddAsync(producto);
+
+            if (tipoProducto == TipoProducto.CuentaAhorro)
+            {
+                var cuentaAhorro = new CuentasAhorro
+                {
+                    IdProductoFinanciero = producto.Id,
+                    NumeroCuenta = GenerarNumeroCuenta(),
+                    Balance = 0,
+                    IdentificadorUnico = GenerarIdentificadorUnico(),
+                    EsPrincipal = false 
+                };
+                await _cuentasAhorroRepository.AddAsync(cuentaAhorro);
+
+
+            }
+            if (tipoProducto == TipoProducto.TarjetaCredito)
+            {
+                if (!limiteCredito.HasValue || limiteCredito <= 0)
+                {
+                    return new UpdateUserResponse
+                    {
+                        HasError = true,
+                        Error = "El límite de crédito debe ser mayor a 0 para una tarjeta de crédito."
+                    };
+                }
+
+                var tarjetaCredito = new TarjetasCredito
+                {
+                    IdProductoFinanciero = producto.Id,
+                    NumeroTarjeta = GenerarNumeroTarjeta(),
+                    LimiteCredito = limiteCredito.Value,
+                    DeudaActual = 0, // Inicializar deuda en 0
+                    IdentificadorUnico = GenerarIdentificadorUnico()
+                };
+                await _tarjetasCreditoRepository.AddAsync(tarjetaCredito);
+            }
+
+            // Validación y creación de Préstamo
+            if (tipoProducto == TipoProducto.Prestamo)
+            {
+                if (!montoPrestamo.HasValue || montoPrestamo <= 0)
+                {
+                    return new UpdateUserResponse
+                    {
+                        HasError = true,
+                        Error = "El monto del préstamo debe ser mayor a 0."
+                    };
+                }
+
+                var prestamo = new Prestamos
+                {
+                    IdProductoFinanciero = producto.Id,
+                    MontoPrestamo = montoPrestamo.Value,
+                    DeudaRestante = montoPrestamo.Value,
+                    FechaInicio = DateTime.Now
+                };
+                await _prestamosRepository.AddAsync(prestamo);
+
+                // Actualizar el balance de la cuenta de ahorro principal
+                var cuentaPrincipal = await _cuentasAhorroRepository.GetPrincipalAccountByUserIdAsync(userId);
+                if (cuentaPrincipal != null)
+                {
+                    cuentaPrincipal.Balance += montoPrestamo.Value;
+                    await _cuentasAhorroRepository.CuentasAhorroUpdateAsync(cuentaPrincipal);
+                }
+            }
+
+            return new UpdateUserResponse
+            {
+                HasError = false
+            };
+        }
+
+        public async Task<UpdateUserResponse> RemoveProductFromUserAsync(string userId, string productoId)
+        {
+            var producto = await _productosFinancierosRepository.GetByIdentificadorUnicoAsync(productoId);
+
+            if (producto == null)
+            {
+                return new UpdateUserResponse
+                {
+                    HasError = true,
+                    Error = "Producto no encontrado o no pertenece al usuario."
+                };
+            }
+
+            if (producto.IdUsuario != userId)
+            {
+                return new UpdateUserResponse
+                {
+                    HasError = true,
+                    Error = "El producto no pertenece al usuario."
+                };
+            }
+
+            try
+            {
+                // Lógica para eliminar el producto dependiendo de su tipo
+                if (producto.TipoProducto == TipoProducto.CuentaAhorro)
+                {
+                    var cuentaAhorro = await _cuentasAhorroRepository.GetByProductoIdAsync(producto.Id);
+                   
+                    if (cuentaAhorro != null)
+                    {
+                        Console.WriteLine($"CuentaAhorro Id: {cuentaAhorro.Id}, EsPrincipal: {cuentaAhorro.EsPrincipal}");
+
+                        if (cuentaAhorro.EsPrincipal == true)
+                        {
+                            return new UpdateUserResponse
+                            {
+                                HasError = true,
+                                Error = "No se puede eliminar una cuenta de ahorro principal."
+                            };
+                        }
+                        Console.WriteLine($"CuentaAhorro Id: {cuentaAhorro.Id}, EsPrincipal: {cuentaAhorro.EsPrincipal}");
+
+                        await _cuentasAhorroRepository.DeleteAsync(cuentaAhorro);
+                    }
+                }
+                else if (producto.TipoProducto == TipoProducto.TarjetaCredito)
+                {
+                    var tarjetaCredito = await _tarjetasCreditoRepository.GetByProductoFinancieroIdAsync(producto.Id);
+                    if (tarjetaCredito != null)
+                    {
+                        // Verificación de deuda pendiente
+                        if (tarjetaCredito.DeudaActual > 0)
+                        {
+                            return new UpdateUserResponse
+                            {
+                                HasError = true,
+                                Error = "No se puede eliminar la tarjeta de crédito porque tiene deuda pendiente."
+                            };
+                        }
+
+                        await _tarjetasCreditoRepository.DeleteAsync(tarjetaCredito);
+                    }
+                }
+                else if (producto.TipoProducto == TipoProducto.Prestamo)
+                {
+                    var prestamo = await _prestamosRepository.GetByProductoFinancieroIdAsync(producto.Id);
+                    if (prestamo != null)
+                    {
+                        // Verificación de deuda pendiente
+                        if (prestamo.DeudaRestante > 0)
+                        {
+                            return new UpdateUserResponse
+                            {
+                                HasError = true,
+                                Error = "No se puede eliminar el préstamo porque tiene deuda pendiente."
+                            };
+                        }
+
+                        await _prestamosRepository.DeleteAsync(prestamo);
+                    }
+                }
+
+                // Eliminar el producto financiero
+                await _productosFinancierosRepository.DeleteAsync(producto);
+                return new UpdateUserResponse
+                {
+                    HasError = false
+                };
+            }
+            catch (Exception ex)
+            {
+                return new UpdateUserResponse
+                {
+                    HasError = true,
+                    Error = $"Error al eliminar el producto: {ex.Message}"
+                };
+            }
+        }
+        #endregion
 
 
     }

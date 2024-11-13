@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
 using InternetBanking.Core.Application.DTOS.Account.Authentication;
 using InternetBanking.Core.Application.DTOS.Account.Edit;
+using InternetBanking.Core.Application.DTOS.Account.Get;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.DTOS.Update;
+using InternetBanking.Core.Application.Interfaces.Services;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
 using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.ViewModels.User;
+using InternetBanking.Core.Domain.Enums;
 
 
 namespace InternetBanking.Core.Application.Services
@@ -46,12 +49,19 @@ namespace InternetBanking.Core.Application.Services
         #region User Functions
         public async Task<List<UserListViewModel>> GetAllUsersForViewAsync()
         {
-            var users = await _accountService.GetAllUsersAsync();
-
-            var userList = _mapper.Map<List<UserListViewModel>>(users);
-
-            return userList;
+            try
+            {
+                var users = await _accountService.GetAllUsersAsync();
+                var userList = _mapper.Map<List<UserListViewModel>>(users);
+                return userList;
+            }
+            catch (Exception ex)
+            {
+                // Manejar el error, como registrar el error y/o retornar un mensaje
+                throw new ApplicationException("Error al obtener usuarios", ex);
+            }
         }
+       
 
         #endregion
 
@@ -77,10 +87,35 @@ namespace InternetBanking.Core.Application.Services
 
         public async Task<bool> UpdateUserAndAccountAsync(EditProfileViewModel vm)
         {
-           // var dto = _mapper.Map<EditUserDTO>(vm);
             return await _accountService.UpdateUserAndAccountAsync(vm);
         }
 
         #endregion
-    }
+
+        #region manejo de productos
+        public async Task<UserDTO> GetUserByIdAsync(string userId)
+        {
+            var userDto = await _accountService.GetUserByIdAsync(userId);
+
+            if (userDto == null)
+            {
+                return null;
+            }
+            
+            Console.WriteLine($"Usuario encontrado: {userDto}");
+
+            return userDto;
+        }
+
+        public async Task<UpdateUserResponse> AddProductToUserAsync(string userId, TipoProducto tipoProducto, decimal? limiteCredito = null, decimal? montoPrestamo = null)
+        {
+            return await _accountService.AddProductToUserAsync(userId, tipoProducto, limiteCredito, montoPrestamo);
+        }
+
+        public async Task<UpdateUserResponse> RemoveProductFromUserAsync(string userId, string productoId)
+        {
+            return await _accountService.RemoveProductFromUserAsync(userId, productoId);
+        }
+        #endregion
+    }   
 }
