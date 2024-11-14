@@ -19,6 +19,14 @@ namespace InternetBanking.Core.Application.ViewModels
         public decimal? LimiteCredito { get; set; } // Solo para tarjetas de crédito
         public decimal? MontoPrestamo { get; set; } // Solo para préstamos
         public decimal? DeudaRestante { get; set; } // Solo para préstamos
+
+        // Propiedades específicas por tipo de producto
+        public MostrarCuentaAhorroViewModel CuentaAhorro { get; set; } // Solo para cuentas de ahorro
+        public MostrarTarjetaCreditoViewModel TarjetaCredito { get; set; } // Solo para tarjetas de crédito
+        public MostrarPrestamoViewModel Prestamo { get; set; } // Solo para préstamos
+
+
+
     }
 
 }

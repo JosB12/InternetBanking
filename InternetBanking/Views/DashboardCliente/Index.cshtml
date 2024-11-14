@@ -1,0 +1,40 @@
+@model InternetBanking.Core.Application.ViewModels.DashboardViewModel
+@using InternetBanking.Core.Domain.Enums;
+
+<div class="container mt-5">
+    <div class="row text-center mt-4">
+        <div class="col-md-12">
+            <h3>Listado de Productos</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tipo de Producto</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model.Productos)
+                    {
+                        <tr>
+                            <td>@producto.TipoProducto</td>
+                            <td>
+                                @if (producto.TipoProducto == TipoProducto.CuentaAhorro)
+                                {
+                                    <span>Balance: @producto.CuentaAhorro.Balance</span>
+                                }
+                                else if (producto.TipoProducto == TipoProducto.TarjetaCredito)
+                                {
+                                    <span>Deuda: @producto.TarjetaCredito.DeudaActual</span>
+                                }
+                                else if (producto.TipoProducto == TipoProducto.Prestamo)
+                                {
+                                    <span>Deuda: @producto.Prestamo.DeudaRestante</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

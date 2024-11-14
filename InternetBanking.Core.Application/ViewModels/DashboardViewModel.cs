@@ -15,5 +15,7 @@ namespace InternetBanking.Core.Application.ViewModels
         public int ClientesActivos { get; set; }
         public int ClientesInactivos { get; set; }
         public int ProductosAsignados { get; set; }
+
+         public List<ProductosFinancierosViewModel>? Productos { get; set; }
     }
 }
