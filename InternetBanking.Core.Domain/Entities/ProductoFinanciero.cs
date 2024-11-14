@@ -2,7 +2,7 @@
 
 namespace InternetBanking.Core.Domain.Entities
 {
-    public class ProductosFinancieros
+    public class ProductoFinanciero
     {
 
         public int Id { get; set; } 

@@ -13,10 +13,5 @@ namespace InternetBanking.Core.Application.ViewModels.Beneficiario
         public int IdProductoFinanciero { get; set; }
 
 
-
-        
-
-        
-
     }
 }

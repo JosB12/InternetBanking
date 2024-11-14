@@ -1,5 +1,6 @@
 ﻿using InternetBanking.Core.Application.DTOS.Account.Authentication;
 using InternetBanking.Core.Application.DTOS.Account.Details;
+using InternetBanking.Core.Application.DTOS.Account.Get;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
@@ -19,6 +20,28 @@ namespace InternetBanking.Infrastructure.Identity.Services
         {
             _userManager = userManager;
             _signInManager = signInManager;
+        }
+        public async Task<UserDTO> GetUserByIdAsync(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                Console.WriteLine($"Usuario con ID {userId} no encontrado.");
+                return null;
+            }
+            Console.WriteLine($"Usuario encontrado: {user.Id}, {user.Nombre}, {user.TipoUsuario}, {user.EstaActivo}");
+
+            var roles = await _userManager.GetRolesAsync(user);
+            return new UserDTO
+            {
+                Id = user.Id,
+                Nombre = user.Nombre,
+                Apellido = user.Apellido,
+                Cedula = user.Cedula,
+                Email = user.Email,
+                TipoUsuario = roles.Contains("Administrador") ? "Administrador" : "Cliente",
+                EstaActivo = user.EstaActivo
+            };
         }
         public async Task<AuthenticationResponse> GetUserByUsernameAsync(string username)
         {

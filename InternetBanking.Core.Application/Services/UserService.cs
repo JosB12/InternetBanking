@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using InternetBanking.Core.Application.DTOS.Account.Authentication;
 using InternetBanking.Core.Application.DTOS.Account.Details;
+using InternetBanking.Core.Application.DTOS.Account.Get;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.Interfaces.Services.Account;
 using InternetBanking.Core.Application.Interfaces.Services.User;
@@ -44,5 +45,20 @@ namespace InternetBanking.Core.Application.Services
             return await _accountService.GetUserDetailsAsync(userId);
         }
         #endregion
+
+
+        public async Task<UserDTO> GetUserByIdAsync(string userId)
+        {
+            var userDto = await _accountService.GetUserByIdAsync(userId);
+
+            if (userDto == null)
+            {
+                return null;
+            }
+
+            Console.WriteLine($"Usuario encontrado: {userDto}");
+
+            return userDto;
+        }
     }
 }

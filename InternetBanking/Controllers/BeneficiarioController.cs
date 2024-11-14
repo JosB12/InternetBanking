@@ -1,9 +1,13 @@
-﻿using InternetBanking.Core.Application.Interfaces.Repositories;
+﻿using InternetBanking.Core.Application.DTOS.Account.Authentication;
+using InternetBanking.Core.Application.Interfaces.Repositories;
 using InternetBanking.Core.Application.Interfaces.Services;
+using InternetBanking.Core.Application.Interfaces.Services.User;
 using InternetBanking.Core.Application.ViewModels.Beneficiario;
+using InternetBanking.Core.Application.Helpers;
 using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Infrastructure.Persistence.Repositories;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -15,12 +19,15 @@ namespace InternetBanking.Controllers
         private readonly IBeneficiarioService _beneficiarioService;
         private readonly ICuentasAhorroRepository _cuentasAhorroRepository;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly AuthenticationResponse userViewModel;
 
-        public BeneficiarioController(IBeneficiarioService beneficiarioService, ICuentasAhorroRepository cuentasAhorroRepository , IHttpContextAccessor httpContextAccessor)
+        public BeneficiarioController(IBeneficiarioService beneficiarioService, ICuentasAhorroRepository cuentasAhorroRepository, IHttpContextAccessor httpContextAccessor)
         {
             _beneficiarioService = beneficiarioService;
             _cuentasAhorroRepository = cuentasAhorroRepository;
             _httpContextAccessor = httpContextAccessor;
+            userViewModel = _httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
+
         }
         public async Task<IActionResult> Index()
         {
@@ -28,57 +35,37 @@ namespace InternetBanking.Controllers
             return View(beneficiarios);
         }
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var vm = new SaveBeneficiarioViewModel();
-            return View(vm);
+            return View(new SaveBeneficiarioViewModel());
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Create(SaveBeneficiarioViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                TempData["ErrorMessage"] = "Hay errores en el formulario. Por favor revisa los datos.";
-                return RedirectToAction("Index");
+                return View(vm);
             }
 
-            try
+            var userId = userViewModel.Id;
+            if (string.IsNullOrEmpty(userId))
             {
-                // Obtener la información de la cuenta de ahorro
-                var accountData = await _cuentasAhorroRepository.ValidateAccountAsync(vm.NumeroCuenta);
-
-                // Verificar si la cuenta existe
-                if (accountData.Equals(default((string NumeroCuenta, int IdProductoFinanciero, string IdUsuario))))
-                {
-                    TempData["ErrorMessage"] = "La cuenta de ahorro no existe.";
-                    return RedirectToAction("Index");
-                }
-
-                // Obtener el ID del usuario actual desde la sesión
-                var idUsuarioActual = _httpContextAccessor.HttpContext.Session.GetString("UserId");
-
-                // Crear el beneficiario llamando al servicio correspondiente
-                var (success, message) = await _beneficiarioService.CrearBeneficiarioAsync(vm.NumeroCuenta, idUsuarioActual);
-
-                // Si hubo un problema, mostrar el mensaje de error en la vista
-                if (!success)
-                {
-                    TempData["ErrorMessage"] = message;
-                    return RedirectToAction("Index");
-                }
-
-                // Beneficiario agregado exitosamente
-                TempData["SuccessMessage"] = "Beneficiario agregado exitosamente.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Beneficiario");
             }
-            catch (Exception ex)
+
+            var (success, message) = await _beneficiarioService.AgregarBeneficiarioAsync(vm.NumeroCuenta, userId);
+
+            if (!success)
             {
-                TempData["ErrorMessage"] = $"Error al crear el beneficiario: {ex.Message}";
-                return RedirectToAction("Index");
+                ModelState.AddModelError(string.Empty, message);
+                return View(vm);
             }
+
+            TempData["SuccessMessage"] = "Beneficiario agregado exitosamente";
+            return RedirectToAction(nameof(Index));
         }
+
 
 
 

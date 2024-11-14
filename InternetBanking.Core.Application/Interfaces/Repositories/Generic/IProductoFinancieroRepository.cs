@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InternetBanking.Core.Application.Interfaces.Repositories.Generic
 {
-    public interface IProductoFinancieroRepository : IGenericRepository<ProductosFinancieros>
+    public interface IProductoFinancieroRepository : IGenericRepository<ProductoFinanciero>
     {
 
     }

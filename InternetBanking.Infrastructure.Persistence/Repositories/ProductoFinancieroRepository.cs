@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace InternetBanking.Infrastructure.Persistence.Repositories.Generic
 {
-    public class ProductoFinancieroRepository : GenericRepository<ProductosFinancieros>, IProductoFinancieroRepository
+    public class ProductoFinancieroRepository : GenericRepository<ProductoFinanciero>, IProductoFinancieroRepository
     {
         private readonly ApplicationContext _dbContext;
 
@@ -17,7 +17,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories.Generic
             _dbContext = dbContext;
         }
 
-        public async Task<List<ProductosFinancieros>> GetByClienteIdAsync(int clienteId)
+        public async Task<List<ProductoFinanciero>> GetByClienteIdAsync(int clienteId)
         {
             return await _dbContext.ProductosFinancieros
                                    .Where(pf => pf.IdUsuario == clienteId.ToString())  // Convertir clienteId a string

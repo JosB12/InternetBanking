@@ -34,30 +34,6 @@ namespace InternetBanking.Core.Application.Services
             userViewModel = _httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
             _accountService = accountService;
         }
-        //public async Task<CuentasAhorroViewModel> GetAccountByNumeroCuentaAsync(string numeroCuenta)
-        //{
-        //    // Validar entrada
-        //    if (string.IsNullOrEmpty(numeroCuenta))
-        //    {
-        //        throw new ArgumentException("El número de cuenta no puede ser vacío.", nameof(numeroCuenta));
-        //    }
-
-        //    // Obtener la cuenta usando el número de cuenta
-        //    var cuenta = await _cuentasAhorroRepository.GetAccountByIdAndNumeroCuentaAsync(numeroCuenta);
-
-        //    // Verificar si la cuenta existe
-        //    if (cuenta == null)
-        //    {
-        //        throw new KeyNotFoundException($"No se encontró la cuenta con el número de cuenta: {numeroCuenta}");
-        //    }
-
-        //    // Mapear a ViewModel
-        //    var cuentaViewModel = _mapper.Map<CuentasAhorroViewModel>(cuenta);
-        //    return cuentaViewModel;
-        //}
-
-
-
-
+  
     }
 }

@@ -3294,19 +3294,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jordy\\.nuget\\packages\\": {}
+    "C:\\Users\\blanc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
       "projectName": "InternetBanking.Infrastructure.Persistence",
-      "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
-      "packagesPath": "C:\\Users\\jordy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jordy\\source\\repos\\JosB12\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\obj\\",
+      "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\InternetBanking.Infrastructure.Persistence.csproj",
+      "packagesPath": "C:\\Users\\blanc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Infrastructure.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jordy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\blanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3321,11 +3321,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj": {
-              "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj"
+            "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj": {
+              "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Application\\InternetBanking.Core.Application.csproj"
             },
-            "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj": {
-              "projectPath": "C:\\Users\\jordy\\Source\\Repos\\JosB12\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj"
+            "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj": {
+              "projectPath": "C:\\Users\\blanc\\source\\repos\\InternetBanking\\InternetBanking.Core.Domain\\InternetBanking.Core.Domain.csproj"
             }
           }
         }
@@ -3374,7 +3374,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,6 @@
 ﻿using InternetBanking.Core.Application.DTOS.Account.Authentication;
 using InternetBanking.Core.Application.DTOS.Account.Details;
+using InternetBanking.Core.Application.DTOS.Account.Get;
 using InternetBanking.Core.Application.DTOS.Account.Register;
 using InternetBanking.Core.Application.ViewModels.User;
 using System;
@@ -15,6 +16,7 @@ namespace InternetBanking.Core.Application.Interfaces.Services.User
         Task<AuthenticationResponse> LogginAsync(LogginViewModel vm);
         Task<RegisterResponse> RegisterAsync(SaveUserViewModel vm, string origin);
         Task<UserDetailsDTO> GetUserDetailsAsync(string userId);
+        Task<UserDTO> GetUserByIdAsync(string userId);
         Task SignOutAsync();
     }
 }

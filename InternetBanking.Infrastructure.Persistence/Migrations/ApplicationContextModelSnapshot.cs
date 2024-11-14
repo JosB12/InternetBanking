@@ -112,7 +112,8 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasColumnType("bit");
 
                     b.Property<int>("IdProductoFinanciero")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("IdProductoFinanciero");
 
                     b.Property<string>("IdentificadorUnico")
                         .IsRequired()
@@ -124,10 +125,15 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<int?>("ProductoFinancieroId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdProductoFinanciero")
                         .IsUnique();
+
+                    b.HasIndex("ProductoFinancieroId");
 
                     b.ToTable("CuentasAhorro", (string)null);
                 });
@@ -207,7 +213,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     b.ToTable("Prestamos", (string)null);
                 });
 
-            modelBuilder.Entity("InternetBanking.Core.Domain.Entities.ProductosFinancieros", b =>
+            modelBuilder.Entity("InternetBanking.Core.Domain.Entities.ProductoFinanciero", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -231,9 +237,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<int>("TipoProducto")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -354,11 +357,16 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.CuentasAhorro", b =>
                 {
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", "ProductoFinanciero")
                         .WithOne("CuentaAhorro")
                         .HasForeignKey("InternetBanking.Core.Domain.Entities.CuentasAhorro", "IdProductoFinanciero")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_CuentasAhorro_ProductoFinanciero");
+
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", null)
+                        .WithMany("CuentasAhorro")
+                        .HasForeignKey("ProductoFinancieroId");
 
                     b.Navigation("ProductoFinanciero");
                 });
@@ -375,7 +383,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasForeignKey("IdCuentaPago")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", "ProductoFinanciero")
                         .WithMany()
                         .HasForeignKey("ProductoFinancieroId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -390,7 +398,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.Prestamos", b =>
                 {
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", "ProductoFinanciero")
                         .WithOne("Prestamo")
                         .HasForeignKey("InternetBanking.Core.Domain.Entities.Prestamos", "IdProductoFinanciero")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -401,7 +409,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.TarjetasCredito", b =>
                 {
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", "ProductoFinanciero")
                         .WithOne("TarjetaCredito")
                         .HasForeignKey("InternetBanking.Core.Domain.Entities.TarjetasCredito", "IdProductoFinanciero")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -422,7 +430,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasForeignKey("IdCuentaOrigen")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
+                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductoFinanciero", "ProductoFinanciero")
                         .WithMany()
                         .HasForeignKey("ProductoFinancieroId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -451,16 +459,15 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     b.Navigation("TransaccionesOrigen");
                 });
 
-            modelBuilder.Entity("InternetBanking.Core.Domain.Entities.ProductosFinancieros", b =>
+            modelBuilder.Entity("InternetBanking.Core.Domain.Entities.ProductoFinanciero", b =>
                 {
-                    b.Navigation("CuentaAhorro")
-                        .IsRequired();
+                    b.Navigation("CuentaAhorro");
 
-                    b.Navigation("Prestamo")
-                        .IsRequired();
+                    b.Navigation("CuentasAhorro");
 
-                    b.Navigation("TarjetaCredito")
-                        .IsRequired();
+                    b.Navigation("Prestamo");
+
+                    b.Navigation("TarjetaCredito");
                 });
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.TarjetasCredito", b =>

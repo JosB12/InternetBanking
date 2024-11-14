@@ -1,42 +1,49 @@
 ﻿@model InternetBanking.Core.Application.ViewModels.Beneficiario.SaveBeneficiarioViewModel
 
-<h2>Agregar Beneficiario</h2>
+@{
+    ViewData["Title"] = "Agregar Beneficiario";
+}
 
-<!-- Botón para abrir el modal -->
-<button class="btn btn-primary" data-toggle="modal" data-target="#AddBeneficiarioModal">Agregar Beneficiario</button>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Agregar Nuevo Beneficiario</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<!-- Modal para agregar beneficiario -->
-<div class="modal fade" id="AddBeneficiarioModal" tabindex="-1" role="dialog" aria-labelledby="AddBeneficiarioModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="AddBeneficiarioModalLabel">Agregar Beneficiario</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form asp-action="Create" asp-controller="Beneficiario" method="post">
-                    @* Asegúrate de que el modelo esté vinculado *@
-                    @Html.AntiForgeryToken()
+                        <div class="form-group mb-3">
+                            <label asp-for="NumeroCuenta" class="form-label"></label>
+                            <input asp-for="NumeroCuenta" class="form-control" />
+                            <span asp-validation-for="NumeroCuenta" class="text-danger"></span>
+                        </div>
 
-                    <!-- Número de Cuenta -->
-                    <div class="form-group">
-                        <label for="NumeroCuenta">Número de Cuenta</label>
-                        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" asp-for="NumeroCuenta" required />
-                        @if (ViewData["ErrorMessage"] != null)
-                        {
-                            <div class="text-danger">@ViewData["ErrorMessage"]</div>
-                        }
-                    </div>
-
-                    @* Propiedades ocultas si es necesario, por ejemplo IdUsuario o IdProductoFinanciero *@
-                    <input type="hidden" asp-for="IdProductoFinanciero" />
-                    <input type="hidden" asp-for="IdUsuario" />
-
-                    <button type="submit" class="btn btn-primary">Agregar</button>
-                </form>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Guardar
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+{
+    <div class="alert alert-danger">
+        @error.ErrorMessage
+    </div>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

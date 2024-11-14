@@ -7,7 +7,7 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
-        public DbSet<ProductosFinancieros> ProductosFinancieros { get; set; }
+        public DbSet<ProductoFinanciero> ProductosFinancieros { get; set; }
         public DbSet<CuentasAhorro> CuentasAhorro { get; set; }
         public DbSet<TarjetasCredito> TarjetasCredito { get; set; }
         public DbSet<Prestamos> Prestamos { get; set; }
@@ -20,7 +20,7 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
         {
             //FLUENT API
             #region tables
-            modelBuilder.Entity<ProductosFinancieros>().ToTable("ProductosFinancieros");
+            modelBuilder.Entity<ProductoFinanciero>().ToTable("ProductosFinancieros");
             modelBuilder.Entity<CuentasAhorro>().ToTable("CuentasAhorro");
             modelBuilder.Entity<TarjetasCredito>().ToTable("TarjetasCredito");
             modelBuilder.Entity<Prestamos>().ToTable("Prestamos");
@@ -31,7 +31,7 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
             #endregion
 
             #region "primary keys"
-            modelBuilder.Entity<ProductosFinancieros>().HasKey(pf => pf.Id);
+            modelBuilder.Entity<ProductoFinanciero>().HasKey(pf => pf.Id);
             modelBuilder.Entity<CuentasAhorro>().HasKey(ca => ca.Id);
             modelBuilder.Entity<TarjetasCredito>().HasKey(tc => tc.Id);
             modelBuilder.Entity<Prestamos>().HasKey(p => p.Id);
@@ -43,17 +43,17 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
 
             #region "Relationships"
             // ProductosFinancieros relationships
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .HasOne(pf => pf.CuentaAhorro)
                 .WithOne(ca => ca.ProductoFinanciero)
                 .HasForeignKey<CuentasAhorro>(ca => ca.IdProductoFinanciero);
 
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .HasOne(pf => pf.TarjetaCredito)
                 .WithOne(tc => tc.ProductoFinanciero)
                 .HasForeignKey<TarjetasCredito>(tc => tc.IdProductoFinanciero);
 
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .HasOne(pf => pf.Prestamo)
                 .WithOne(p => p.ProductoFinanciero)
                 .HasForeignKey<Prestamos>(p => p.IdProductoFinanciero);
@@ -100,16 +100,16 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
 
             #region "Property configurations"
             // ProductosFinancieros
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .Property(pf => pf.IdentificadorUnico)
                 .IsRequired()
                 .HasMaxLength(9);
 
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .Property(pf => pf.IdUsuario)
                 .IsRequired();
 
-            modelBuilder.Entity<ProductosFinancieros>()
+            modelBuilder.Entity<ProductoFinanciero>()
                 .Property(pf => pf.NumeroProducto)
                 .HasMaxLength(20);
 
@@ -203,6 +203,16 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
                 .Property(ae => ae.Interes)
                 .HasPrecision(18, 2);
             #endregion
+            modelBuilder.Entity<ProductoFinanciero>()
+               .HasOne(pf => pf.CuentaAhorro)
+               .WithOne(ca => ca.ProductoFinanciero)
+               .HasForeignKey<CuentasAhorro>(ca => ca.IdProductoFinanciero)
+               .HasConstraintName("FK_CuentasAhorro_ProductoFinanciero"); // Opcional: nombre de la restricción
+
+            // Específicamente para CuentasAhorro, asegúrate que la columna se llame correctamente
+            modelBuilder.Entity<CuentasAhorro>()
+                .Property(ca => ca.IdProductoFinanciero)
+                .HasColumnName("IdProductoFinanciero");
         }
     }
 }

@@ -12,7 +12,8 @@ namespace InternetBanking.Core.Application.Interfaces.Services
 {
     public interface IBeneficiarioService : IGenericService<SaveBeneficiarioViewModel, BeneficiarioViewModel, Beneficiarios>
     {
-        Task<(bool success, string message)> CrearBeneficiarioAsync(string numeroCuenta, string idUsuarioActual);
+        Task<(bool success, string message)> AgregarBeneficiarioAsync(string numeroCuenta, string idUsuarioActual);
+       // Task<(bool success, string message)> CrearBeneficiarioAsync(string numeroCuenta, string idUsuarioActual);
         Task<List<BeneficiarioViewModel>> GetBeneficiariosAsync();
         Task DeleteBeneficiarioAsync(int id);
     }

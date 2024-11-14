@@ -25,7 +25,7 @@ public class ProductoFinancieroService : IProductoFinancieroService
     public async Task<ProductoFinancieroResponse> CrearCuentaAhorroAsync(decimal balanceInicial, string userId)
     {
         // Crear el producto financiero principal
-        var productoFinanciero = new ProductosFinancieros
+        var productoFinanciero = new ProductoFinanciero
         {
             IdentificadorUnico = GenerateUniqueIdentifier(),
             IdUsuario = userId,

@@ -41,15 +41,17 @@ namespace InternetBanking.Core.Application.Services
             _httpContextAccessor = httpContextAccessor;
             userViewModel = _httpContextAccessor.HttpContext.Session.Get<AuthenticationResponse>("user");
             _accountService = accountService;
+            _cuentasAhorroRepository = cuentasAhorroRepository;
         }
-        public async Task<(bool success, string message)> CrearBeneficiarioAsync(string numeroCuenta, string idUsuarioActual)
+        #region Create
+        public async Task<(bool success, string message)> AgregarBeneficiarioAsync(string numeroCuenta, string idUsuarioActual)
         {
             try
             {
-                // 1. Validar la cuenta del beneficiario
+                // 1. Validar si la cuenta del beneficiario existe
                 var (exists, cuenta, idUsuarioCuenta) = await _cuentasAhorroRepository.ValidateAccountAsync(numeroCuenta);
 
-                if (!exists)
+                if (!exists || cuenta == null)
                 {
                     return (false, $"La cuenta {numeroCuenta} no existe en el sistema.");
                 }
@@ -76,21 +78,27 @@ namespace InternetBanking.Core.Application.Services
                     IdUsuario = idUsuarioActual,
                     IdCuentaBeneficiario = cuenta.Id,
                     CuentaBeneficiario = cuenta,
-                    Nombre = cuenta.ProductoFinanciero?.NumeroProducto ?? "No disponible",
-                    Apellido = cuenta.NumeroCuenta ?? "No disponible",
-                    NumeroCuenta = numeroCuenta
+                    Nombre = cuenta.ProductoFinanciero?.NumeroProducto ?? "No disponible",  // ProductoFinanciero puede ser null
+                    Apellido = cuenta.NumeroCuenta ?? "No disponible",  // Puede ser null también
+                    NumeroCuenta = numeroCuenta,
                 };
 
-                // 5. Guardar el beneficiario
+                // 5. Guardar el beneficiario en la base de datos
                 await _beneficiarioRepository.AddAsync(beneficiario);
 
                 return (true, "Beneficiario agregado exitosamente.");
             }
             catch (Exception ex)
             {
-                return (false, "Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo.");
+                // Agregar logs de excepción si es necesario
+                // Log.Error("Error al agregar beneficiario: " + ex.Message);
+                return (false, $"Ocurrió un error al procesar la solicitud. Detalles: {ex.Message}");
             }
         }
+
+        #endregion
+
+        #region ...
 
         private void ValidarBeneficiario(Beneficiarios beneficiario)
         {
@@ -171,7 +179,7 @@ namespace InternetBanking.Core.Application.Services
             }
         }
 
-
+        #endregion
 
 
     }

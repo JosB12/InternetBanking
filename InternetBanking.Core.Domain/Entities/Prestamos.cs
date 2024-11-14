@@ -11,6 +11,6 @@ namespace InternetBanking.Core.Domain.Entities
 
         [Required]
         public int IdProductoFinanciero { get; set; }
-        public virtual ProductosFinancieros ProductoFinanciero { get; set; }
+        public virtual ProductoFinanciero ProductoFinanciero { get; set; }
     }
 }
