@@ -19,12 +19,29 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             return await _dbContext.CuentasAhorro
                 .FirstOrDefaultAsync(c => c.IdentificadorUnico == userId && c.EsPrincipal);
         }
-       
+        public async Task UpdateCuentaexistenteAsync(CuentasAhorro entity)
+        {
+            // Obtenemos el id de la entidad (siempre que tenga la propiedad Id)
+            var existingEntity = await _dbContext.CuentasAhorro.FindAsync(entity.Id);
+            if (existingEntity != null)
+            {
+                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
         public async Task<CuentasAhorro> GetByProductoIdAsync(int productoId)
         {
             return await _dbContext.CuentasAhorro
                 .FirstOrDefaultAsync(c => c.IdProductoFinanciero == productoId);
         }
+        public async Task<CuentasAhorro> GetPrincipalAccountByProductIdAsync(int productoId)
+        {
+            // Devuelve la cuenta de ahorro principal asociada al producto financiero
+            return await _dbContext.CuentasAhorro
+                .Where(c => c.EsPrincipal && c.IdProductoFinanciero == productoId)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<CuentasAhorro> GetPrincipalAccountByUserIdAsync(string userId)
         {
             return await _dbContext.CuentasAhorro

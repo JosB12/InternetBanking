@@ -1,6 +1,7 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Repositories;
 using InternetBanking.Core.Application.Interfaces.Repositories.Pago;
 using InternetBanking.Core.Domain.Entities;
+using InternetBanking.Core.Domain.Enums;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,13 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public async Task<ProductosFinancieros> GetByUserIdAndProductTypeAsync(string userId, TipoProducto tipoProducto)
+        {
+            return await _dbContext.ProductosFinancieros
+                .FirstOrDefaultAsync(p => p.IdUsuario == userId && p.TipoProducto == tipoProducto);
+        }
+
         public async Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string identificadorUnico)
         {
             return await _dbContext.ProductosFinancieros

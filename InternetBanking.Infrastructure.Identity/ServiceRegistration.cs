@@ -42,7 +42,7 @@ namespace InternetBanking.Infrastructure.Identity
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequiredLength = 4;
+                options.Password.RequiredLength = 3;
             })
                 .AddRoles<IdentityRole>()
                 .AddSignInManager()
