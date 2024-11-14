@@ -41,8 +41,10 @@
                     {
                         <button class="btn btn-success" onclick="confirmActivate('@user.Id')">Activar</button>
                     }
-                    <a href="@Url.Action("ManageProducts", "UserManagement", new { userId = user.Id })" class="btn btn-info">Gestionar Productos</a>
-
+                    @if (user.TipoUsuario == "Cliente")
+                    {
+                        <a href="@Url.Action("ManageProducts", "UserManagement", new { userId = user.Id })" class="btn btn-info">Gestionar Productos</a>
+                    }
                 </div>
             </div>
         }
