@@ -23,7 +23,6 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-
                 <a class="navbar-brand text-dark fw-bold" asp-area="" asp-controller="@(isAdmin ? "Dashboard" : "Index")" asp-action="Index">InternetBanking</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -44,16 +43,35 @@
                                 </li>
                             }
 
-                            <li class="nav-item align-content-end">
-                                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="User" asp-action="LogOut">Cerrar session (@(User.UserName))</a>
-                            </li>
                             @if (User.Roles.Contains("Cliente"))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Beneficiario" asp-action="Index">Beneficiarios</a>
+                              <li class="nav-item">
+                                    <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="DashboardCliente" asp-action="Index">Home</a>
                                 </li>
-
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Pagos
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item text-dark" href="#">Expreso</a>
+                                        <a class="dropdown-item text-dark" href="#">Tarjeta de crédito</a>
+                                        <a class="dropdown-item text-dark" href="#">Préstamo</a>
+                                        <a class="dropdown-item text-dark" href="#">Beneficiarios</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Beneficiario" asp-action="Index">Beneficiario</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fw-bold" href="#">Avance de efectivo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark fw-bold" href="#">Transferencia</a>
+                                </li>
                             }
+                            <li class="nav-item align-content-end">
+                                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="User" asp-action="LogOut">Cerrar sesión (@(User.UserName))</a>
+                            </li>
                         }
                         else
                         {

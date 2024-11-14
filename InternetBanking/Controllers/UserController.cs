@@ -32,18 +32,32 @@ namespace WebApp.InternetBanking.Controllers
                 return View(vm);
             }
 
-            AuthenticationResponse userVm = await _userService.LogginAsync(vm);
-            if (userVm != null && userVm.HasError != true)
-            {
-                HttpContext.Session.Set<AuthenticationResponse>("user", userVm);
-                return RedirectToRoute(new { controller = "Dashboard", action = "Index" });
-            }
-            else
-            {
-                vm.HasError = userVm.HasError;
-                vm.Error = userVm.Error;
-                return View(vm);
-            }
+              AuthenticationResponse userVm = await _userService.LogginAsync(vm);
+    if (userVm != null && userVm.HasError != true)
+    {
+        HttpContext.Session.Set<AuthenticationResponse>("user", userVm);
+
+        // Verificar si el usuario es administrador
+        if (userVm.Roles.Contains("Administrador"))
+        {
+            return RedirectToRoute(new { controller = "Dashboard", action = "Index" });
+        }
+        else if (userVm.Roles.Contains("Cliente"))
+        {
+            HttpContext.Session.SetString("userId", userVm.Id);
+            return RedirectToRoute(new { controller = "DashboardCliente", action = "Index" });
+        }
+        else
+        {
+            return RedirectToAction("AccessDenied");
+        }
+    }
+    else
+    {
+        vm.HasError = userVm.HasError;
+        vm.Error = userVm.Error;
+        return View(vm);
+    }
         }
         public async Task<IActionResult> LogOut()
         {
