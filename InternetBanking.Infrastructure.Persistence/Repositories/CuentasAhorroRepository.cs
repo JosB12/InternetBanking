@@ -127,7 +127,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Select(c => new
                 {
                     Cuenta = c,
-                    IdUsuario = c.ProductoFinanciero.IdUsuario
+                    IdUsuario = c.ProductoFinanciero != null ? c.ProductoFinanciero.IdUsuario : null  // Verificar que ProductoFinanciero no sea null
                 })
                 .FirstOrDefaultAsync();
 

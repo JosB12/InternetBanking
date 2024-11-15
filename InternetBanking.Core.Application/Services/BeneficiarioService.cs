@@ -53,6 +53,7 @@ namespace InternetBanking.Core.Application.Services
         {
             try
             {
+                // Validar que la cuenta existe
                 var (exists, cuenta, idUsuarioCuenta) = await _cuentasAhorroRepository.ValidateAccountAsync(numeroCuenta);
 
                 if (!exists || cuenta == null)
@@ -65,6 +66,7 @@ namespace InternetBanking.Core.Application.Services
                     return (false, "No puedes agregar tu propia cuenta como beneficiario.");
                 }
 
+                // Verificar si el beneficiario ya está registrado
                 var beneficiarioExistente = await _beneficiarioRepository.AnyAsync(b =>
                     b.IdUsuario == idUsuarioActual &&
                     b.NumeroCuenta == numeroCuenta);
@@ -74,13 +76,22 @@ namespace InternetBanking.Core.Application.Services
                     return (false, "Este beneficiario ya está registrado en tu lista.");
                 }
 
+                // Obtener datos del usuario asociado a la cuenta
+                var usuario = await _accountService.GetUserByIdAsync(idUsuarioCuenta);
+
+                if (usuario == null)
+                {
+                    return (false, "No se pudo obtener la información del usuario asociado a la cuenta.");
+                }
+
+                // Crear el beneficiario con datos correctos
                 var beneficiario = new Beneficiarios
                 {
                     IdUsuario = idUsuarioActual,
                     IdCuentaBeneficiario = cuenta.Id,
                     CuentaBeneficiario = cuenta,
-                    Nombre = cuenta.ProductoFinanciero?.NumeroProducto ?? "No disponible",
-                    Apellido = cuenta.NumeroCuenta ?? "No disponible",
+                    Nombre = usuario.Nombre, // Usar el nombre del usuario
+                    Apellido = usuario.Apellido, // Usar el apellido del usuario
                     NumeroCuenta = numeroCuenta,
                 };
 
@@ -94,7 +105,8 @@ namespace InternetBanking.Core.Application.Services
             }
         }
 
-        
+
+
         public async Task<List<BeneficiarioViewModel>> GetBeneficiariosAsync()
         {
             try

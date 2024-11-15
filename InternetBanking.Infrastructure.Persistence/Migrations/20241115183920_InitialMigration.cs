@@ -17,7 +17,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdentificadorUnico = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     IdUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumeroProducto = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -34,7 +33,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdentificadorUnico = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     NumeroCuenta = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Balance = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     EsPrincipal = table.Column<bool>(type: "bit", nullable: false),
@@ -79,7 +77,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdentificadorUnico = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     NumeroTarjeta = table.Column<string>(type: "nvarchar(16)", maxLength: 16, nullable: false),
                     LimiteCredito = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     DeudaActual = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
