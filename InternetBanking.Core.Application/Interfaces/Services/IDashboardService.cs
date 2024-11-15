@@ -1,4 +1,7 @@
-﻿using System;
+﻿using InternetBanking.Core.Application.Interfaces.Services.Generic;
+using InternetBanking.Core.Application.ViewModels;
+using InternetBanking.Core.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InternetBanking.Core.Application.Interfaces.Services
 {
-    public interface IDashboardService 
+    public interface IDashboardService
     {
         Task<int> ObtenerCantidadTotalTransaccionesAsync();
         Task<int> ObtenerCantidadTransaccionesDelDiaAsync();

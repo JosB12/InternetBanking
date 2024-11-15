@@ -25,6 +25,9 @@ namespace InternetBanking.Core.Application
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IDashboardService, DashboardService>();
             services.AddTransient<IProductosFinancierosService, ProductosFinancierosService>();
+            services.AddTransient<ICuentasAhorroService, CuentasAhorroService>();
+            services.AddTransient<IAvancesEfectivoService, AvancesEfectivoService>();
+            services.AddTransient<ITarjetasCreditoService, TarjetasCreditoService>();
 
 
 

@@ -11,14 +11,18 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
 {
     public interface IProductosFinancierosRepository : IGenericRepository<ProductosFinancieros>
     {
+        #region sector 1
         Task<int> ObtenerCantidadTotalProductosFinancierosAsync();
-        Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string identificadorUnico);
+        Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string numeroProducto);
         Task<ProductosFinancieros> GetByIdAsync(int id);
-        Task<bool> ExistsByIdentificadorUnicoAsync(string identificadorUnico);
+        Task<bool> ExistsByIdentificadorUnicoAsync(string numeroProducto);
         Task<bool> DeleteAsync(ProductosFinancieros producto);
         Task<List<ProductosFinancieros>> GetByUserIdAsync(string userId);
         Task<ProductosFinancieros> AddAsync(ProductosFinancieros entity);
         Task<ProductosFinancieros> GetByUserIdAndProductTypeAsync(string userId, TipoProducto tipoProducto);
+        #endregion
+
+
 
     }
 }

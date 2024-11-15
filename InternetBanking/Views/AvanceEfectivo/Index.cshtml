@@ -1,0 +1,47 @@
+﻿@model IEnumerable<InternetBanking.Core.Application.ViewModels.AvanceEfectivoListadoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Avances de Efectivo";
+}
+
+<!-- Título -->
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+<!-- Contenedor de la tabla con estilos modernos -->
+<div class="container">
+    <div class="card shadow-lg p-4 mb-4">
+        <div class="card-body">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Tarjeta de Crédito</th>
+                        <th>Cuenta de Ahorro</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var avance in Model)
+                    {
+                        <tr>
+                            <td>@avance.NumeroTarjeta</td>
+                            <td>@avance.NumeroCuenta</td>
+                            <td>@avance.Monto</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Botón para crear nuevo avance -->
+    <div class="text-center mt-3">
+        <a href="@Url.Action("Create")" class="btn btn-success btn-lg">
+            <i class="fas fa-plus-circle"></i> Crear nuevo avance
+        </a>
+    </div>
+</div>
+
+<!-- Iconos de Font Awesome para el botón (si no están cargados en el proyecto, agregar el CDN) -->
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+}

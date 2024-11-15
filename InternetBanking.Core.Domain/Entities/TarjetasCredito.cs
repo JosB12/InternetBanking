@@ -5,8 +5,7 @@ namespace InternetBanking.Core.Domain.Entities
     public class TarjetasCredito
     {
         public int Id { get; set; }
-        [Required]
-        public string IdentificadorUnico { get; set; }
+       
         [Required]
         public string NumeroTarjeta { get; set; } 
         public decimal LimiteCredito { get; set; }

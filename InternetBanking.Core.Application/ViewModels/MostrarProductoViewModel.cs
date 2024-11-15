@@ -9,7 +9,6 @@ namespace InternetBanking.Core.Application.ViewModels
     public class MostrarProductoViewModel
     {
         public string TipoProducto { get; set; } // "CuentaAhorro", "TarjetaCredito", "Prestamo"
-        public string IdentificadorUnico { get; set; }
         public string NumeroProducto { get; set; }
 
         // Propiedades específicas según el tipo de producto

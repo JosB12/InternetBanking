@@ -6,9 +6,7 @@ namespace InternetBanking.Core.Domain.Entities
     {
         public int Id { get; set; }
         [Required]
-        public string IdentificadorUnico { get; set; }
-        [Required]
-        public string NumeroCuenta { get; set; } 
+        public string NumeroCuenta { get; set; }
         public decimal Balance { get; set; }
         public bool EsPrincipal { get; set; }
 

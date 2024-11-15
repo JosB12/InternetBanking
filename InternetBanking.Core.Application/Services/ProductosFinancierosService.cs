@@ -31,7 +31,7 @@ namespace InternetBanking.Core.Application.Services
         public async Task<SaveProductosFinancierosViewModel> AddProductoAsync(SaveProductosFinancierosViewModel model)
         {
             // Verificar que el identificador único sea único en el sistema
-            var existingProduct = await _productosFinancierosRepository.GetByIdentificadorUnicoAsync(model.IdentificadorUnico);
+            var existingProduct = await _productosFinancierosRepository.GetByIdentificadorUnicoAsync(model.NumeroProducto);
             if (existingProduct != null)
             {
                 throw new Exception("El identificador único ya está registrado.");
@@ -40,7 +40,7 @@ namespace InternetBanking.Core.Application.Services
             // Crear el producto financiero
             var producto = new ProductosFinancieros
             {
-                IdentificadorUnico = model.IdentificadorUnico, // Asegúrate de que el modelo tenga esta propiedad
+                NumeroProducto = model.NumeroProducto, // Asegúrate de que el modelo tenga esta propiedad
                 IdUsuario = model.IdUsuario,
                 TipoProducto = model.TipoProducto,
                 FechaCreacion = DateTime.Now
@@ -52,7 +52,7 @@ namespace InternetBanking.Core.Application.Services
                 // Si es una cuenta de ahorro, crearla
                 var cuenta = new CuentasAhorro
                 {
-                    IdentificadorUnico = producto.IdentificadorUnico,
+                    NumeroCuenta = producto.NumeroProducto,
                     EsPrincipal = model.EsPrincipal ?? false, // Asegúrate de manejar la propiedad correctamente
                     Balance = model.Balance ?? 0, // Asegúrate de que Balance no sea nulo
                     ProductoFinanciero = producto
@@ -65,7 +65,7 @@ namespace InternetBanking.Core.Application.Services
                 // Si es tarjeta de crédito, crearla
                 var tarjeta = new TarjetasCredito
                 {
-                    IdentificadorUnico = producto.IdentificadorUnico,
+                    NumeroTarjeta = producto.NumeroProducto,
                     LimiteCredito = model.LimiteCredito ?? 0, // Asegúrate de que el límite de crédito no sea nulo
                     ProductoFinanciero = producto
                 };
