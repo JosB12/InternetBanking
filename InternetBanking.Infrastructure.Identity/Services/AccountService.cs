@@ -154,8 +154,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
                     IdUsuario = user.Id,
                     TipoProducto = TipoProducto.CuentaAhorro,
-                    IdentificadorUnico = GenerarIdentificadorUnico(),
-                    NumeroProducto = GenerarNumeroProducto(),
+                    NumeroProducto = GenerarIdentificadorUnico(),
                     FechaCreacion = DateTime.Now
                 };
 
@@ -163,8 +162,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
                 var cuentaAhorro = new CuentasAhorro
                 {
-                    IdentificadorUnico = GenerarIdentificadorUnico(),
-                    NumeroCuenta = GenerarNumeroCuenta(),
+                    NumeroCuenta = GenerarIdentificadorUnico(),
                     Balance = request.MontoInicial ?? 0,
                     EsPrincipal = true,
                     IdProductoFinanciero = productoFinanciero.Id
@@ -261,30 +259,19 @@ namespace InternetBanking.Infrastructure.Identity.Services
         #region metodos de apoyo
         private string GenerarIdentificadorUnico()
         {
-            return new Random().Next(100000000, 999999999).ToString();
+            return Guid.NewGuid().ToString("N").Substring(0, 9);
         }
-        public string GenerarNumeroTarjeta()
+
+        private string GenerarNumeroTarjetaUnico()
         {
-            var random = new Random();
+            string base1 = DateTime.UtcNow.Ticks.ToString();
+            string base2 = Guid.NewGuid().ToString("N").Where(char.IsDigit).Take(8).ToString();
 
-            long numeroTarjeta = 0;
-
-            for (int i = 0; i < 16; i++)
-            {
-                numeroTarjeta = numeroTarjeta * 10 + random.Next(0, 10); 
-            }
-
-            return numeroTarjeta.ToString();
+            return (base1 + base2).Substring(0, 16);
         }
 
-        private string GenerarNumeroCuenta()
-        {
-            return Guid.NewGuid().ToString("N").Substring(0, 20);
-        }
-        private string GenerarNumeroProducto()
-        {
-            return Guid.NewGuid().ToString("N").Substring(0, 20); 
-        }
+
+
         #endregion
 
         #region get
@@ -487,8 +474,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                         {
                             Balance = vm.MontoAdicional.Value,
                             EsPrincipal = true,
-                            NumeroCuenta = GenerarNumeroCuenta(),
-                            IdentificadorUnico = GenerarIdentificadorUnico(),
+                            NumeroCuenta = GenerarIdentificadorUnico(),
                             IdProductoFinanciero = productoAhorro.Id  // Asociar la cuenta al Producto Financiero
                         };
 
@@ -504,8 +490,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                         IdUsuario = user.Id,
                         TipoProducto = TipoProducto.CuentaAhorro,
                         FechaCreacion = DateTime.Now,
-                        IdentificadorUnico = GenerarIdentificadorUnico(),
-                        NumeroProducto = GenerarNumeroProducto()
+                        NumeroProducto = GenerarIdentificadorUnico(),
                     };
 
                     // Guarda el Producto Financiero
@@ -516,8 +501,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
                     {
                         Balance = vm.MontoAdicional.Value,
                         EsPrincipal = true,
-                        NumeroCuenta = GenerarNumeroCuenta(),
-                        IdentificadorUnico = GenerarIdentificadorUnico(),
+                        NumeroCuenta = GenerarIdentificadorUnico(),
                         IdProductoFinanciero = nuevoProducto.Id  // Asociar la cuenta al Producto Financiero
                     };
 
@@ -558,13 +542,12 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 };
             }
 
-            var identificadorUnico = GenerarIdentificadorUnico();
+            var NumeroProducto = GenerarIdentificadorUnico();
             var producto = new ProductosFinancieros
             {
                 IdUsuario = user.Id,
                 TipoProducto = tipoProducto,
-                IdentificadorUnico = identificadorUnico,
-                NumeroProducto = GenerarNumeroProducto(),
+                NumeroProducto = NumeroProducto,
                 FechaCreacion = DateTime.Now
             };
 
@@ -576,9 +559,8 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 var cuentaAhorro = new CuentasAhorro
                 {
                     IdProductoFinanciero = producto.Id,
-                    NumeroCuenta = GenerarNumeroCuenta(),
                     Balance = 0,
-                    IdentificadorUnico = GenerarIdentificadorUnico(),
+                    NumeroCuenta = GenerarIdentificadorUnico(),
                     EsPrincipal = false 
                 };
                 await _cuentasAhorroRepository.AddAsync(cuentaAhorro);
@@ -599,10 +581,9 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 var tarjetaCredito = new TarjetasCredito
                 {
                     IdProductoFinanciero = producto.Id,
-                    NumeroTarjeta = GenerarNumeroTarjeta(),
                     LimiteCredito = limiteCredito.Value,
                     DeudaActual = 0, // Inicializar deuda en 0
-                    IdentificadorUnico = GenerarIdentificadorUnico()
+                    NumeroTarjeta = GenerarIdentificadorUnico()
                 };
                 await _tarjetasCreditoRepository.AddAsync(tarjetaCredito);
             }

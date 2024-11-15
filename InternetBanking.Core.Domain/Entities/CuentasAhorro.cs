@@ -5,8 +5,7 @@ namespace InternetBanking.Core.Domain.Entities
     public class CuentasAhorro
     {
         public int Id { get; set; }
-        [Required]
-        public string IdentificadorUnico { get; set; }
+       
         [Required]
         public string NumeroCuenta { get; set; } 
         public decimal Balance { get; set; }

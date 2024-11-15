@@ -99,12 +99,6 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
             #endregion
 
             #region "Property configurations"
-            // ProductosFinancieros
-            modelBuilder.Entity<ProductosFinancieros>()
-                .Property(pf => pf.IdentificadorUnico)
-                .IsRequired()
-                .HasMaxLength(9);
-
             modelBuilder.Entity<ProductosFinancieros>()
                 .Property(pf => pf.IdUsuario)
                 .IsRequired();
@@ -115,11 +109,6 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
 
             // CuentasAhorro
             modelBuilder.Entity<CuentasAhorro>()
-                .Property(ca => ca.IdentificadorUnico)
-                .IsRequired()
-                .HasMaxLength(9);
-
-            modelBuilder.Entity<CuentasAhorro>()
                 .Property(ca => ca.NumeroCuenta)
                 .IsRequired()
                 .HasMaxLength(20);
@@ -127,12 +116,6 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
             modelBuilder.Entity<CuentasAhorro>()
                 .Property(ca => ca.Balance)
                 .HasPrecision(18, 2);
-
-            // TarjetasCredito
-            modelBuilder.Entity<TarjetasCredito>()
-                .Property(tc => tc.IdentificadorUnico)
-                .IsRequired()
-                .HasMaxLength(9);
 
             modelBuilder.Entity<TarjetasCredito>()
                 .Property(tc => tc.NumeroTarjeta)

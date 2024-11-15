@@ -17,7 +17,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         public async Task<CuentasAhorro> GetPrimaryAccountByUserIdAsync(string userId)
         {
             return await _dbContext.CuentasAhorro
-                .FirstOrDefaultAsync(c => c.IdentificadorUnico == userId && c.EsPrincipal);
+                .FirstOrDefaultAsync(c => c.NumeroCuenta == userId && c.EsPrincipal);
         }
         public async Task UpdateCuentaexistenteAsync(CuentasAhorro entity)
         {
