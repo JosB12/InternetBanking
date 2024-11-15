@@ -96,5 +96,47 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
+
+        public async Task<CuentasAhorro> GetAccountByIdAndNumeroCuentaAsync(int idCuenta, string numeroCuenta)
+        {
+            if (idCuenta <= 0 || string.IsNullOrEmpty(numeroCuenta))
+            {
+                throw new ArgumentException("El ID de cuenta o el número de cuenta no son válidos.");
+            }
+
+            var cuenta = await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero) // Incluye la entidad Producto relacionada
+                .FirstOrDefaultAsync(c => c.Id == idCuenta && c.NumeroCuenta.Trim() == numeroCuenta.Trim());
+
+            if (cuenta == null)
+            {
+                throw new KeyNotFoundException("No se encontró una cuenta con el ID y número de cuenta proporcionados.");
+            }
+
+            return cuenta;
+        }
+
+        public async Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta)
+        {
+            if (string.IsNullOrWhiteSpace(numeroCuenta))
+                return (false, null, null);
+
+            var cuentaInfo = await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero)
+                .Where(c => c.NumeroCuenta == numeroCuenta.Trim())
+                .Select(c => new
+                {
+                    Cuenta = c,
+                    IdUsuario = c.ProductoFinanciero.IdUsuario
+                })
+                .FirstOrDefaultAsync();
+
+            if (cuentaInfo == null || cuentaInfo.Cuenta == null || cuentaInfo.IdUsuario == null)
+                return (false, null, null);
+
+            return (true, cuentaInfo.Cuenta, cuentaInfo.IdUsuario);
+        }
+
+
     }
 }

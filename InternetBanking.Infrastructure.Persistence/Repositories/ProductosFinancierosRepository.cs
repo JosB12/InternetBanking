@@ -79,5 +79,13 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.Prestamo)
                 .ToListAsync();
         }
+
+        public async Task<List<ProductosFinancieros>> GetByClienteIdAsync(int clienteId)
+        {
+            return await _dbContext.ProductosFinancieros
+                                   .Where(pf => pf.IdUsuario == clienteId.ToString())
+                                   .ToListAsync();
+        }
+
     }
 }

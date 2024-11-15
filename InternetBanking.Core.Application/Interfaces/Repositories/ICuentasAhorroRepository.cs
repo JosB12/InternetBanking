@@ -15,6 +15,8 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
         Task UpdateCuentaexistenteAsync(CuentasAhorro entity);
         Task<CuentasAhorro> GetPrincipalAccountByProductIdAsync(int productoId);
         Task<CuentasAhorro> GetByProductoIdAsync(int productoId);
+        Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta);
+        Task<CuentasAhorro> GetAccountByIdAndNumeroCuentaAsync(int idCuenta, string numeroCuenta);
 
     }
 }

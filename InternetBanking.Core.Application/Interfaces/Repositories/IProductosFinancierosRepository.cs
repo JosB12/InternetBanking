@@ -19,6 +19,7 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
         Task<List<ProductosFinancieros>> GetByUserIdAsync(string userId);
         Task<ProductosFinancieros> AddAsync(ProductosFinancieros entity);
         Task<ProductosFinancieros> GetByUserIdAndProductTypeAsync(string userId, TipoProducto tipoProducto);
+        Task<List<ProductosFinancieros>> GetByClienteIdAsync(int clienteId);
 
     }
 }
