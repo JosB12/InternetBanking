@@ -7,6 +7,7 @@ using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Core.Application.ViewModels;
 using InternetBanking.Core.Domain.Entities;
+using InternetBanking.Core.Application.ViewModels.Beneficiario;
 
 namespace InternetBanking.Core.Application.Mapping
 {
@@ -54,6 +55,18 @@ namespace InternetBanking.Core.Application.Mapping
             #region EditUser
             CreateMap<EditUserDTO, EditProfileViewModel>()
             .ReverseMap();
+            #endregion
+
+
+            #region Beneficiario
+            CreateMap<SaveBeneficiarioViewModel, Beneficiarios>()
+               .ForMember(dest => dest.NumeroCuenta, opt => opt.MapFrom(src => src.NumeroCuenta));
+
+            CreateMap<Beneficiarios, BeneficiarioViewModel>()
+                           .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                           .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
+                           .ForMember(dest => dest.Apellido, opt => opt.MapFrom(src => src.Apellido))
+                           .ForMember(dest => dest.NumeroCuenta, opt => opt.MapFrom(src => src.NumeroCuenta));
             #endregion
         }
     }

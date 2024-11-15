@@ -19,7 +19,7 @@ namespace InternetBanking.Core.Application.ViewModels
         public TipoProducto TipoProducto { get; set; }
 
         [Required]
-        public string IdentificadorUnico { get; set; }
+        public string NumeroProducto { get; set; }
 
         // Propiedades específicas por tipo de producto
         public decimal? LimiteCredito { get; set; } // Solo para tarjetas de crédito

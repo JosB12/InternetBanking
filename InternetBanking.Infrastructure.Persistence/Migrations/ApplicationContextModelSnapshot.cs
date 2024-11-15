@@ -114,11 +114,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     b.Property<int>("IdProductoFinanciero")
                         .HasColumnType("int");
 
-                    b.Property<string>("IdentificadorUnico")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
-
                     b.Property<string>("NumeroCuenta")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -222,11 +217,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdentificadorUnico")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
-
                     b.Property<string>("NumeroProducto")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -254,11 +244,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
 
                     b.Property<int>("IdProductoFinanciero")
                         .HasColumnType("int");
-
-                    b.Property<string>("IdentificadorUnico")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
 
                     b.Property<decimal>("LimiteCredito")
                         .HasPrecision(18, 2)

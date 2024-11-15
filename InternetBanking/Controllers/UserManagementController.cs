@@ -244,7 +244,6 @@ namespace InternetBanking.Controllers
             var productosViewModel = productos.Select(p => new MostrarProductoViewModel
             {
                 TipoProducto = p.TipoProducto.ToString(),
-                IdentificadorUnico = p.IdentificadorUnico,
                 NumeroProducto = p.NumeroProducto,
                 CuentaAhorro = p.TipoProducto == TipoProducto.CuentaAhorro ? new MostrarCuentaAhorroViewModel
                 {
