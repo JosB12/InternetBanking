@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InternetBanking.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20241111112440_InitialMigration")]
+    [Migration("20241115051154_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
