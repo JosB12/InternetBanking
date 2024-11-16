@@ -32,12 +32,6 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .FirstOrDefaultAsync();
         }
 
-        //public async Task<CuentasAhorro> GetPrimaryAccountByUserIdAsync(string userId)
-        //{
-        //    return await _dbContext.CuentasAhorro
-        //        .FirstOrDefaultAsync(c => c.ProductoFinanciero.IdUsuario == userId && c.EsPrincipal);
-        //}
-
 
         public async Task<CuentasAhorro> GetSavingsAccountByUserIdAsync(string userId)
         {
@@ -79,5 +73,23 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
+        public async Task<CuentasAhorro> GetByIdAsync(int id)
+        {
+            return await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero) 
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+
+
+        public async Task<CuentasAhorro> GetByIdentificadorUnicoAsync(string identificadorUnico)
+        {
+            return await _dbContext.CuentasAhorro
+                .FirstOrDefaultAsync(c => c.IdentificadorUnico == identificadorUnico);
+        }
+
+        public async Task<CuentasAhorro> GetCuentaByNumeroCuentaAsync(string numeroCuenta)
+        {
+            return await _dbContext.CuentasAhorro.FirstOrDefaultAsync(c => c.NumeroCuenta == numeroCuenta);
+        }
     }
 }

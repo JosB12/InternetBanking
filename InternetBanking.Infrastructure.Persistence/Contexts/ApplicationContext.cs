@@ -77,6 +77,13 @@ namespace InternetBanking.Infrastructure.Persistence.Contexts
                 .HasForeignKey(p => p.IdCuentaPago)
                 .OnDelete(DeleteBehavior.Restrict);
 
+
+            modelBuilder.Entity<Pagos>()
+                .HasOne(p => p.CuentaDestino)  
+                .WithMany()  
+                .HasForeignKey(p => p.IdCuentaDestino)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<CuentasAhorro>()
                 .HasMany(ca => ca.AvancesEfectivo)
                 .WithOne(ae => ae.CuentaDestino)

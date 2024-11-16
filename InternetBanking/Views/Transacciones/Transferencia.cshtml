@@ -1,0 +1,78 @@
+@using InternetBanking.Core.Application.ViewModels.Transacciones;
+@model TransferenciaViewModel
+@{
+    ViewData["Title"] = "Transferencia de Fondos";
+}
+
+<h2 class="title">Transferencia de Fondos</h2>
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.SuccessMessage
+    </div>
+}
+
+<div id="topValidationMessage" class="alert alert-danger" style="display:none;"></div> <!-- New div for validation message -->
+
+<form asp-action="Transferencia" method="post" id="transferenciaForm" class="styled-form">
+    <input type="hidden" asp-for="IdUsuario" />
+
+    <div class="form-group">
+        <label>Cuenta Origen</label>
+        <select asp-for="IdCuentaOrigen" class="form-control" id="IdCuentaOrigen">
+            @foreach (var cuenta in Model.Cuentas)
+            {
+                <option value="@cuenta.Id">@cuenta.NumeroCuenta</option>
+            }
+        </select>
+        <span asp-validation-for="IdCuentaOrigen" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Cuenta Destino</label>
+        <select asp-for="IdCuentaDestino" class="form-control" id="IdCuentaDestino">
+            @foreach (var cuenta in Model.Cuentas)
+            {
+                <option value="@cuenta.Id">@cuenta.NumeroCuenta</option>
+            }
+        </select>
+        <span asp-validation-for="IdCuentaDestino" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Monto</label>
+        <input asp-for="Monto" class="form-control" />
+        <span asp-validation-for="Monto" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary submit-button">Transferir</button>
+</form>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div id="customValidationMessage" class="text-danger"></div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/custom-styles.css" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            $("#transferenciaForm").submit(function (event) {
+                var cuentaOrigen = $("#IdCuentaOrigen").val();
+                var cuentaDestino = $("#IdCuentaDestino").val();
+                var validationMessage = $("#customValidationMessage");
+                var topValidationMessage = $("#topValidationMessage"); 
+
+                validationMessage.text(""); 
+                topValidationMessage.hide();
+                if (cuentaOrigen === cuentaDestino) {
+         event.preventDefault();
+                    topValidationMessage.text("Debe seleccionar una cuenta diferente para la transacción.").show(); 
+                }
+            });
+        });
+    </script>
+}

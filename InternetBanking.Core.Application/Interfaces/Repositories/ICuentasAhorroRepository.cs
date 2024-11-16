@@ -14,5 +14,8 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
         Task<CuentasAhorro> GetPrincipalAccountByUserIdAsync(string userId);
         Task<CuentasAhorro> GetByProductoIdAsync(int productoId);
 
+        Task<CuentasAhorro> GetByIdentificadorUnicoAsync(string identificadorUnico);
+        Task<CuentasAhorro> GetCuentaByNumeroCuentaAsync(string numeroCuenta);
+
     }
 }

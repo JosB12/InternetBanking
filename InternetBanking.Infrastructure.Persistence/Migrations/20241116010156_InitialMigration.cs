@@ -132,8 +132,7 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdCuentaOrigen = table.Column<int>(type: "int", nullable: true),
                     IdCuentaDestino = table.Column<int>(type: "int", nullable: true),
-                    IdProductoFinanciero = table.Column<int>(type: "int", nullable: true),
-                    ProductoFinancieroId = table.Column<int>(type: "int", nullable: false)
+                    IdProductoFinanciero = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -150,12 +149,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         principalTable: "CuentasAhorro",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Transacciones_ProductosFinancieros_ProductoFinancieroId",
-                        column: x => x.ProductoFinancieroId,
-                        principalTable: "ProductosFinancieros",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -198,9 +191,9 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     Monto = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdCuentaPago = table.Column<int>(type: "int", nullable: true),
+                    IdCuentaDestino = table.Column<int>(type: "int", nullable: true),
                     IdBeneficiario = table.Column<int>(type: "int", nullable: true),
-                    IdProductoFinanciero = table.Column<int>(type: "int", nullable: true),
-                    ProductoFinancieroId = table.Column<int>(type: "int", nullable: false)
+                    IdProductoFinanciero = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -212,17 +205,17 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
+                        name: "FK_Pagos_CuentasAhorro_IdCuentaDestino",
+                        column: x => x.IdCuentaDestino,
+                        principalTable: "CuentasAhorro",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_Pagos_CuentasAhorro_IdCuentaPago",
                         column: x => x.IdCuentaPago,
                         principalTable: "CuentasAhorro",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Pagos_ProductosFinancieros_ProductoFinancieroId",
-                        column: x => x.ProductoFinancieroId,
-                        principalTable: "ProductosFinancieros",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -252,14 +245,14 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                 column: "IdBeneficiario");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Pagos_IdCuentaDestino",
+                table: "Pagos",
+                column: "IdCuentaDestino");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pagos_IdCuentaPago",
                 table: "Pagos",
                 column: "IdCuentaPago");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Pagos_ProductoFinancieroId",
-                table: "Pagos",
-                column: "ProductoFinancieroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Prestamos_IdProductoFinanciero",
@@ -282,11 +275,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                 name: "IX_Transacciones_IdCuentaOrigen",
                 table: "Transacciones",
                 column: "IdCuentaOrigen");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transacciones_ProductoFinancieroId",
-                table: "Transacciones",
-                column: "ProductoFinancieroId");
         }
 
         /// <inheritdoc />

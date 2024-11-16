@@ -1,0 +1,29 @@
+@model InternetBanking.Core.Application.ViewModels.Pago.SavePagoExpresoViewModel
+
+@{
+    ViewData["Title"] = "Pago Expreso";
+}
+
+<h2>Pago Expreso</h2>
+
+<form asp-action="PagoExpreso" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label for="NumeroCuenta">Número de Cuenta</label>
+        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" required />
+    </div>
+    <div class="form-group">
+        <label for="Monto">Monto</label>
+        <input type="number" class="form-control" id="Monto" name="Monto" required />
+    </div>
+    <div class="form-group">
+        <label for="IdCuentaPago">Cuenta de Pago</label>
+        <select class="form-control" id="IdCuentaPago" name="IdCuentaPago" required>
+            @foreach (var cuenta in ViewBag.Cuentas)
+            {
+                <option value="@cuenta.Id">@cuenta.NumeroCuenta</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Realizar Pago</button>
+</form>

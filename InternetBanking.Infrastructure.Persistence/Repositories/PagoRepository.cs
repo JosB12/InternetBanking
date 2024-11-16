@@ -1,13 +1,9 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Repositories.Pago;
-using InternetBanking.Core.Application.Interfaces.Repositories.Transaccion;
 using InternetBanking.Core.Domain.Entities;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace InternetBanking.Infrastructure.Persistence.Repositories
@@ -32,5 +28,22 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Where(p => p.Fecha.Date == DateTime.Today)
                 .CountAsync();
         }
+
+        public async Task<CuentasAhorro> GetCuentaByNumeroAsync(string numeroCuenta)
+        {
+            return await _dbContext.CuentasAhorro.FirstOrDefaultAsync(c => c.NumeroCuenta == numeroCuenta);
+        }
+
+        public async Task<CuentasAhorro> GetCuentaByIdAsync(int idCuenta)
+        {
+            return await _dbContext.CuentasAhorro.FirstOrDefaultAsync(c => c.Id == idCuenta);
+        }
+
+        public async Task<CuentasAhorro> GetCuentaByIdentificadorUnicoAsync(string identificadorUnico)
+        {
+            return await _dbContext.CuentasAhorro.FirstOrDefaultAsync(c => c.IdentificadorUnico == identificadorUnico);
+        }
+
+       
     }
 }

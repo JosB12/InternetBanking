@@ -16,12 +16,13 @@ namespace InternetBanking.Core.Domain.Entities
         public int? IdCuentaPago { get; set; }
         public virtual CuentasAhorro CuentaPago { get; set; }
 
+        public int? IdCuentaDestino { get; set; }
+        public virtual CuentasAhorro CuentaDestino { get; set; }
+
         public int? IdBeneficiario { get; set; }
         public virtual Beneficiarios Beneficiario { get; set; }
 
         public int? IdProductoFinanciero { get; set; }
-        public virtual ProductosFinancieros ProductoFinanciero { get; set; }
-
-
+       
     }
 }

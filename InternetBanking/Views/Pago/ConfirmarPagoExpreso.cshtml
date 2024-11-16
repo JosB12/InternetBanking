@@ -1,0 +1,29 @@
+@model InternetBanking.Core.Application.ViewModels.Pago.SavePagoExpresoViewModel
+
+@{
+    ViewData["Title"] = "Confirmar Pago Expreso";
+}
+
+<h2>Confirmar Pago Expreso</h2>
+
+<form asp-action="ConfirmarPagoExpreso" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label for="NumeroCuenta">Número de Cuenta</label>
+        <input type="text" class="form-control" id="NumeroCuenta" name="NumeroCuenta" value="@Model.NumeroCuenta" readonly />
+    </div>
+    <div class="form-group">
+        <label for="Monto">Monto</label>
+        <input type="number" class="form-control" id="Monto" name="Monto" value="@Model.Monto" readonly />
+    </div>
+    <div class="form-group">
+        <label for="IdCuentaPago">Cuenta de Pago</label>
+        <input type="text" class="form-control" id="IdCuentaPago" name="IdCuentaPago" value="@Model.IdCuentaPago" readonly />
+    </div>
+    <div class="form-group">
+        <label for="NombrePropietarioCuentaDestino">Nombre del Propietario de la Cuenta Destino</label>
+        <input type="text" class="form-control" id="NombrePropietarioCuentaDestino" name="NombrePropietarioCuentaDestino" value="@Model.NombrePropietarioCuentaDestino" readonly />
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar Pago</button>
+    <a asp-action="PagoExpreso" class="btn btn-secondary">Cancelar</a>
+</form>

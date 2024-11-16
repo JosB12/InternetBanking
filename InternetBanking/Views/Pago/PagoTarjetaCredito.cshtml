@@ -1,0 +1,33 @@
+@model InternetBanking.Core.Application.ViewModels.Pago.SavePagoViewModel
+
+@{
+    ViewData["Title"] = "Pago Tarjeta de Crédito";
+}
+
+<h2>Pago Tarjeta de Crédito</h2>
+
+<form asp-action="PagoTarjetaCredito" method="post">
+    <div class="form-group">
+        <label for="IdTarjetaCredito">Tarjeta de Crédito</label>
+        <select class="form-control" id="IdTarjetaCredito" name="IdTarjetaCredito" required>
+            @foreach (var tarjeta in ViewBag.Tarjetas)
+            {
+                <option value="@tarjeta.Id">@tarjeta.NumeroTarjeta</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="IdCuentaPago">Cuenta de Pago</label>
+        <select class="form-control" id="IdCuentaPago" name="IdCuentaPago" required>
+            @foreach (var cuenta in ViewBag.Cuentas)
+            {
+                <option value="@cuenta.Id">@cuenta.NumeroCuenta</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Monto">Monto</label>
+        <input type="number" class="form-control" id="Monto" name="Monto" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Realizar Pago</button>
+</form>

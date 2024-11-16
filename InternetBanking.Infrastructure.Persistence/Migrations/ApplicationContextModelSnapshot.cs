@@ -146,6 +146,9 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     b.Property<int?>("IdBeneficiario")
                         .HasColumnType("int");
 
+                    b.Property<int?>("IdCuentaDestino")
+                        .HasColumnType("int");
+
                     b.Property<int?>("IdCuentaPago")
                         .HasColumnType("int");
 
@@ -160,9 +163,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProductoFinancieroId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TipoPago")
                         .HasColumnType("int");
 
@@ -170,9 +170,9 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("IdBeneficiario");
 
-                    b.HasIndex("IdCuentaPago");
+                    b.HasIndex("IdCuentaDestino");
 
-                    b.HasIndex("ProductoFinancieroId");
+                    b.HasIndex("IdCuentaPago");
 
                     b.ToTable("Pagos", (string)null);
                 });
@@ -305,9 +305,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProductoFinancieroId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TipoTransaccion")
                         .HasColumnType("int");
 
@@ -316,8 +313,6 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                     b.HasIndex("IdCuentaDestino");
 
                     b.HasIndex("IdCuentaOrigen");
-
-                    b.HasIndex("ProductoFinancieroId");
 
                     b.ToTable("Transacciones", (string)null);
                 });
@@ -370,22 +365,21 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasForeignKey("IdBeneficiario")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("InternetBanking.Core.Domain.Entities.CuentasAhorro", "CuentaDestino")
+                        .WithMany()
+                        .HasForeignKey("IdCuentaDestino")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("InternetBanking.Core.Domain.Entities.CuentasAhorro", "CuentaPago")
                         .WithMany("Pagos")
                         .HasForeignKey("IdCuentaPago")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
-                        .WithMany()
-                        .HasForeignKey("ProductoFinancieroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Beneficiario");
 
-                    b.Navigation("CuentaPago");
+                    b.Navigation("CuentaDestino");
 
-                    b.Navigation("ProductoFinanciero");
+                    b.Navigation("CuentaPago");
                 });
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.Prestamos", b =>
@@ -422,17 +416,9 @@ namespace InternetBanking.Infrastructure.Persistence.Migrations
                         .HasForeignKey("IdCuentaOrigen")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("InternetBanking.Core.Domain.Entities.ProductosFinancieros", "ProductoFinanciero")
-                        .WithMany()
-                        .HasForeignKey("ProductoFinancieroId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CuentaDestino");
 
                     b.Navigation("CuentaOrigen");
-
-                    b.Navigation("ProductoFinanciero");
                 });
 
             modelBuilder.Entity("InternetBanking.Core.Domain.Entities.Beneficiarios", b =>

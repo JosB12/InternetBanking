@@ -20,7 +20,7 @@ namespace InternetBanking.Core.Domain.Entities
         public int? IdCuentaDestino { get; set; }
         public virtual CuentasAhorro CuentaDestino { get; set; }
 
-        public int? IdProductoFinanciero { get; set; }
-        public virtual ProductosFinancieros ProductoFinanciero { get; set; }
+        public int? IdProductoFinanciero { get; set; } // Nullable
+      
     }
 }

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InternetBanking.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
@@ -53,8 +54,8 @@
                                         Pagos
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item text-dark" href="#">Expreso</a>
-                                        <a class="dropdown-item text-dark" href="#">Tarjeta de crédito</a>
+                                        <a class="dropdown-item text-dark" asp-controller="Pago" asp-action="PagoExpreso">Expreso</a>
+                                        <a class="dropdown-item text-dark" asp-controller="Pago" asp-action="PagoTarjetaCredito">Tarjeta de crédito</a>
                                         <a class="dropdown-item text-dark" href="#">Préstamo</a>
                                         <a class="dropdown-item text-dark" href="#">Beneficiarios</a>
                                     </div>
@@ -66,7 +67,8 @@
                                     <a class="nav-link text-dark fw-bold" href="#">Avance de efectivo</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark fw-bold" href="#">Transferencia</a>
+                                   <a class="nav-link text-dark fw-bold" href="@Url.Action("Transferencia", "Transacciones")">Transferencias</a>
+
                                 </li>
                             }
                             <li class="nav-item align-content-end">
@@ -78,7 +80,7 @@
 
                         }
                     </ul>
-                </div>
+                </div> 
             </div>
         </nav>
     </header>

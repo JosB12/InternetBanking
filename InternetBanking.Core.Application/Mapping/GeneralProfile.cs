@@ -7,6 +7,8 @@ using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Core.Application.ViewModels;
 using InternetBanking.Core.Domain.Entities;
+using InternetBanking.Core.Application.ViewModels.Transacciones;
+using InternetBanking.Core.Application.ViewModels.Pago;
 
 namespace InternetBanking.Core.Application.Mapping
 {
@@ -51,9 +53,23 @@ namespace InternetBanking.Core.Application.Mapping
             CreateMap<SaveProductosFinancierosViewModel, ProductosFinancieros>().ReverseMap();
             #endregion
 
+
+            #region Transacciones
+             CreateMap<Transacciones, TransaccionesViewModel>().ReverseMap();
+            CreateMap<Transacciones, TransaccionesSaveViewModel>().ReverseMap();
+            CreateMap<Transacciones, TransferenciaViewModel>().ReverseMap();
+            #endregion
+
             #region EditUser
             CreateMap<EditUserDTO, EditProfileViewModel>()
             .ReverseMap();
+            #endregion
+
+            #region Pagos
+            CreateMap<Pagos, PagoExpresoViewModel>().ReverseMap();
+            CreateMap<Pagos, PagoTarjetaCreditoViewModel>().ReverseMap();
+            CreateMap<Pagos, SavePagoViewModel>().ReverseMap();
+            CreateMap<Pagos, PagoViewModel>().ReverseMap();
             #endregion
         }
     }
