@@ -12,7 +12,11 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
         Task<List<CuentasAhorro>> GetByUserIdAsync(string userId);
         Task<bool> CuentasAhorroUpdateAsync(CuentasAhorro cuenta);
         Task<CuentasAhorro> GetPrincipalAccountByUserIdAsync(string userId);
+        Task UpdateCuentaexistenteAsync(CuentasAhorro entity);
+        Task<CuentasAhorro> GetPrincipalAccountByProductIdAsync(int productoId);
         Task<CuentasAhorro> GetByProductoIdAsync(int productoId);
+        Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta);
+        Task<CuentasAhorro> GetAccountByIdAndNumeroCuentaAsync(int idCuenta, string numeroCuenta);
 
         Task<CuentasAhorro> GetByIdentificadorUnicoAsync(string identificadorUnico);
         Task<CuentasAhorro> GetCuentaByNumeroCuentaAsync(string numeroCuenta);

@@ -17,14 +17,31 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         public async Task<CuentasAhorro> GetPrimaryAccountByUserIdAsync(string userId)
         {
             return await _dbContext.CuentasAhorro
-                .FirstOrDefaultAsync(c => c.IdentificadorUnico == userId && c.EsPrincipal);
+                .FirstOrDefaultAsync(c => c.NumeroCuenta == userId && c.EsPrincipal);
         }
-       
+        public async Task UpdateCuentaexistenteAsync(CuentasAhorro entity)
+        {
+            // Obtenemos el id de la entidad (siempre que tenga la propiedad Id)
+            var existingEntity = await _dbContext.CuentasAhorro.FindAsync(entity.Id);
+            if (existingEntity != null)
+            {
+                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
         public async Task<CuentasAhorro> GetByProductoIdAsync(int productoId)
         {
             return await _dbContext.CuentasAhorro
                 .FirstOrDefaultAsync(c => c.IdProductoFinanciero == productoId);
         }
+        public async Task<CuentasAhorro> GetPrincipalAccountByProductIdAsync(int productoId)
+        {
+            // Devuelve la cuenta de ahorro principal asociada al producto financiero
+            return await _dbContext.CuentasAhorro
+                .Where(c => c.EsPrincipal && c.IdProductoFinanciero == productoId)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<CuentasAhorro> GetPrincipalAccountByUserIdAsync(string userId)
         {
             return await _dbContext.CuentasAhorro
@@ -73,6 +90,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
+<<<<<<< HEAD
         public async Task<CuentasAhorro> GetByIdAsync(int id)
         {
             return await _dbContext.CuentasAhorro
@@ -91,5 +109,49 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         {
             return await _dbContext.CuentasAhorro.FirstOrDefaultAsync(c => c.NumeroCuenta == numeroCuenta);
         }
+=======
+
+        public async Task<CuentasAhorro> GetAccountByIdAndNumeroCuentaAsync(int idCuenta, string numeroCuenta)
+        {
+            if (idCuenta <= 0 || string.IsNullOrEmpty(numeroCuenta))
+            {
+                throw new ArgumentException("El ID de cuenta o el número de cuenta no son válidos.");
+            }
+
+            var cuenta = await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero) // Incluye la entidad Producto relacionada
+                .FirstOrDefaultAsync(c => c.Id == idCuenta && c.NumeroCuenta.Trim() == numeroCuenta.Trim());
+
+            if (cuenta == null)
+            {
+                throw new KeyNotFoundException("No se encontró una cuenta con el ID y número de cuenta proporcionados.");
+            }
+
+            return cuenta;
+        }
+
+        public async Task<(bool exists, CuentasAhorro cuenta, string idUsuario)> ValidateAccountAsync(string numeroCuenta)
+        {
+            if (string.IsNullOrWhiteSpace(numeroCuenta))
+                return (false, null, null);
+
+            var cuentaInfo = await _dbContext.CuentasAhorro
+                .Include(c => c.ProductoFinanciero)
+                .Where(c => c.NumeroCuenta == numeroCuenta.Trim())
+                .Select(c => new
+                {
+                    Cuenta = c,
+                    IdUsuario = c.ProductoFinanciero != null ? c.ProductoFinanciero.IdUsuario : null  // Verificar que ProductoFinanciero no sea null
+                })
+                .FirstOrDefaultAsync();
+
+            if (cuentaInfo == null || cuentaInfo.Cuenta == null || cuentaInfo.IdUsuario == null)
+                return (false, null, null);
+
+            return (true, cuentaInfo.Cuenta, cuentaInfo.IdUsuario);
+        }
+
+
+>>>>>>> origin/client-beneficiaries-prueba
     }
 }

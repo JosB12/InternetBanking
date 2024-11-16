@@ -1,6 +1,7 @@
 ﻿using InternetBanking.Core.Application.Interfaces.Repositories;
 using InternetBanking.Core.Application.Interfaces.Repositories.Pago;
 using InternetBanking.Core.Domain.Entities;
+using InternetBanking.Core.Domain.Enums;
 using InternetBanking.Infrastructure.Persistence.Contexts;
 using InternetBanking.Infrastructure.Persistence.Repositories.Generic;
 using Microsoft.EntityFrameworkCore;
@@ -21,10 +22,17 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public async Task<ProductosFinancieros> GetByUserIdAndProductTypeAsync(string userId, TipoProducto tipoProducto)
+        {
+            return await _dbContext.ProductosFinancieros
+                .FirstOrDefaultAsync(p => p.IdUsuario == userId && p.TipoProducto == tipoProducto);
+        }
+
         public async Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string identificadorUnico)
         {
             return await _dbContext.ProductosFinancieros
-                .FirstOrDefaultAsync(p => p.IdentificadorUnico == identificadorUnico);
+                .FirstOrDefaultAsync(p => p.NumeroProducto == identificadorUnico);
         }
         // Obtiene un producto financiero con todos los detalles de las relaciones asociadas
         public async Task<ProductosFinancieros> GetByIdAsync(int id)
@@ -38,7 +46,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         public async Task<bool> ExistsByIdentificadorUnicoAsync(string identificadorUnico)
         {
             return await _dbContext.ProductosFinancieros
-                .AnyAsync(p => p.IdentificadorUnico == identificadorUnico);
+                .AnyAsync(p => p.NumeroProducto == identificadorUnico);
         }
 
         // Método para agregar un nuevo producto financiero
@@ -71,5 +79,13 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.Prestamo)
                 .ToListAsync();
         }
+
+        public async Task<List<ProductosFinancieros>> GetByClienteIdAsync(int clienteId)
+        {
+            return await _dbContext.ProductosFinancieros
+                                   .Where(pf => pf.IdUsuario == clienteId.ToString())
+                                   .ToListAsync();
+        }
+
     }
 }

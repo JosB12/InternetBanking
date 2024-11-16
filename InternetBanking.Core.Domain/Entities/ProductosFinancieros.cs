@@ -8,7 +8,6 @@ namespace InternetBanking.Core.Domain.Entities
     {
 
         public int Id { get; set; }
-        public string IdentificadorUnico { get; set; } 
         [Required]
         public string IdUsuario { get; set; }
         public string NumeroProducto { get; set; } 

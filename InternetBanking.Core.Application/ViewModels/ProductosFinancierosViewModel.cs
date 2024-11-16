@@ -10,7 +10,6 @@ namespace InternetBanking.Core.Application.ViewModels
     public class ProductosFinancierosViewModel
     {
         public int Id { get; set; }
-        public string IdentificadorUnico { get; set; }
         public string NumeroProducto { get; set; }
         public TipoProducto TipoProducto { get; set; }
         public DateTime FechaCreacion { get; set; }

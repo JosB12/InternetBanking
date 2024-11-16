@@ -61,7 +61,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
         public async Task<TarjetasCredito> GetByIdentificadorUnicoAsync(string identificadorUnico)
         {
             return await _dbContext.TarjetasCredito
-                .FirstOrDefaultAsync(t => t.IdentificadorUnico == identificadorUnico);
+                .FirstOrDefaultAsync(t => t.NumeroTarjeta == identificadorUnico);
         }
     }
 }

@@ -7,8 +7,12 @@ using InternetBanking.Core.Application.Enums;
 using InternetBanking.Core.Application.ViewModels.User;
 using InternetBanking.Core.Application.ViewModels;
 using InternetBanking.Core.Domain.Entities;
+<<<<<<< HEAD
 using InternetBanking.Core.Application.ViewModels.Transacciones;
 using InternetBanking.Core.Application.ViewModels.Pago;
+=======
+using InternetBanking.Core.Application.ViewModels.Beneficiario;
+>>>>>>> origin/client-beneficiaries-prueba
 
 namespace InternetBanking.Core.Application.Mapping
 {
@@ -65,11 +69,24 @@ namespace InternetBanking.Core.Application.Mapping
             .ReverseMap();
             #endregion
 
+<<<<<<< HEAD
             #region Pagos
             CreateMap<Pagos, PagoExpresoViewModel>().ReverseMap();
             CreateMap<Pagos, PagoTarjetaCreditoViewModel>().ReverseMap();
             CreateMap<Pagos, SavePagoViewModel>().ReverseMap();
             CreateMap<Pagos, PagoViewModel>().ReverseMap();
+=======
+
+            #region Beneficiario
+            CreateMap<SaveBeneficiarioViewModel, Beneficiarios>()
+               .ForMember(dest => dest.NumeroCuenta, opt => opt.MapFrom(src => src.NumeroCuenta));
+
+            CreateMap<Beneficiarios, BeneficiarioViewModel>()
+                           .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                           .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
+                           .ForMember(dest => dest.Apellido, opt => opt.MapFrom(src => src.Apellido))
+                           .ForMember(dest => dest.NumeroCuenta, opt => opt.MapFrom(src => src.NumeroCuenta));
+>>>>>>> origin/client-beneficiaries-prueba
             #endregion
         }
     }
