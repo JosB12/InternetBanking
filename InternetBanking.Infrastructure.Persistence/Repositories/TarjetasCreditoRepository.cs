@@ -23,6 +23,23 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .FirstOrDefaultAsync(t => t.Id == id);
         }
 
+        public async Task UpdateDeudaAsync(int tarjetaCreditoId, decimal montoConInteres)
+        {
+            var tarjetaCredito = await _dbContext.TarjetasCredito
+                .FirstOrDefaultAsync(tc => tc.Id == tarjetaCreditoId);
+
+            if (tarjetaCredito != null)
+            {
+                tarjetaCredito.DeudaActual += montoConInteres;
+                _dbContext.TarjetasCredito.Update(tarjetaCredito);
+                await _dbContext.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Tarjeta de crédito no encontrada.");
+            }
+        }
+
         // Obtiene todas las tarjetas de crédito asociadas a un usuario
         public async Task<List<TarjetasCredito>> GetByUserIdAsync(string userId)
         {

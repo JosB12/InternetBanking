@@ -5,7 +5,11 @@ namespace InternetBanking.Core.Domain.Entities
     public class TarjetasCredito
     {
         public int Id { get; set; }
+<<<<<<< HEAD
       
+=======
+       
+>>>>>>> origin/client-cash-advances
         [Required]
         public string NumeroTarjeta { get; set; } 
         public decimal LimiteCredito { get; set; }

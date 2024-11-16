@@ -26,11 +26,17 @@ namespace InternetBanking.Core.Application
             services.AddTransient<IDashboardService, DashboardService>();
             services.AddTransient<IProductosFinancierosService, ProductosFinancierosService>();
 <<<<<<< HEAD
+<<<<<<< HEAD
              services.AddTransient<ITransaccionesService, TransaccionesService>();
              services.AddTransient<IPagoService, PagoService>();
 =======
             services.AddTransient<IBeneficiarioService, BeneficiarioService>();
 >>>>>>> origin/client-beneficiaries-prueba
+=======
+            services.AddTransient<ICuentasAhorroService, CuentasAhorroService>();
+            services.AddTransient<IAvancesEfectivoService, AvancesEfectivoService>();
+            services.AddTransient<ITarjetasCreditoService, TarjetasCreditoService>();
+>>>>>>> origin/client-cash-advances
 
 
 

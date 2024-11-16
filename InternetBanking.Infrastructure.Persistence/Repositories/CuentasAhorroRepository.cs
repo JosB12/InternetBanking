@@ -77,6 +77,11 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(c => c.AvancesEfectivo)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
+        public async Task UpdateGeneralAsync(CuentasAhorro cuentaAhorro)
+        {
+            _dbContext.Set<CuentasAhorro>().Update(cuentaAhorro);
+            await _dbContext.SaveChangesAsync();
+        }
         public async Task<List<CuentasAhorro>> GetByUserIdAsync(string userId)
         {
             return await _dbContext.CuentasAhorro

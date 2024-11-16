@@ -180,79 +180,6 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
             return response;
         }
-        //public async Task<RegisterResponse> RegisterUserAsync(RegisterRequest request)
-        //{
-        //    var response = new RegisterResponse { HasError = false };
-
-        //    var existingUser = await _userManager.FindByNameAsync(request.UserName);
-        //    if (existingUser != null)
-        //    {
-        //        response.HasError = true;
-        //        response.Error = "Username already taken.";
-        //        return response;
-        //    }
-
-        //    var user = new ApplicationUser
-        //    {
-        //        Email = request.Email,
-        //        Nombre = request.Nombre,
-        //        Apellido = request.Apellido,
-        //        UserName = request.UserName,
-        //        Cedula = request.Cedula,
-        //        TipoUsuario = request.TipoUsuario
-        //    };
-
-        //    var result = await _userManager.CreateAsync(user, request.Password);
-        //    if (!result.Succeeded)
-        //    {
-        //        response.HasError = true;
-        //        response.Error = "Error creating user.";
-        //        return response;
-        //    }
-
-        //    // Asignar el rol según el tipo de usuario
-        //    string role = request.TipoUsuario switch
-        //    {
-        //        TipoUsuario.Administrador => "Administrador",
-        //        TipoUsuario.Cliente => "Cliente",
-        //        TipoUsuario.superadmin => "SuperAdmin",
-        //        _ => throw new ArgumentException("Tipo de usuario no válido")
-        //    };
-
-        //    await _userManager.AddToRoleAsync(user, role);
-
-        //    if (request.TipoUsuario == TipoUsuario.Cliente)
-        //    {
-        //        user.TieneCuentaPrincipal = true; // Establecer tiene cuenta principal
-
-        //        var productoFinanciero = new ProductosFinancieros
-        //        {
-        //            IdUsuario = user.Id,
-        //            TipoProducto = TipoProducto.CuentaAhorro,
-        //            IdentificadorUnico = GenerarIdentificadorUnico(),
-        //            NumeroProducto = GenerarNumeroProducto(),
-        //            FechaCreacion = DateTime.Now
-        //        };
-
-        //        await _productosFinancierosRepository.AddAsync(productoFinanciero);
-
-        //        var cuentaAhorro = new CuentasAhorro
-        //        {
-        //            IdentificadorUnico = GenerarIdentificadorUnico(),
-        //            NumeroCuenta = GenerarNumeroCuenta(),
-        //            Balance = request.MontoInicial ?? 0,
-        //            EsPrincipal = true,
-        //            IdProductoFinanciero = productoFinanciero.Id
-        //        };
-
-        //        await _cuentasAhorroRepository.AddAsync(cuentaAhorro);
-
-        //        // Guardar el cambio en el campo TieneCuentaPrincipal en la base de datos
-        //        await _userManager.UpdateAsync(user);  // Esto asegura que los cambios se persistan
-        //    }
-
-        //    return response;
-        //}
 
         #endregion
 
@@ -272,6 +199,10 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
 
 
+<<<<<<< HEAD
+=======
+       
+>>>>>>> origin/client-cash-advances
         #endregion
 
         #region get
@@ -451,6 +382,7 @@ namespace InternetBanking.Infrastructure.Identity.Services
 
             if (vm.MontoAdicional.HasValue && vm.MontoAdicional.Value > 0 && user.TipoUsuario == TipoUsuario.Cliente)
             {
+
                 // Obtiene el producto de tipo Cuenta de Ahorro para el usuario
                 var productoAhorro = await _productosFinancierosRepository.GetByUserIdAndProductTypeAsync(user.Id, TipoProducto.CuentaAhorro);
 
@@ -469,6 +401,8 @@ namespace InternetBanking.Infrastructure.Identity.Services
                     }
                     else
                     {
+                        user.TieneCuentaPrincipal = true;
+
                         // Si no tiene una cuenta principal, crea una nueva
                         var nuevaCuentaAhorro = new CuentasAhorro
                         {
@@ -490,7 +424,11 @@ namespace InternetBanking.Infrastructure.Identity.Services
                         IdUsuario = user.Id,
                         TipoProducto = TipoProducto.CuentaAhorro,
                         FechaCreacion = DateTime.Now,
+<<<<<<< HEAD
                         NumeroProducto = GenerarIdentificadorUnico(),
+=======
+                        NumeroProducto = GenerarIdentificadorUnico()
+>>>>>>> origin/client-cash-advances
                     };
 
                     // Guarda el Producto Financiero
@@ -559,8 +497,13 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 var cuentaAhorro = new CuentasAhorro
                 {
                     IdProductoFinanciero = producto.Id,
+<<<<<<< HEAD
                     Balance = 0,
                     NumeroCuenta = GenerarIdentificadorUnico(),
+=======
+                    NumeroCuenta = GenerarIdentificadorUnico(),
+                    Balance = 0,
+>>>>>>> origin/client-cash-advances
                     EsPrincipal = false 
                 };
                 await _cuentasAhorroRepository.AddAsync(cuentaAhorro);
@@ -581,9 +524,15 @@ namespace InternetBanking.Infrastructure.Identity.Services
                 var tarjetaCredito = new TarjetasCredito
                 {
                     IdProductoFinanciero = producto.Id,
+<<<<<<< HEAD
                     LimiteCredito = limiteCredito.Value,
                     DeudaActual = 0, // Inicializar deuda en 0
                     NumeroTarjeta = GenerarIdentificadorUnico()
+=======
+                    NumeroTarjeta = GenerarIdentificadorUnico(),
+                    LimiteCredito = limiteCredito.Value,
+                    DeudaActual = 0, // Inicializar deuda en 0
+>>>>>>> origin/client-cash-advances
                 };
                 await _tarjetasCreditoRepository.AddAsync(tarjetaCredito);
             }

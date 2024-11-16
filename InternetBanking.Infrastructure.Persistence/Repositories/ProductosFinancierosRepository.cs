@@ -23,16 +23,21 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
+        #region sector 1
         public async Task<ProductosFinancieros> GetByUserIdAndProductTypeAsync(string userId, TipoProducto tipoProducto)
         {
             return await _dbContext.ProductosFinancieros
                 .FirstOrDefaultAsync(p => p.IdUsuario == userId && p.TipoProducto == tipoProducto);
         }
 
-        public async Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string identificadorUnico)
+        public async Task<ProductosFinancieros> GetByIdentificadorUnicoAsync(string numeroProducto)
         {
             return await _dbContext.ProductosFinancieros
+<<<<<<< HEAD
                 .FirstOrDefaultAsync(p => p.NumeroProducto == identificadorUnico);
+=======
+                .FirstOrDefaultAsync(p => p.NumeroProducto == numeroProducto);
+>>>>>>> origin/client-cash-advances
         }
         // Obtiene un producto financiero con todos los detalles de las relaciones asociadas
         public async Task<ProductosFinancieros> GetByIdAsync(int id)
@@ -43,10 +48,14 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.Prestamo)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
-        public async Task<bool> ExistsByIdentificadorUnicoAsync(string identificadorUnico)
+        public async Task<bool> ExistsByIdentificadorUnicoAsync(string numeroProducto)
         {
             return await _dbContext.ProductosFinancieros
+<<<<<<< HEAD
                 .AnyAsync(p => p.NumeroProducto == identificadorUnico);
+=======
+                .AnyAsync(p => p.NumeroProducto == numeroProducto);
+>>>>>>> origin/client-cash-advances
         }
 
         // Método para agregar un nuevo producto financiero
@@ -79,6 +88,7 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                 .Include(p => p.Prestamo)
                 .ToListAsync();
         }
+<<<<<<< HEAD
 
         public async Task<List<ProductosFinancieros>> GetByClienteIdAsync(int clienteId)
         {
@@ -86,6 +96,9 @@ namespace InternetBanking.Infrastructure.Persistence.Repositories
                                    .Where(pf => pf.IdUsuario == clienteId.ToString())
                                    .ToListAsync();
         }
+=======
+        #endregion
+>>>>>>> origin/client-cash-advances
 
     }
 }

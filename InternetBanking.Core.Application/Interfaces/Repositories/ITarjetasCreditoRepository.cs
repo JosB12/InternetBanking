@@ -14,7 +14,7 @@ namespace InternetBanking.Core.Application.Interfaces.Repositories
         Task<List<TarjetasCredito>> GetByUserIdAsync(string userId);
         Task UpdateAsync(TarjetasCredito tarjetaCredito);
         Task<TarjetasCredito> GetByProductoFinancieroIdAsync(int productoFinancieroId);
-
+        Task UpdateDeudaAsync(int tarjetaCreditoId, decimal montoConInteres);
         Task<TarjetasCredito> GetByIdentificadorUnicoAsync(string identificadorUnico);
 
     }

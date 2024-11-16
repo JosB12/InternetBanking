@@ -1,0 +1,105 @@
+﻿@model InternetBanking.Core.Application.ViewModels.AvanceEfectivoViewModel
+
+@{
+    ViewData["Title"] = "Crear Avance de Efectivo";
+}
+
+<!-- Título -->
+<h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+<!-- Formulario principal -->
+<form asp-action="Create" method="post" class="needs-validation" novalidate>
+    @Html.AntiForgeryToken() 
+    @if (ViewData.ModelState.Values.Any(v => v.Errors.Any()))
+    {
+        <div class="alert alert-danger">
+            <h5>Se encontraron los siguientes errores:</h5>
+            <ul>
+                @foreach (var modelState in ViewData.ModelState.Values)
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+
+    <!-- Formulario de avance de efectivo -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Selección de tarjeta de crédito -->
+            <div class="form-group">
+                <label for="TarjetaCreditoId">Tarjeta de Crédito</label>
+                <select asp-for="TarjetaCreditoId" class="form-control" asp-items="@(ViewData["TarjetaCreditoOptions"] as SelectList)" required>
+                    <option value="">Seleccione una tarjeta de crédito</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione una tarjeta de crédito.
+                </div>
+                <span asp-validation-for="TarjetaCreditoId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- Selección de cuenta de ahorro -->
+            <div class="form-group">
+                <label for="CuentaAhorroId">Cuenta de Ahorro</label>
+                <select asp-for="CuentaAhorroId" class="form-control" asp-items="@(ViewData["CuentaAhorroOptions"] as SelectList)" required>
+                    <option value="">Seleccione una cuenta de ahorro</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor, seleccione una cuenta de ahorro.
+                </div>
+                <span asp-validation-for="CuentaAhorroId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <!-- Monto -->
+            <div class="form-group">
+                <label for="Monto">Monto</label>
+                <input type="number" asp-for="Monto" class="form-control" placeholder="Ingrese el monto" required />
+                <div class="invalid-feedback">
+                    El monto es obligatorio.
+                </div>
+                <span asp-validation-for="Monto" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de submit -->
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success btn-lg">Crear Avance de Efectivo</button>
+    </div>
+
+</form>
+
+<!-- Enlace para volver a la lista -->
+<div class="text-center mt-3">
+    <a href="@Url.Action("Index")" class="btn btn-link">Volver a la lista de avances</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script>
+        // Habilitar validación de formularios con Bootstrap 4
+        (function () {
+            'use strict'
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation')
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            }, false)
+        })()
+    </script>
+}

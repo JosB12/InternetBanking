@@ -5,9 +5,14 @@ namespace InternetBanking.Core.Domain.Entities
     public class CuentasAhorro
     {
         public int Id { get; set; }
+<<<<<<< HEAD
        
         [Required]
         public string NumeroCuenta { get; set; } 
+=======
+        [Required]
+        public string NumeroCuenta { get; set; }
+>>>>>>> origin/client-cash-advances
         public decimal Balance { get; set; }
         public bool EsPrincipal { get; set; }
 
